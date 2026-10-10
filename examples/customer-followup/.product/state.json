@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "phase": "complete",
+  "status": "passed",
+  "selected": [
+    {
+      "id": "workbench-definition",
+      "provider": "builtin",
+      "reason": "外部 Skill 未安装；按内置产品契约定义"
+    },
+    {
+      "id": "interface-delivery",
+      "provider": "builtin",
+      "reason": "按固定 DESIGN.md 与代码 tokens 实现"
+    },
+    {
+      "id": "workbench-verification",
+      "provider": "builtin",
+      "reason": "真实浏览器行为及截图检查"
+    }
+  ],
+  "open_questions": [],
+  "evidence": [
+    "evidence/browser-results.json",
+    "evidence/desktop-empty.png",
+    "evidence/desktop-populated.png",
+    "evidence/mobile-populated.png",
+    "evidence/mobile-form.png",
+    ".product/verification.md"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-01",
+      "status": "passed",
+      "evidence": [
+        "evidence/browser-results.json"
+      ]
+    },
+    {
+      "id": "AC-02",
+      "status": "passed",
+      "evidence": [
+        "evidence/browser-results.json"
+      ]
+    },
+    {
+      "id": "AC-03",
+      "status": "passed",
+      "evidence": [
+        "evidence/browser-results.json"
+      ]
+    },
+    {
+      "id": "AC-04",
+      "status": "passed",
+      "evidence": [
+        "evidence/browser-results.json"
+      ]
+    },
+    {
+      "id": "AC-05",
+      "status": "passed",
+      "evidence": [
+        "evidence/browser-results.json"
+      ]
+    },
+    {
+      "id": "AC-06",
+      "status": "passed",
+      "evidence": [
+        "evidence/browser-results.json"
+      ]
+    },
+    {
+      "id": "AC-07",
+      "status": "passed",
+      "evidence": [
+        "evidence/browser-results.json"
+      ]
+    }
+  ],
+  "updated_at": "2026-10-10T06:08:53.170Z"
+}

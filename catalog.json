@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "version": "0.4.0",
+  "path_base": "skills/",
+  "categories": [
+    "product",
+    "design",
+    "engineering",
+    "testing",
+    "collaboration",
+    "documentation"
+  ],
+  "skills": [
+    {
+      "id": "skill-router",
+      "kind": "workflow",
+      "category": "engineering",
+      "tags": [
+        "routing",
+        "catalog"
+      ],
+      "path": "skill-router/SKILL.md",
+      "use_when": "从技能库选择适合当前请求的独立能力或领域工作流",
+      "not_for": "替代已经明确指定的技能或自行扩大执行授权",
+      "inputs": [
+        "用户请求",
+        "技能目录",
+        "已有项目上下文"
+      ],
+      "outputs": [
+        "技能选择与依据",
+        "实际任务结果"
+      ],
+      "requires": [],
+      "side_effects": [
+        "取决于所选技能及用户授权"
+      ],
+      "completion": "执行所选能力的完成契约，或明确记录缺失能力",
+      "display_name": "总入口 · 自动选择技能",
+      "level": "entry"
+    },
+    {
+      "id": "product-workflow",
+      "kind": "workflow",
+      "category": "product",
+      "tags": [
+        "workbench",
+        "end-to-end"
+      ],
+      "path": "product-workflow/SKILL.md",
+      "use_when": "模糊工作台需求到本地实现检查，或继续已有工作台",
+      "not_for": "单独 Jira 提交、测试用例编写、非工作台产品",
+      "inputs": [
+        "用户请求",
+        "现有项目"
+      ],
+      "outputs": [
+        "规格",
+        "设计",
+        "实现",
+        "验证记录"
+      ],
+      "requires": [
+        "workbench-definition",
+        "interface-delivery",
+        "workbench-verification"
+      ],
+      "side_effects": [
+        "项目内文件和本地检查"
+      ],
+      "completion": "范围内验收通过；未完成或未验证明确记录",
+      "display_name": "工作台 · 从需求到实现检查",
+      "level": "domain-workflow"
+    },
+    {
+      "id": "workbench-definition",
+      "kind": "capability",
+      "category": "product",
+      "tags": [
+        "workbench",
+        "requirements"
+      ],
+      "path": "workbench-definition/SKILL.md",
+      "use_when": "个人或业务工作台缺少清晰定义",
+      "not_for": "仅视觉修正、一般市场验证",
+      "inputs": [
+        "请求",
+        "现有规格"
+      ],
+      "outputs": [
+        ".workbench/spec.md"
+      ],
+      "requires": [
+        "skill-router",
+        "finesse-brief"
+      ],
+      "side_effects": [
+        "规格文件"
+      ],
+      "completion": "核心任务、数据来源、冷启动、范围和可检查验收明确",
+      "display_name": "工作台产品定义",
+      "level": "capability"
+    },
+    {
+      "id": "interface-delivery",
+      "kind": "capability",
+      "category": "design",
+      "tags": [
+        "web",
+        "implementation",
+        "design-system"
+      ],
+      "path": "interface-delivery/SKILL.md",
+      "use_when": "按明确规格实现或修改 Web 界面",
+      "not_for": "后端独立项目、Jira 操作",
+      "inputs": [
+        "产品规格",
+        "现有代码和设计规范"
+      ],
+      "outputs": [
+        "DESIGN.md",
+        "界面代码"
+      ],
+      "requires": [
+        "skill-router",
+        "impeccable",
+        "ui-ux-pro-max"
+      ],
+      "side_effects": [
+        "设计文件和代码",
+        "本地构建"
+      ],
+      "completion": "范围内页面和状态可运行，设计规范落实到代码",
+      "display_name": "界面设计与实现",
+      "level": "capability"
+    },
+    {
+      "id": "workbench-verification",
+      "kind": "capability",
+      "category": "testing",
+      "tags": [
+        "workbench",
+        "browser",
+        "acceptance"
+      ],
+      "path": "workbench-verification/SKILL.md",
+      "use_when": "核对工作台实现是否符合规格和设计",
+      "not_for": "独立测试用例规范、一般安全审计",
+      "inputs": [
+        "规格",
+        "设计",
+        "实现"
+      ],
+      "outputs": [
+        ".product/verification.md",
+        "检查证据"
+      ],
+      "requires": [],
+      "side_effects": [
+        "本地测试数据",
+        "验证文件"
+      ],
+      "completion": "逐项报告通过、失败或未验证，关键失败修复后再验",
+      "display_name": "工作台实现验收",
+      "level": "capability"
+    },
+    {
+      "id": "finesse-brief",
+      "kind": "capability",
+      "origin": "upstream",
+      "category": "product",
+      "tags": [
+        "provider"
+      ],
+      "path": "finesse-brief/SKILL.md",
+      "use_when": "按上游方法定义工作台产品",
+      "not_for": "无关领域或扩大用户授权",
+      "inputs": [
+        "实际产品与项目上下文"
+      ],
+      "outputs": [
+        ".workbench/spec.md"
+      ],
+      "requires": [],
+      "side_effects": [
+        "按实际上游指令；Impeccable 首次可能下载校验过的引擎"
+      ],
+      "completion": "按实际上游与本地交接契约验收",
+      "revision": "d1f45618b605587b882a20d72eb0d8ec666990bd",
+      "display_name": "finesse-brief · 工作台需求澄清",
+      "level": "provider"
+    },
+    {
+      "id": "impeccable",
+      "kind": "capability",
+      "origin": "upstream",
+      "category": "design",
+      "tags": [
+        "provider"
+      ],
+      "path": "impeccable/SKILL.md",
+      "use_when": "依据产品上下文进行前端设计、审查与精修",
+      "not_for": "无关领域或扩大用户授权",
+      "inputs": [
+        "实际产品与项目上下文"
+      ],
+      "outputs": [
+        "设计规范",
+        "界面",
+        "检测结果"
+      ],
+      "requires": [],
+      "side_effects": [
+        "按实际上游指令；Impeccable 首次可能下载校验过的引擎"
+      ],
+      "completion": "按实际上游与本地交接契约验收",
+      "revision": "d631a8827f99414d2b6daba4ef08b7f8701751d7",
+      "display_name": "Impeccable · 界面设计与精修",
+      "level": "provider"
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "kind": "capability",
+      "origin": "upstream",
+      "category": "design",
+      "tags": [
+        "provider"
+      ],
+      "path": "ui-ux-pro-max/SKILL.md",
+      "use_when": "检索配色、字体、图表、UX 或技术栈并形成设计建议",
+      "not_for": "无关领域或扩大用户授权",
+      "inputs": [
+        "实际产品与项目上下文"
+      ],
+      "outputs": [
+        "设计建议",
+        "设计系统"
+      ],
+      "requires": [],
+      "side_effects": [
+        "按实际上游指令；Impeccable 首次可能下载校验过的引擎"
+      ],
+      "completion": "按实际上游与本地交接契约验收",
+      "revision": "50d8a7de0900119855614541f15a1a616691eb33",
+      "display_name": "UI UX Pro Max · 设计建议检索",
+      "level": "provider"
+    },
+    {
+      "id": "qa-workflow",
+      "kind": "workflow",
+      "category": "testing",
+      "tags": [
+        "qa",
+        "functional",
+        "portable"
+      ],
+      "path": "qa-workflow/SKILL.md",
+      "use_when": "持续功能QA任务的能力选择、交接与阶段推进",
+      "not_for": "单纯产品设计或未经授权的外部操作",
+      "inputs": [
+        "需求、设计和当前QA资产"
+      ],
+      "outputs": [
+        "技能选择、范围与QA交付"
+      ],
+      "requires": [
+        "qa-test-design",
+        "qa-functional-execution",
+        "jira-defect-delivery",
+        "qa-test-report"
+      ],
+      "side_effects": [
+        "本地QA产物；外部写入按独立授权"
+      ],
+      "completion": "范围、来源、结果和未完成项可追溯；结构检查不冒充业务或真实执行",
+      "display_name": "功能测试 · 自动安排QA任务",
+      "level": "domain-workflow"
+    },
+    {
+      "id": "qa-test-design",
+      "kind": "capability",
+      "category": "testing",
+      "tags": [
+        "qa",
+        "functional",
+        "portable"
+      ],
+      "path": "qa-test-design/SKILL.md",
+      "use_when": "从需求与可选Figma编写、审查或持续修订功能用例",
+      "not_for": "直接执行设备操作或自动建Jira",
+      "inputs": [
+        "需求/设计依据、项目策略、旧用例"
+      ],
+      "outputs": [
+        "用例、追踪、维度决策、缺口与版本差异"
+      ],
+      "requires": [],
+      "side_effects": [
+        "项目QA文件与快照"
+      ],
+      "completion": "范围、来源、结果和未完成项可追溯；结构检查不冒充业务或真实执行",
+      "display_name": "功能测试用例",
+      "level": "capability"
+    },
+    {
+      "id": "qa-functional-execution",
+      "kind": "capability",
+      "category": "testing",
+      "tags": [
+        "qa",
+        "functional",
+        "portable"
+      ],
+      "path": "qa-functional-execution/SKILL.md",
+      "use_when": "按当前修订执行或复测功能用例并留真实证据",
+      "not_for": "缺明确预期时编造测试通过",
+      "inputs": [
+        "可执行用例、目标环境与授权"
+      ],
+      "outputs": [
+        "追加结果、证据、阻塞与未执行"
+      ],
+      "requires": [
+        "qa-test-design"
+      ],
+      "side_effects": [
+        "授权内测试数据、设备/浏览器操作、结果追加"
+      ],
+      "completion": "范围、来源、结果和未完成项可追溯；结构检查不冒充业务或真实执行",
+      "display_name": "功能执行与复测",
+      "level": "capability"
+    },
+    {
+      "id": "jira-defect-delivery",
+      "kind": "capability",
+      "category": "collaboration",
+      "tags": [
+        "qa",
+        "functional",
+        "portable"
+      ],
+      "path": "jira-defect-delivery/SKILL.md",
+      "use_when": "确认缺陷的Jira草稿、建单、更新、复测备注与状态流转",
+      "not_for": "报告汇总或测试执行自动推导建单授权",
+      "inputs": [
+        "确认异常、版本/环境、来源、证据与动作授权"
+      ],
+      "outputs": [
+        "可审阅草稿、逐动作回执"
+      ],
+      "requires": [
+        "qa-test-design"
+      ],
+      "side_effects": [
+        "本地稿；仅授权时外部Jira写入"
+      ],
+      "completion": "范围、来源、结果和未完成项可追溯；结构检查不冒充业务或真实执行",
+      "display_name": "Jira缺陷交付",
+      "level": "capability"
+    },
+    {
+      "id": "qa-test-report",
+      "kind": "capability",
+      "category": "documentation",
+      "tags": [
+        "qa",
+        "functional",
+        "portable"
+      ],
+      "path": "qa-test-report/SKILL.md",
+      "use_when": "按保存结果与当前修订生成/更新范围限定报告",
+      "not_for": "修改用例审批、执行历史或自动Jira同步",
+      "inputs": [
+        "版本范围、保存结果、缺陷与证据"
+      ],
+      "outputs": [
+        "复算统计、报告与未测风险"
+      ],
+      "requires": [
+        "qa-test-design"
+      ],
+      "side_effects": [
+        "本地报告与导出文件"
+      ],
+      "completion": "范围、来源、结果和未完成项可追溯；结构检查不冒充业务或真实执行",
+      "display_name": "测试报告",
+      "level": "capability"
+    }
+  ],
+  "external_capabilities": [
+    {
+      "id": "finesse-brief",
+      "url": "https://github.com/mouse-lin/finesse-brief",
+      "adapter": "workbench-definition/references/finesse-brief.md",
+      "required": false,
+      "bundled": true,
+      "path": "finesse-brief/SKILL.md",
+      "revision": "d1f45618b605587b882a20d72eb0d8ec666990bd"
+    },
+    {
+      "id": "impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "adapter": "interface-delivery/references/impeccable.md",
+      "required": false,
+      "bundled": true,
+      "path": "impeccable/SKILL.md",
+      "revision": "d631a8827f99414d2b6daba4ef08b7f8701751d7"
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "adapter": "interface-delivery/references/ui-ux-pro-max.md",
+      "required": false,
+      "bundled": true,
+      "path": "ui-ux-pro-max/SKILL.md",
+      "revision": "50d8a7de0900119855614541f15a1a616691eb33"
+    }
+  ],
+  "entrypoints": {
+    "default": "skill-router",
+    "domains": {
+      "workbench": "product-workflow",
+      "functional-qa": "qa-workflow"
+    }
+  },
+  "runtime": {
+    "implementation": "go",
+    "minimum_build_version": "1.23",
+    "installed_directory": ".amazing-skills",
+    "executable": "amazing-skills",
+    "windows_executable": "amazing-skills.exe",
+    "python_required": false
+  }
+}

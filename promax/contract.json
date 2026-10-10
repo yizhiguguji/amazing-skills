@@ -1,0 +1,1445 @@
+{
+  "csv": {
+    "style": {
+      "file": "styles.csv",
+      "search_cols": [
+        "Style ID",
+        "Style Category",
+        "Aliases",
+        "Keywords",
+        "Best For",
+        "Type",
+        "AI Prompt Keywords"
+      ],
+      "output_cols": [
+        "Style ID",
+        "Style Category",
+        "Aliases",
+        "Status",
+        "Parent Style ID",
+        "Preferred Mode",
+        "Type",
+        "Keywords",
+        "Primary Colors",
+        "Effects & Animation",
+        "Best For",
+        "Light Mode ✓",
+        "Dark Mode ✓",
+        "Performance",
+        "Accessibility",
+        "Framework Compatibility",
+        "Complexity",
+        "AI Prompt Keywords",
+        "CSS/Technical Keywords",
+        "Implementation Checklist",
+        "Design System Variables"
+      ]
+    },
+    "color": {
+      "file": "colors.csv",
+      "search_cols": [
+        "Product Type",
+        "Notes"
+      ],
+      "output_cols": [
+        "Product Type",
+        "Primary",
+        "On Primary",
+        "Secondary",
+        "On Secondary",
+        "Accent",
+        "On Accent",
+        "Background",
+        "Foreground",
+        "Card",
+        "Card Foreground",
+        "Muted",
+        "Muted Foreground",
+        "Border",
+        "Destructive",
+        "On Destructive",
+        "Ring",
+        "Notes"
+      ]
+    },
+    "chart": {
+      "file": "charts.csv",
+      "search_cols": [
+        "Data Type",
+        "Keywords",
+        "Best Chart Type",
+        "When to Use",
+        "When NOT to Use",
+        "Accessibility Notes"
+      ],
+      "output_cols": [
+        "Data Type",
+        "Keywords",
+        "Best Chart Type",
+        "Secondary Options",
+        "When to Use",
+        "When NOT to Use",
+        "Data Volume Threshold",
+        "Color Guidance",
+        "Accessibility Grade",
+        "Accessibility Risk",
+        "Accessibility Notes",
+        "A11y Fallback",
+        "Library Recommendation",
+        "Interactive Level"
+      ]
+    },
+    "landing": {
+      "file": "landing.csv",
+      "search_cols": [
+        "Pattern ID",
+        "Pattern Name",
+        "Aliases",
+        "Keywords",
+        "Conversion Optimization",
+        "Section Order"
+      ],
+      "output_cols": [
+        "Pattern ID",
+        "Pattern Name",
+        "Aliases",
+        "Keywords",
+        "Section Order",
+        "Primary CTA Placement",
+        "Color Strategy",
+        "Conversion Optimization"
+      ]
+    },
+    "product": {
+      "file": "products.csv",
+      "search_cols": [
+        "Product Type",
+        "Keywords",
+        "Primary Style Recommendation",
+        "Key Considerations"
+      ],
+      "output_cols": [
+        "Product Type",
+        "Keywords",
+        "Primary Style Recommendation",
+        "Secondary Styles",
+        "Landing Page Pattern",
+        "Dashboard Style (if applicable)",
+        "Color Palette Focus"
+      ]
+    },
+    "ux": {
+      "file": "ux-guidelines.csv",
+      "search_cols": [
+        "Category",
+        "Issue",
+        "Description",
+        "Platform"
+      ],
+      "output_cols": [
+        "Category",
+        "Issue",
+        "Platform",
+        "Description",
+        "Do",
+        "Don't",
+        "Code Example Good",
+        "Code Example Bad",
+        "Severity"
+      ]
+    },
+    "typography": {
+      "file": "typography.csv",
+      "search_cols": [
+        "Font Pairing Name",
+        "Category",
+        "Mood/Style Keywords",
+        "Best For",
+        "Heading Font",
+        "Body Font"
+      ],
+      "output_cols": [
+        "Font Pairing Name",
+        "Category",
+        "Heading Font",
+        "Body Font",
+        "Mood/Style Keywords",
+        "Best For",
+        "Google Fonts URL",
+        "CSS Import",
+        "Tailwind Config",
+        "Notes"
+      ]
+    },
+    "icons": {
+      "file": "icons.csv",
+      "search_cols": [
+        "Category",
+        "Icon Name",
+        "Keywords",
+        "Best For",
+        "Library"
+      ],
+      "output_cols": [
+        "Category",
+        "Icon Name",
+        "Keywords",
+        "Library",
+        "Import Code",
+        "Usage",
+        "Best For",
+        "Style",
+        "Semantic Role",
+        "Allowed Contexts"
+      ]
+    },
+    "gsap": {
+      "file": "motion.csv",
+      "search_cols": [
+        "Category",
+        "Intensity Tier",
+        "Keywords",
+        "Trigger"
+      ],
+      "output_cols": [
+        "Category",
+        "Intensity Tier",
+        "Trigger",
+        "Duration",
+        "Easing",
+        "GSAP Snippet",
+        "Framework Notes",
+        "Do",
+        "Don't",
+        "Performance Notes"
+      ]
+    },
+    "react": {
+      "file": "react-performance.csv",
+      "search_cols": [
+        "Category",
+        "Issue",
+        "Keywords",
+        "Description"
+      ],
+      "output_cols": [
+        "Category",
+        "Issue",
+        "Platform",
+        "Description",
+        "Do",
+        "Don't",
+        "Code Example Good",
+        "Code Example Bad",
+        "Severity"
+      ]
+    },
+    "web": {
+      "file": "app-interface.csv",
+      "search_cols": [
+        "Category",
+        "Issue",
+        "Keywords",
+        "Description"
+      ],
+      "output_cols": [
+        "Category",
+        "Issue",
+        "Platform",
+        "Description",
+        "Do",
+        "Don't",
+        "Code Example Good",
+        "Code Example Bad",
+        "Severity"
+      ]
+    },
+    "google-fonts": {
+      "file": "google-fonts.csv",
+      "search_cols": [
+        "Family",
+        "Category",
+        "Stroke",
+        "Classifications",
+        "Keywords",
+        "Subsets",
+        "Designers"
+      ],
+      "output_cols": [
+        "Family",
+        "Category",
+        "Stroke",
+        "Classifications",
+        "Styles",
+        "Variable Axes",
+        "Subsets",
+        "Designers",
+        "Popularity Rank",
+        "Google Fonts URL"
+      ]
+    }
+  },
+  "stack": {
+    "react": {
+      "file": "stacks/react.csv"
+    },
+    "nextjs": {
+      "file": "stacks/nextjs.csv"
+    },
+    "vue": {
+      "file": "stacks/vue.csv"
+    },
+    "svelte": {
+      "file": "stacks/svelte.csv"
+    },
+    "astro": {
+      "file": "stacks/astro.csv"
+    },
+    "swiftui": {
+      "file": "stacks/swiftui.csv"
+    },
+    "react-native": {
+      "file": "stacks/react-native.csv"
+    },
+    "flutter": {
+      "file": "stacks/flutter.csv"
+    },
+    "nuxtjs": {
+      "file": "stacks/nuxtjs.csv"
+    },
+    "nuxt-ui": {
+      "file": "stacks/nuxt-ui.csv"
+    },
+    "html-tailwind": {
+      "file": "stacks/html-tailwind.csv"
+    },
+    "shadcn": {
+      "file": "stacks/shadcn.csv"
+    },
+    "jetpack-compose": {
+      "file": "stacks/jetpack-compose.csv"
+    },
+    "threejs": {
+      "file": "stacks/threejs.csv"
+    },
+    "angular": {
+      "file": "stacks/angular.csv"
+    },
+    "laravel": {
+      "file": "stacks/laravel.csv"
+    },
+    "javafx": {
+      "file": "stacks/javafx.csv"
+    },
+    "wpf": {
+      "file": "stacks/wpf.csv"
+    },
+    "winui": {
+      "file": "stacks/winui.csv"
+    },
+    "avalonia": {
+      "file": "stacks/avalonia.csv"
+    },
+    "uno": {
+      "file": "stacks/uno.csv"
+    },
+    "uwp": {
+      "file": "stacks/uwp.csv"
+    }
+  },
+  "stack_cols": {
+    "search_cols": [
+      "Category",
+      "Guideline",
+      "Description",
+      "Do",
+      "Don't",
+      "Code Good",
+      "Code Bad"
+    ],
+    "output_cols": [
+      "Category",
+      "Guideline",
+      "Description",
+      "Do",
+      "Don't",
+      "Code Good",
+      "Code Bad",
+      "Severity",
+      "Docs URL",
+      "Applies To",
+      "Status",
+      "Verified At"
+    ]
+  },
+  "synonyms": [
+    [
+      "customisation",
+      "customization"
+    ],
+    [
+      "organisation",
+      "organization"
+    ],
+    [
+      "e-commerce",
+      "ecommerce"
+    ],
+    [
+      "light-mode",
+      "light"
+    ],
+    [
+      "dark-mode",
+      "dark"
+    ],
+    [
+      "lightmode",
+      "light"
+    ],
+    [
+      "behaviour",
+      "behavior"
+    ],
+    [
+      "darkmode",
+      "dark"
+    ],
+    [
+      "sign-up",
+      "signup"
+    ],
+    [
+      "colours",
+      "colors"
+    ],
+    [
+      "log-in",
+      "login"
+    ],
+    [
+      "colour",
+      "color"
+    ],
+    [
+      "ux/ui",
+      "ux ui"
+    ],
+    [
+      "a11y",
+      "accessibility"
+    ],
+    [
+      "q&a",
+      "question answer"
+    ],
+    [
+      "nav",
+      "navigation"
+    ]
+  ],
+  "stopwords": [
+    "an",
+    "and",
+    "are",
+    "as",
+    "at",
+    "be",
+    "by",
+    "do",
+    "for",
+    "if",
+    "in",
+    "is",
+    "it",
+    "no",
+    "of",
+    "on",
+    "or",
+    "so",
+    "the",
+    "to",
+    "was",
+    "we"
+  ],
+  "keywords": {
+    "color": [
+      "color",
+      "palette",
+      "hex",
+      "rgb",
+      "token",
+      "semantic",
+      "accent",
+      "destructive",
+      "muted",
+      "foreground"
+    ],
+    "chart": [
+      "time series",
+      "chart",
+      "graph",
+      "visualization",
+      "trend",
+      "bar chart",
+      "pie",
+      "scatter",
+      "heatmap",
+      "funnel",
+      "forecast"
+    ],
+    "landing": [
+      "landing",
+      "page",
+      "cta",
+      "conversion",
+      "hero",
+      "testimonial",
+      "pricing",
+      "section"
+    ],
+    "product": [
+      "academic journal / scholarly publishing",
+      "research lab / university department",
+      "conference / symposium landing page",
+      "government portal / civic services",
+      "study together / virtual coworking",
+      "status page / incident management",
+      "testimonial & social proof widget",
+      "micro-credentials/badges platform",
+      "sustainable energy / climate tech",
+      "home decoration & interior design",
+      "feature flag / config management",
+      "anonymous community / confession",
+      "patient portal / health records",
+      "design system/component library",
+      "e-signature / document workflow",
+      "autonomous drone fleet manager",
+      "remote work/collaboration tool",
+      "expense splitter / bill split",
+      "ride hailing / transportation",
+      "church/religious organization",
+      "knowledge base/documentation",
+      "inventory & stock management",
+      "fasting & intermittent timer",
+      "open source project landing",
+      "music creation & beat maker",
+      "white noise & ambient sound",
+      "ai photo & avatar generator",
+      "calorie & nutrition counter",
+      "banking/traditional finance",
+      "coding challenge & practice",
+      "beauty/spa/wellness service",
+      "calculator & unit converter",
+      "quantum computing interface",
+      "scanner & document manager",
+      "biohacking / longevity app",
+      "water & hydration reminder",
+      "rpa / automation dashboard",
+      "no-code / low-code builder",
+      "drawing & sketching canvas",
+      "medication & pill reminder",
+      "digital products/downloads",
+      "spatial computing os / app",
+      "music instrument learning",
+      "couple & relationship app",
+      "changelog / release notes",
+      "government/public service",
+      "wardrobe & outfit planner",
+      "booking & appointment app",
+      "construction/architecture",
+      "automotive/car dealership",
+      "food delivery / on-demand",
+      "calendar & scheduling app",
+      "link-in-bio page builder",
+      "personal finance tracker",
+      "citizen science platform",
+      "online course/e-learning",
+      "creator economy platform",
+      "family calendar & chores",
+      "meditation & mindfulness",
+      "parenting & baby tracker",
+      "smart home/iot dashboard",
+      "local events & discovery",
+      "forum / discussion board",
+      "subscription box service",
+      "directory / listing site",
+      "yoga & stretching guide",
+      "digital signage / kiosk",
+      "file manager & transfer",
+      "architecture / interior",
+      "biotech / life sciences",
+      "grocery & shopping list",
+      "restaurant/food service",
+      "crm & client management",
+      "generative art platform",
+      "space tech / aerospace",
+      "invoice & billing tool",
+      "period & cycle tracker",
+      "q&a community platform",
+      "flashcard & study tool",
+      "classifieds / buy-sell",
+      "emergency sos & safety",
+      "cybersecurity platform",
+      "ticketing / box office",
+      "photo editor & filters",
+      "wedding/event planning",
+      "grant / funding portal",
+      "book & reading tracker",
+      "running & cycling gps",
+      "word & crossword game",
+      "telemedicine platform",
+      "bookmark & read-later",
+      "crowdfunding platform",
+      "agriculture/farm tech",
+      "ev/charging ecosystem",
+      "survey / form builder",
+      "language learning app",
+      "job board/recruitment",
+      "voice recorder & memo",
+      "travel/tourism agency",
+      "wallpaper & theme app",
+      "chat & messaging app",
+      "meme & sticker maker",
+      "developer tool / ide",
+      "real estate/property",
+      "luxury/premium brand",
+      "membership/community",
+      "patent / ip database",
+      "public transit guide",
+      "recipe & cooking app",
+      "api developer portal",
+      "financial dashboard",
+      "idle & clicker game",
+      "ai/chatbot platform",
+      "news/media platform",
+      "alarm & world clock",
+      "diary & journal app",
+      "pharmacy/drug store",
+      "arcade & retro game",
+      "hyperlocal services",
+      "freelancer platform",
+      "newsletter platform",
+      "senior care/elderly",
+      "video streaming/ott",
+      "resume / cv builder",
+      "analytics dashboard",
+      "wiki / encyclopedia",
+      "notes & writing app",
+      "logistics/delivery",
+      "short video editor",
+      "non-profit/charity",
+      "photography studio",
+      "plant care tracker",
+      "casual puzzle game",
+      "trivia & quiz game",
+      "vpn & privacy tool",
+      "florist/plant shop",
+      "portfolio/personal",
+      "insurance platform",
+      "hotel/hospitality",
+      "card & board game",
+      "e-commerce luxury",
+      "childcare/daycare",
+      "road trip planner",
+      "nft/web3 platform",
+      "veterinary clinic",
+      "mental health app",
+      "productivity tool",
+      "auction platform",
+      "podcast platform",
+      "social media app",
+      "timer & pomodoro",
+      "sports team/club",
+      "event management",
+      "marketing agency",
+      "password manager",
+      "creative agency",
+      "coding bootcamp",
+      "dental practice",
+      "educational app",
+      "fitness/gym app",
+      "music streaming",
+      "coworking space",
+      "gift & wishlist",
+      "review platform",
+      "medical clinic",
+      "parking finder",
+      "fintech/crypto",
+      "museum/gallery",
+      "legal services",
+      "theater/cinema",
+      "brewery/winery",
+      "healthcare app",
+      "translator app",
+      "magazine/blog",
+      "home services",
+      "habit tracker",
+      "cybersecurity",
+      "sleep tracker",
+      "kids learning",
+      "pet tech app",
+      "email client",
+      "social media",
+      "mood tracker",
+      "weather app",
+      "marketplace",
+      "b2b service",
+      "bakery/cafe",
+      "real estate",
+      "micro saas",
+      "healthcare",
+      "restaurant",
+      "e-commerce",
+      "dating app",
+      "portfolio",
+      "ecommerce",
+      "education",
+      "wellness",
+      "airline",
+      "booking",
+      "fitness",
+      "fintech",
+      "banking",
+      "beauty",
+      "crypto",
+      "gaming",
+      "travel",
+      "salon",
+      "saas",
+      "spa"
+    ],
+    "style": [
+      "style",
+      "design",
+      "ui",
+      "minimalism",
+      "glassmorphism",
+      "neumorphism",
+      "brutalism",
+      "dark mode",
+      "flat",
+      "aurora",
+      "css",
+      "implementation",
+      "variable",
+      "checklist",
+      "tailwind"
+    ],
+    "ux": [
+      "ux",
+      "usability",
+      "accessibility",
+      "wcag",
+      "touch",
+      "scroll",
+      "animation",
+      "keyboard",
+      "navigation",
+      "mobile"
+    ],
+    "typography": [
+      "font pairing",
+      "typography pairing",
+      "heading font",
+      "body font"
+    ],
+    "google-fonts": [
+      "google font",
+      "font family",
+      "font weight",
+      "font style",
+      "variable font",
+      "noto",
+      "font for",
+      "find font",
+      "font subset",
+      "font language",
+      "monospace font",
+      "serif font",
+      "sans serif font",
+      "display font",
+      "handwriting font",
+      "font",
+      "typography",
+      "serif",
+      "sans"
+    ],
+    "icons": [
+      "icon",
+      "icons",
+      "lucide",
+      "phosphor",
+      "heroicons",
+      "symbol",
+      "glyph",
+      "pictogram",
+      "svg icon"
+    ],
+    "gsap": [
+      "gsap",
+      "quickto",
+      "scrolltrigger",
+      "stagger",
+      "magnetic cursor",
+      "parallax",
+      "page transition",
+      "scroll reveal",
+      "scroll-triggered",
+      "scrollytelling",
+      "flip plugin",
+      "splittext",
+      "shimmer",
+      "skeleton loader"
+    ],
+    "react": [
+      "react",
+      "next.js",
+      "nextjs",
+      "suspense",
+      "memo",
+      "usecallback",
+      "useeffect",
+      "rerender",
+      "bundle",
+      "waterfall",
+      "barrel",
+      "dynamic import",
+      "rsc",
+      "server component"
+    ],
+    "web": [
+      "aria",
+      "focus",
+      "outline",
+      "semantic",
+      "virtualize",
+      "autocomplete",
+      "form",
+      "input type",
+      "preconnect",
+      "drag reorder",
+      "single pointer",
+      "touch target",
+      "native accessibility"
+    ]
+  },
+  "order": [
+    "ux",
+    "product",
+    "style",
+    "color",
+    "typography",
+    "google-fonts",
+    "chart",
+    "landing",
+    "icons",
+    "gsap",
+    "react",
+    "web"
+  ],
+  "rewrites": {
+    "color": {
+      "color": null,
+      "palette": null,
+      "hex": null,
+      "rgb": null,
+      "token": null,
+      "semantic": null,
+      "destructive": null,
+      "muted": null,
+      "foreground": null
+    },
+    "landing": {
+      "testimonial": "testimonials"
+    },
+    "style": {
+      "css": null,
+      "implementation": null,
+      "variable": null,
+      "checklist": null,
+      "tailwind": null
+    },
+    "ux": {
+      "ux": "accessibility",
+      "usability": "accessibility",
+      "wcag": "accessibility"
+    },
+    "google-fonts": {
+      "typography": "font"
+    },
+    "icons": {
+      "lucide": null,
+      "symbol": null,
+      "glyph": null,
+      "pictogram": null
+    },
+    "gsap": {
+      "gsap": "animation",
+      "quickto": null,
+      "scrolltrigger": "scroll",
+      "flip plugin": null,
+      "splittext": null
+    },
+    "react": {
+      "nextjs": "react",
+      "usecallback": "memoization",
+      "useeffect": "effects"
+    },
+    "web": {
+      "aria": "accessibility",
+      "outline": "focus",
+      "semantic": null,
+      "autocomplete": "input",
+      "preconnect": null
+    }
+  },
+  "thresholds": {
+    "style": {
+      "min_score": 4.3,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    },
+    "color": {
+      "min_score": 0.0,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    },
+    "chart": {
+      "min_score": 0.0,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    },
+    "landing": {
+      "min_score": 4.0,
+      "min_margin": 0.0,
+      "min_coverage": 0.5
+    },
+    "product": {
+      "min_score": 6.0,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    },
+    "ux": {
+      "min_score": 0.0,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    },
+    "typography": {
+      "min_score": 0.0,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    },
+    "icons": {
+      "min_score": 5.8,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    },
+    "gsap": {
+      "min_score": 0.0,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    },
+    "react": {
+      "min_score": 3.3,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    },
+    "web": {
+      "min_score": 0.0,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    },
+    "google-fonts": {
+      "min_score": 0.0,
+      "min_margin": 0.0,
+      "min_coverage": 0.0
+    }
+  },
+  "stack_threshold": {
+    "min_score": 3.6,
+    "min_margin": 0.0,
+    "min_coverage": 0.3333333333333333
+  },
+  "current": {
+    "react": [
+      19
+    ],
+    "nextjs": [
+      16
+    ],
+    "vue": [
+      3
+    ],
+    "svelte": [
+      5
+    ],
+    "astro": [
+      7
+    ],
+    "angular": [
+      22
+    ],
+    "html-tailwind": [
+      4
+    ],
+    "nuxtjs": [
+      4
+    ],
+    "nuxt-ui": [
+      4
+    ],
+    "react-native": [
+      0,
+      86
+    ],
+    "flutter": [
+      3,
+      44
+    ],
+    "swiftui": [
+      16
+    ],
+    "jetpack-compose": [
+      1,
+      11
+    ],
+    "avalonia": [
+      12
+    ],
+    "winui": [
+      3
+    ],
+    "javafx": [
+      26
+    ],
+    "threejs": [
+      0,
+      185
+    ],
+    "laravel": [
+      13
+    ]
+  },
+  "stack_names": {
+    "react": "react",
+    "nextjs": "next(?:\\.js|js)?",
+    "vue": "vue",
+    "svelte": "svelte",
+    "astro": "astro",
+    "angular": "angular",
+    "html-tailwind": "tailwind(?:\\s*css)?",
+    "nuxtjs": "nuxt(?:\\.js|js)?",
+    "nuxt-ui": "nuxt\\s*ui",
+    "react-native": "react[\\s-]*native",
+    "flutter": "flutter",
+    "swiftui": "(?:ios|swiftui\\s+ios)",
+    "jetpack-compose": "(?:jetpack\\s*)?compose",
+    "avalonia": "avalonia",
+    "winui": "winui",
+    "javafx": "javafx",
+    "threejs": "three(?:\\.js|js)?",
+    "laravel": "laravel"
+  },
+  "signals": {
+    "if_booking": [
+      "booking",
+      "appointment",
+      "calendar"
+    ],
+    "if_boutique": [
+      "boutique"
+    ],
+    "if_casual": [
+      "casual",
+      "playful"
+    ],
+    "if_checkout": [
+      "checkout",
+      "payment",
+      "purchase"
+    ],
+    "if_children": [
+      "child",
+      "children",
+      "kids"
+    ],
+    "if_collaboration": [
+      "collaboration",
+      "multiplayer",
+      "co-edit"
+    ],
+    "if_competitive": [
+      "competitive",
+      "leaderboard"
+    ],
+    "if_content_focused": [
+      "content",
+      "article",
+      "reading",
+      "documentation"
+    ],
+    "if_conversion_focused": [
+      "conversion",
+      "sales",
+      "signup",
+      "purchase"
+    ],
+    "if_creative_field": [
+      "creative",
+      "artist",
+      "portfolio"
+    ],
+    "if_crop_focused": [
+      "crop",
+      "farm",
+      "agriculture"
+    ],
+    "if_dashboard": [
+      "dashboard",
+      "operations",
+      "monitoring"
+    ],
+    "if_data_heavy": [
+      "data heavy",
+      "data-heavy",
+      "analytics",
+      "large dataset"
+    ],
+    "if_delivery": [
+      "delivery",
+      "courier",
+      "shipping"
+    ],
+    "if_discovery_focused": [
+      "discover",
+      "discovery",
+      "browse",
+      "directory"
+    ],
+    "if_engagement_metric": [
+      "engagement",
+      "retention",
+      "contribution"
+    ],
+    "if_experience_focused": [
+      "experience",
+      "immersive",
+      "journey"
+    ],
+    "if_gamification": [
+      "gamification",
+      "badges",
+      "streak"
+    ],
+    "if_health": [
+      "health",
+      "medical",
+      "patient"
+    ],
+    "if_hero_needed": [
+      "hero",
+      "showcase",
+      "launch"
+    ],
+    "if_large_dataset": [
+      "large dataset",
+      "thousands",
+      "millions"
+    ],
+    "if_light_mode_needed": [
+      "light mode",
+      "light theme"
+    ],
+    "if_low_performance": [
+      "low performance",
+      "low-end",
+      "slow device"
+    ],
+    "if_luxury": [
+      "luxury",
+      "premium",
+      "high-end"
+    ],
+    "if_medication": [
+      "medication",
+      "medicine",
+      "prescription"
+    ],
+    "if_meditation": [
+      "meditation",
+      "breathing",
+      "mindfulness"
+    ],
+    "if_minimal_portfolio": [
+      "minimal portfolio",
+      "simple portfolio"
+    ],
+    "if_mobile": [
+      "mobile",
+      "phone",
+      "tablet",
+      "ios",
+      "android"
+    ],
+    "if_personalized": [
+      "personalized",
+      "personalised",
+      "recommendation"
+    ],
+    "if_pre_launch": [
+      "pre-launch",
+      "prelaunch",
+      "coming soon",
+      "waitlist"
+    ],
+    "if_salary_focused": [
+      "salary",
+      "compensation",
+      "pay range"
+    ],
+    "if_team_collaboration": [
+      "team collaboration",
+      "team workspace"
+    ],
+    "if_trust_needed": [
+      "trust",
+      "secure",
+      "verified",
+      "authority"
+    ],
+    "if_ux_focused": [
+      "ux",
+      "usability",
+      "accessibility",
+      "accessible"
+    ],
+    "if_video_ready": [
+      "video ready",
+      "product video",
+      "demo video"
+    ]
+  },
+  "dials": {
+    "variance": [
+      [
+        1,
+        3,
+        {
+          "label": "Centered / Minimal",
+          "style_keywords": [
+            "Minimalism",
+            "Exaggerated Minimalism",
+            "centered",
+            "symmetric",
+            "grid-based"
+          ]
+        }
+      ],
+      [
+        4,
+        7,
+        {
+          "label": "Balanced / Modern",
+          "style_keywords": [
+            "modern",
+            "structured",
+            "balanced"
+          ]
+        }
+      ],
+      [
+        8,
+        10,
+        {
+          "label": "Bold / Asymmetric",
+          "style_keywords": [
+            "Brutalism",
+            "Bento Grids",
+            "asymmetric",
+            "experimental"
+          ]
+        }
+      ]
+    ],
+    "motion": [
+      [
+        1,
+        3,
+        {
+          "label": "Subtle",
+          "tier": "Subtle"
+        }
+      ],
+      [
+        4,
+        7,
+        {
+          "label": "Standard",
+          "tier": "Standard"
+        }
+      ],
+      [
+        8,
+        10,
+        {
+          "label": "Complex",
+          "tier": "Complex"
+        }
+      ]
+    ],
+    "density": [
+      [
+        1,
+        3,
+        {
+          "label": "Spacious",
+          "spacing": {
+            "xs": "4px",
+            "sm": "8px",
+            "md": "24px",
+            "lg": "32px",
+            "xl": "48px",
+            "2xl": "64px",
+            "3xl": "96px"
+          }
+        }
+      ],
+      [
+        4,
+        7,
+        {
+          "label": "Standard",
+          "spacing": {
+            "xs": "4px",
+            "sm": "8px",
+            "md": "16px",
+            "lg": "24px",
+            "xl": "32px",
+            "2xl": "48px",
+            "3xl": "64px"
+          }
+        }
+      ],
+      [
+        8,
+        10,
+        {
+          "label": "Dense / Dashboard",
+          "spacing": {
+            "xs": "2px",
+            "sm": "4px",
+            "md": "8px",
+            "lg": "12px",
+            "xl": "16px",
+            "2xl": "24px",
+            "3xl": "32px"
+          }
+        }
+      ]
+    ]
+  },
+  "semantic_colors": [
+    [
+      "Primary",
+      "primary",
+      "--color-primary"
+    ],
+    [
+      "On Primary",
+      "on_primary",
+      "--color-on-primary"
+    ],
+    [
+      "Secondary",
+      "secondary",
+      "--color-secondary"
+    ],
+    [
+      "On Secondary",
+      "on_secondary",
+      "--color-on-secondary"
+    ],
+    [
+      "Accent/CTA",
+      "accent",
+      "--color-accent"
+    ],
+    [
+      "On Accent/CTA",
+      "on_accent",
+      "--color-on-accent"
+    ],
+    [
+      "Background",
+      "background",
+      "--color-background"
+    ],
+    [
+      "Foreground",
+      "foreground",
+      "--color-foreground"
+    ],
+    [
+      "Card",
+      "card",
+      "--color-card"
+    ],
+    [
+      "Card Foreground",
+      "card_foreground",
+      "--color-card-foreground"
+    ],
+    [
+      "Muted",
+      "muted",
+      "--color-muted"
+    ],
+    [
+      "Muted Foreground",
+      "muted_foreground",
+      "--color-muted-foreground"
+    ],
+    [
+      "Border",
+      "border",
+      "--color-border"
+    ],
+    [
+      "Destructive",
+      "destructive",
+      "--color-destructive"
+    ],
+    [
+      "On Destructive",
+      "on_destructive",
+      "--color-on-destructive"
+    ],
+    [
+      "Ring",
+      "ring",
+      "--color-ring"
+    ]
+  ],
+  "dark_primary": [
+    "dark mode primary",
+    "dark primary",
+    "dark-only",
+    "dark only",
+    "dark preferred",
+    "dark focused",
+    "dark-first",
+    "dark rich",
+    "light mode only as exception"
+  ],
+  "dark_query": [
+    "dark mode",
+    "dark theme",
+    "dark ui",
+    "dark-mode",
+    "darkmode",
+    "night mode",
+    "midnight",
+    "oled"
+  ]
+}

@@ -1,0 +1,686 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "S1",
+      "version": "1",
+      "kind": "document",
+      "status": "accepted",
+      "locator": "sources/r1.md",
+      "sha256": "0d68f82174d56a5feccad3d52f5618a1cac13d82f316a72e3418782d254f671e"
+    },
+    {
+      "id": "F1",
+      "version": "1",
+      "kind": "synthetic-figma-excerpt",
+      "status": "accepted",
+      "locator": "sources/design-excerpt.md",
+      "sha256": "1546ee732d7ef97e2ded9c17706adf3648e12d8001ef5a157fb8e333f7bf6eae"
+    },
+    {
+      "id": "S2",
+      "version": "2",
+      "kind": "document",
+      "status": "accepted",
+      "locator": "sources/r2.md",
+      "sha256": "e6ff02481c8243c090deabced8a45ce2125e318053bd626e595d91122ee917fa"
+    },
+    {
+      "id": "S3",
+      "version": "3",
+      "kind": "document",
+      "status": "accepted",
+      "locator": "sources/r3.md",
+      "sha256": "533d0f6a1367ef94df21c49cfa1a7e997e2504b28a0336516f9bb1743024af81"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R-SAVE",
+      "revision": 2,
+      "status": "active",
+      "text": "保存成功仍在编辑区，已保存状态，输入保留且列表更新",
+      "source_refs": [
+        {
+          "source_id": "S2",
+          "locator": "AC-SAVE"
+        }
+      ]
+    },
+    {
+      "id": "R-EMPTY",
+      "revision": 2,
+      "status": "active",
+      "text": "空字符串及纯空白不可提交",
+      "source_refs": [
+        {
+          "source_id": "S2",
+          "locator": "AC-LIMIT"
+        }
+      ]
+    },
+    {
+      "id": "R-FAIL",
+      "revision": 1,
+      "status": "active",
+      "text": "网络失败保留输入、手动重试，不自动重提",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "AC-FAIL"
+        }
+      ]
+    },
+    {
+      "id": "R-CANCEL",
+      "revision": 1,
+      "status": "withdrawn",
+      "text": "取消返回列表且不保存",
+      "source_refs": [
+        {
+          "source_id": "F1",
+          "locator": "NODE-EDIT"
+        }
+      ]
+    },
+    {
+      "id": "R-LIMIT",
+      "revision": 3,
+      "status": "active",
+      "text": "1–30 Unicode码点，包含两端",
+      "source_refs": [
+        {
+          "source_id": "S3",
+          "locator": "AC-LIMIT"
+        }
+      ]
+    },
+    {
+      "id": "R-RESUME",
+      "revision": 2,
+      "status": "active",
+      "text": "同进程切应用、后台、锁屏后输入保留；不包括杀进程",
+      "source_refs": [
+        {
+          "source_id": "S2",
+          "locator": "AC-RESUME"
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "TC-001",
+      "revision": 4,
+      "status": "ready",
+      "objective": "合法保存后的页面、列表与输入状态",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "scenario",
+      "requirement_refs": [
+        {
+          "id": "R-SAVE",
+          "revision": 2
+        }
+      ],
+      "dimensions": [
+        "happy",
+        "interaction",
+        "state"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "备注：记录下一步",
+      "steps": [
+        "输入备注“记录下一步”",
+        "点击保存，模拟成功响应",
+        "直接核对所在页面、输入值及列表保存值"
+      ],
+      "expected": [
+        "已保存且列表更新，保持编辑区，输入保留"
+      ],
+      "fixture_kind": "save"
+    },
+    {
+      "id": "TC-002",
+      "revision": 4,
+      "status": "ready",
+      "objective": "空输入被拒绝且不写入",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "scenario",
+      "requirement_refs": [
+        {
+          "id": "R-EMPTY",
+          "revision": 2
+        }
+      ],
+      "dimensions": [
+        "negative",
+        "interaction"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "空字符串",
+      "steps": [
+        "保持输入为空字符串",
+        "点击保存，核对未进入提交且列表未变化"
+      ],
+      "expected": [
+        "不写入列表"
+      ],
+      "fixture_kind": "empty"
+    },
+    {
+      "id": "TC-003",
+      "revision": 4,
+      "status": "ready",
+      "objective": "请求中断后保留输入并手动恢复",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "scenario",
+      "requirement_refs": [
+        {
+          "id": "R-FAIL",
+          "revision": 1
+        }
+      ],
+      "dimensions": [
+        "offline",
+        "negative",
+        "state"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "输入“需要保留的备注”，提交后模拟响应失败",
+      "steps": [
+        "输入“保留”并点击保存",
+        "提交中模拟网络失败响应",
+        "核对输入、错误状态及写入次数",
+        "手动点击保存并模拟成功响应",
+        "核对保存值与唯一写入"
+      ],
+      "expected": [
+        "失败不写入，输入保留；手动重试成功只写一次"
+      ],
+      "fixture_kind": "offline"
+    },
+    {
+      "id": "TC-004",
+      "revision": 1,
+      "status": "retired",
+      "objective": "取消不写入",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "scenario",
+      "requirement_refs": [
+        {
+          "id": "R-CANCEL",
+          "revision": 1
+        }
+      ],
+      "dimensions": [
+        "interaction",
+        "negative",
+        "state"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "输入未保存备注",
+      "steps": [
+        "输入指定备注",
+        "执行本场景触发，并在相关状态直接观察"
+      ],
+      "expected": [
+        "返回列表，列表没有未保存值"
+      ],
+      "fixture_kind": "cancel"
+    },
+    {
+      "id": "TC-012",
+      "revision": 4,
+      "status": "ready",
+      "objective": "延迟响应不造成重复写入",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "scenario",
+      "requirement_refs": [
+        {
+          "id": "R-FAIL",
+          "revision": 1
+        }
+      ],
+      "dimensions": [
+        "weak-network",
+        "state"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "模型延迟响应，不设置秒数阈值，提交中再点击",
+      "steps": [
+        "输入“等待”并点击保存",
+        "保持响应未返回，再次点击保存",
+        "核对等待状态与零写入",
+        "模拟成功响应，核对只写一次"
+      ],
+      "expected": [
+        "等待时不写入，最终响应只写一次"
+      ],
+      "fixture_kind": "delay"
+    },
+    {
+      "id": "TC-005",
+      "revision": 4,
+      "status": "ready",
+      "objective": "最小长度",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "equivalence+boundary",
+      "requirement_refs": [
+        {
+          "id": "R-LIMIT",
+          "revision": 3
+        }
+      ],
+      "dimensions": [
+        "boundary"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "一个汉字“中”，1码点",
+      "steps": [
+        "输入已确认最小长度的备注",
+        "点击保存并模拟成功响应",
+        "核对列表保存值"
+      ],
+      "expected": [
+        "允许提交，列表保存值等于输入，唯一写入"
+      ],
+      "fixture_kind": "min"
+    },
+    {
+      "id": "TC-006",
+      "revision": 4,
+      "status": "ready",
+      "objective": "最大长度",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "equivalence+boundary",
+      "requirement_refs": [
+        {
+          "id": "R-LIMIT",
+          "revision": 3
+        }
+      ],
+      "dimensions": [
+        "boundary"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "30个“中”，30码点",
+      "steps": [
+        "输入已确认最大长度的备注",
+        "点击保存并模拟成功响应",
+        "核对列表保存值"
+      ],
+      "expected": [
+        "允许提交，列表保存值等于输入，唯一写入"
+      ],
+      "fixture_kind": "max"
+    },
+    {
+      "id": "TC-007",
+      "revision": 4,
+      "status": "ready",
+      "objective": "上限外拒绝",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "equivalence+boundary",
+      "requirement_refs": [
+        {
+          "id": "R-LIMIT",
+          "revision": 3
+        }
+      ],
+      "dimensions": [
+        "boundary"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "31个“中”，31码点",
+      "steps": [
+        "输入超过上限一个码点的备注",
+        "点击保存",
+        "核对拒绝提交且列表无写入"
+      ],
+      "expected": [
+        "拒绝提交、零写入、原保存值不变"
+      ],
+      "fixture_kind": "over"
+    },
+    {
+      "id": "TC-008",
+      "revision": 4,
+      "status": "ready",
+      "objective": "码点边界",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "equivalence+boundary",
+      "requirement_refs": [
+        {
+          "id": "R-LIMIT",
+          "revision": 3
+        }
+      ],
+      "dimensions": [
+        "boundary"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "30个单码点emoji，30码点",
+      "steps": [
+        "按码点数输入到上限的emoji备注",
+        "点击保存并模拟成功响应",
+        "核对保存的原字符值"
+      ],
+      "expected": [
+        "允许提交，列表保存值等于输入，唯一写入"
+      ],
+      "fixture_kind": "unicode"
+    },
+    {
+      "id": "TC-009",
+      "revision": 4,
+      "status": "ready",
+      "objective": "app-switch恢复输入",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "state-transition",
+      "requirement_refs": [
+        {
+          "id": "R-RESUME",
+          "revision": 2
+        }
+      ],
+      "dimensions": [
+        "app-switch",
+        "state"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "输入“生命周期草稿”，同进程模拟指定事件",
+      "steps": [
+        "输入“生命周期草稿”，不点击保存",
+        "模拟切到另一应用再切回，同进程",
+        "直接观察编辑区草稿与写入次数"
+      ],
+      "expected": [
+        "模拟恢复后草稿不变，无保存写入"
+      ],
+      "fixture_kind": "app-switch"
+    },
+    {
+      "id": "TC-010",
+      "revision": 4,
+      "status": "ready",
+      "objective": "background恢复输入",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "state-transition",
+      "requirement_refs": [
+        {
+          "id": "R-RESUME",
+          "revision": 2
+        }
+      ],
+      "dimensions": [
+        "background",
+        "state"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "输入“生命周期草稿”，同进程模拟指定事件",
+      "steps": [
+        "输入“生命周期草稿”，不点击保存",
+        "模拟Home切后台后返回，同进程",
+        "直接观察编辑区草稿与写入次数"
+      ],
+      "expected": [
+        "模拟恢复后草稿不变，无保存写入"
+      ],
+      "fixture_kind": "background"
+    },
+    {
+      "id": "TC-011",
+      "revision": 4,
+      "status": "ready",
+      "objective": "lock恢复输入",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "state-transition",
+      "requirement_refs": [
+        {
+          "id": "R-RESUME",
+          "revision": 2
+        }
+      ],
+      "dimensions": [
+        "lock",
+        "state"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "输入“生命周期草稿”，同进程模拟指定事件",
+      "steps": [
+        "输入“生命周期草稿”，不点击保存",
+        "模拟锁屏再解锁返回，同进程",
+        "直接观察编辑区草稿与写入次数"
+      ],
+      "expected": [
+        "模拟恢复后草稿不变，无保存写入"
+      ],
+      "fixture_kind": "lock"
+    },
+    {
+      "id": "TC-013",
+      "revision": 4,
+      "status": "ready",
+      "objective": "纯空白输入不可提交",
+      "module": "条目详情",
+      "subfunction": "备注保存",
+      "category": "functional",
+      "impact": "medium",
+      "method": "equivalence",
+      "requirement_refs": [
+        {
+          "id": "R-EMPTY",
+          "revision": 2
+        }
+      ],
+      "dimensions": [
+        "negative"
+      ],
+      "preconditions": [
+        "打开条目详情，模型初始无保存值，同一进程"
+      ],
+      "data": "三个空格",
+      "steps": [
+        "输入三个空格",
+        "点击保存，核对未进入提交且列表未变化"
+      ],
+      "expected": [
+        "不写入"
+      ],
+      "fixture_kind": "spaces"
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "interaction",
+      "decision": "include",
+      "reason": "直接验证备注操作的输入、保存或恢复；不扩展相邻业务",
+      "requirement_ids": [
+        "R-EMPTY",
+        "R-SAVE"
+      ],
+      "case_ids": [
+        "TC-001",
+        "TC-002"
+      ]
+    },
+    {
+      "id": "happy",
+      "decision": "include",
+      "reason": "直接验证备注操作的输入、保存或恢复；不扩展相邻业务",
+      "requirement_ids": [
+        "R-SAVE"
+      ],
+      "case_ids": [
+        "TC-001"
+      ]
+    },
+    {
+      "id": "negative",
+      "decision": "include",
+      "reason": "直接验证备注操作的输入、保存或恢复；不扩展相邻业务",
+      "requirement_ids": [
+        "R-EMPTY",
+        "R-FAIL"
+      ],
+      "case_ids": [
+        "TC-002",
+        "TC-003",
+        "TC-013"
+      ]
+    },
+    {
+      "id": "boundary",
+      "decision": "include",
+      "reason": "直接验证备注操作的输入、保存或恢复；不扩展相邻业务",
+      "requirement_ids": [
+        "R-LIMIT"
+      ],
+      "case_ids": [
+        "TC-005",
+        "TC-006",
+        "TC-007",
+        "TC-008"
+      ]
+    },
+    {
+      "id": "state",
+      "decision": "include",
+      "reason": "直接验证备注操作的输入、保存或恢复；不扩展相邻业务",
+      "requirement_ids": [
+        "R-FAIL",
+        "R-RESUME",
+        "R-SAVE"
+      ],
+      "case_ids": [
+        "TC-001",
+        "TC-003",
+        "TC-012",
+        "TC-009",
+        "TC-010",
+        "TC-011"
+      ]
+    },
+    {
+      "id": "app-switch",
+      "decision": "include",
+      "reason": "直接验证备注操作的输入、保存或恢复；不扩展相邻业务",
+      "requirement_ids": [
+        "R-RESUME"
+      ],
+      "case_ids": [
+        "TC-009"
+      ]
+    },
+    {
+      "id": "background",
+      "decision": "include",
+      "reason": "直接验证备注操作的输入、保存或恢复；不扩展相邻业务",
+      "requirement_ids": [
+        "R-RESUME"
+      ],
+      "case_ids": [
+        "TC-010"
+      ]
+    },
+    {
+      "id": "lock",
+      "decision": "include",
+      "reason": "直接验证备注操作的输入、保存或恢复；不扩展相邻业务",
+      "requirement_ids": [
+        "R-RESUME"
+      ],
+      "case_ids": [
+        "TC-011"
+      ]
+    },
+    {
+      "id": "offline",
+      "decision": "include",
+      "reason": "直接验证备注操作的输入、保存或恢复；不扩展相邻业务",
+      "requirement_ids": [
+        "R-FAIL"
+      ],
+      "case_ids": [
+        "TC-003"
+      ]
+    },
+    {
+      "id": "weak-network",
+      "decision": "include",
+      "reason": "直接验证备注操作的输入、保存或恢复；不扩展相邻业务",
+      "requirement_ids": [
+        "R-FAIL"
+      ],
+      "case_ids": [
+        "TC-012"
+      ]
+    },
+    {
+      "id": "thermal",
+      "decision": "not-applicable",
+      "reason": "短时文本保存无温度风险线索，任务明确排除温度专项；不编造阈值"
+    }
+  ],
+  "gaps": []
+}

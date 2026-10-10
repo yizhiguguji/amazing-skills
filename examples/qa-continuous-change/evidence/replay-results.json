@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "assertions": [
+    "Unclear rules remain proposed",
+    "Changed expectation has no inherited pass",
+    "Same-round first failure preserved",
+    "Mock media failure incomplete",
+    "Mock retry one issue",
+    "Withdrawn case retained outside denominator",
+    "Four changed cases require new execution",
+    "Report remains synthetic-only"
+  ],
+  "real_device_verified": false,
+  "real_jira_submitted": false,
+  "final_counts": {
+    "passed": 12,
+    "failed": 0,
+    "blocked": 0,
+    "deferred": 0,
+    "not-run": 0
+  }
+}

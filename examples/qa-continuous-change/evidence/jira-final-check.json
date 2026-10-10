@@ -1,0 +1,7 @@
+{
+  "receipt_check": "complete",
+  "mode": "mock",
+  "real_jira_verified": false,
+  "note": "Structured receipt only; actual network readback must be evidenced separately.",
+  "errors": []
+}

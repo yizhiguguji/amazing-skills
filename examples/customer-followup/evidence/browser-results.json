@@ -1,0 +1,42 @@
+{
+  "run_at": "2026-10-10T07:28:30.636Z",
+  "status": "passed",
+  "environment": {
+    "browser": "Installed Chrome via Playwright, headless",
+    "timezone": "Asia/Tokyo",
+    "viewportWidths": [
+      1440,
+      390
+    ]
+  },
+  "results": [
+    {
+      "id": "AC-01",
+      "status": "passed"
+    },
+    {
+      "id": "AC-02",
+      "status": "passed"
+    },
+    {
+      "id": "AC-03",
+      "status": "passed"
+    },
+    {
+      "id": "AC-04",
+      "status": "passed"
+    },
+    {
+      "id": "AC-05",
+      "status": "passed"
+    },
+    {
+      "id": "AC-06",
+      "status": "passed"
+    },
+    {
+      "id": "AC-07",
+      "status": "passed"
+    }
+  ]
+}

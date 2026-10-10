@@ -1,0 +1,4 @@
+interface:
+  display_name: "功能测试 · 自动安排QA任务"
+  short_description: "按交付目标选择功能QA技能并维护持续需求的范围和证据"
+  default_prompt: "使用 $qa-workflow 完成本次授权范围内的QA任务，明确来源、版本和未验证事项。"

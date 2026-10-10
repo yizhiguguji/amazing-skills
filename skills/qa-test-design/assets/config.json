@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "project_id": "unconfigured",
+  "source_policy": "Use the current task's confirmed authority; unresolved conflicts become gaps.",
+  "severity_mapping": {},
+  "priority_mapping": {},
+  "review_policy": "Unspecified; no approval or exemption may be inferred.",
+  "jira": {"project_key": null, "target_transition": null, "connector": null},
+  "execution": {"platforms": [], "devices": [], "network_profiles": [], "thermal_criteria": null},
+  "export_format": "markdown+json"
+}

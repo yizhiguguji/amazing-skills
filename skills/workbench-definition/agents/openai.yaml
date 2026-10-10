@@ -1,0 +1,4 @@
+interface:
+  display_name: "workbench-definition"
+  short_description: "个人或业务工作台缺少清晰定义，保存明确方案与完成证据供后续复用"
+  default_prompt: "使用 $workbench-definition 完成当前请求并保存相关方案与证据。"

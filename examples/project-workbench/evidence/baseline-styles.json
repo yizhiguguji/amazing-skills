@@ -1,0 +1,17 @@
+{
+  "font": "system-ui, -apple-system, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+  "button": {
+    "color": "rgb(255, 255, 255)",
+    "background": "rgb(19, 78, 74)",
+    "borderRadius": "12px",
+    "padding": "8px 16px"
+  },
+  "tokens": {
+    "--canvas": "#f0f7f5",
+    "--surface": "#ffffff",
+    "--ink": "#134e4a",
+    "--accent": "#134e4a",
+    "--radius": "12px",
+    "--font": "system-ui,-apple-system,\"PingFang SC\",\"Microsoft YaHei\",sans-serif"
+  }
+}

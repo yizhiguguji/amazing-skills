@@ -1,0 +1,47 @@
+{
+  "scope": "Same macOS host, different installation root; no other OS execution claimed",
+  "installation": {
+    "installed": [
+      "skill-router",
+      "finesse-brief",
+      "workbench-definition",
+      "impeccable",
+      "ui-ux-pro-max",
+      "interface-delivery",
+      "workbench-verification",
+      "product-workflow"
+    ]
+  },
+  "doctor": [
+    {
+      "id": "finesse-brief",
+      "revision": "d1f45618b605587b882a20d72eb0d8ec666990bd",
+      "skill": "/private/var/folders/z9/yl9c5qhs5rl_pmy3lhtgv2rw0000gn/T/amazing-relocation-nh0rhg98/project/.agents/skills/finesse-brief/SKILL.md",
+      "root": "/private/var/folders/z9/yl9c5qhs5rl_pmy3lhtgv2rw0000gn/T/amazing-relocation-nh0rhg98/project/.agents/skills/finesse-brief",
+      "integrity": "passed",
+      "missing": [],
+      "changed": []
+    },
+    {
+      "id": "impeccable",
+      "revision": "d631a8827f99414d2b6daba4ef08b7f8701751d7",
+      "skill": "/private/var/folders/z9/yl9c5qhs5rl_pmy3lhtgv2rw0000gn/T/amazing-relocation-nh0rhg98/project/.agents/skills/impeccable/SKILL.md",
+      "root": "/private/var/folders/z9/yl9c5qhs5rl_pmy3lhtgv2rw0000gn/T/amazing-relocation-nh0rhg98/project/.agents/skills/impeccable",
+      "integrity": "passed",
+      "missing": [],
+      "changed": []
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "revision": "50d8a7de0900119855614541f15a1a616691eb33",
+      "skill": "/private/var/folders/z9/yl9c5qhs5rl_pmy3lhtgv2rw0000gn/T/amazing-relocation-nh0rhg98/project/.agents/skills/ui-ux-pro-max/SKILL.md",
+      "root": "/private/var/folders/z9/yl9c5qhs5rl_pmy3lhtgv2rw0000gn/T/amazing-relocation-nh0rhg98/project/.agents/skills/ui-ux-pro-max",
+      "integrity": "passed",
+      "missing": [],
+      "changed": []
+    }
+  ],
+  "offline_search_exit_code": 0,
+  "search_output": "{\"at\": \"2026-10-10T06:25:58.623586+00:00\", \"provider\": \"ui-ux-pro-max\", \"revision\": \"50d8a7de0900119855614541f15a1a616691eb33\", \"kind\": \"tool-execution\", \"arguments\": [\"category count comparison\", \"--domain\", \"chart\", \"--json\"], \"exit_code\": 0, \"evidence\": \".product/provider-evidence/20261010T062558575590Z-ui-ux-pro-max.txt\"}\n{\n  \"domain\": \"chart\",\n  \"query\": \"category count comparison\",\n  \"file\": \"charts.csv\",\n  \"count\": 3,\n  \"results\": [\n    {\n      \"Data Type\": \"Compare Categories\",\n      \"Keywords\": \"compare, categories, bar, comparison, ranking, accessible chart, keyboard accessible chart\",\n      \"Best Chart Type\": \"Bar Chart (Horizontal or Vertical)\",\n      \"Secondary Options\": \"Column Chart, Grouped Bar\",\n      \"When to Use\": \"Comparing discrete categories by magnitude; ranking or ordering is the core insight; categories ≤ 15\",\n      \"When NOT to Use\": \"Categories > 15 (use table or search); data has time dimension (use line); showing proportions (use waffle/stacked)\",\n      \"Data Volume Threshold\": \"<20 categories: vertical bar; 20–50: horizontal bar; >50: paginated table\",\n      \"Color Guidance\": \"Each bar: distinct color. Grouped: same hue family. Always sort descending by value\",\n      \"Accessibility Grade\": \"deprecated: use Accessibility Risk\",\n      \"Accessibility Risk\": \"risk:low\",\n      \"Accessibility Notes\": \"Use direct category/value labels and group outlines or patterns; never encode category solely by bar color. Do not rely on color alone.\",\n      \"A11y Fallback\": \"Visible sortable data table plus concise comparison summary. Keyboard: focus reveals hover values; focusable headers with Enter/Space sort and aria-sort reports direction.\",\n      \"Library Recommendation\": \"Chart.js, Recharts, D3.js\",\n      \"Interactive Level\": \"Hover + Sort\"\n    },\n    {\n      \"Data Type\": \"Multi-Variable Comparison\",\n      \"Keywords\": \"radar, spider, multi-variable, attributes, dimensions, comparison, accessible chart, keyboard accessible chart\",\n      \"Best Chart Type\": \"Radar / Spider Chart\",\n      \"Secondary Options\": \"Parallel Coordinates, Grouped Bar\",\n      \"When to Use\": \"Comparing multiple entities across the same fixed set of attributes (e.g., product feature comparison)\",\n      \"When NOT to Use\": \"Axes > 8 (unreadable); values need precise comparison (use grouped bar); audience unfamiliar with radar charts\",\n      \"Data Volume Threshold\": \"2–3 datasets maximum per chart; 5–8 axes; beyond 8 axes switch to parallel coordinates\",\n      \"Color Guidance\": \"Single dataset: #0080FF at 20% fill. Multiple: distinct hues with 30% fill. Border: full opacity\",\n      \"Accessibility Grade\": \"deprecated: use Accessibility Risk\",\n      \"Accessibility Risk\": \"risk:conditional\",\n      \"Accessibility Notes\": \"Use line styles, point shapes, and direct series labels in addition to color. Do not rely on color alone.\",\n      \"A11y Fallback\": \"Raw data table and grouped-bar alternative plus comparison summary. Keyboard: focus reveals values; buttons toggle series.\",\n      \"Library Recommendation\": \"Chart.js, Recharts, ApexCharts\",\n      \"Interactive Level\": \"Hover + Toggle\"\n    },\n    {\n      \"Data Type\": \"Proportional / Percentage\",\n      \"Keywords\": \"waffle, percentage, proportion, progress, filled, grid, accessible chart, keyboard accessible chart\",\n      \"Best Chart Type\": \"Waffle Chart\",\n      \"Secondary Options\": \"Pictogram, Stacked Bar 100%\",\n      \"When to Use\": \"Showing what fraction of a whole is filled; percentage progress in a visually engaging and accessible format\",\n      \"When NOT to Use\": \"More than 5 categories (use stacked bar); exact values matter over visual proportion; very tight space\",\n      \"Data Volume Threshold\": \"10×10 grid standard (100 cells); for > 5 categories switch to stacked 100% bar\",\n      \"Color Guidance\": \"3–5 categories max. 2–3px gap between cells. Each category a distinct accessible color pair\",\n      \"Accessibility Grade\": \"deprecated: use Accessibility Risk\",\n      \"Accessibility Risk\": \"risk:low\",\n      \"Accessibility Notes\": \"Label each category and percentage and add patterns or symbols; filled-cell color alone is insufficient.\",\n      \"A11y Fallback\": \"Percentage table/list plus part-to-whole summary. Keyboard: focus reveals each cell value.\",\n      \"Library Recommendation\": \"D3.js, React-Waffle, Custom CSS Grid\",\n      \"Interactive Level\": \"Hover\"\n    }\n  ]\n}\n",
+  "test_host_paths_are_evidence_only": true
+}

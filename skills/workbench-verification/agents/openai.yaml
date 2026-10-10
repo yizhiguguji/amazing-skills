@@ -1,0 +1,4 @@
+interface:
+  display_name: "workbench-verification"
+  short_description: "核对工作台实现是否符合规格和设计，保存明确方案与完成证据供后续复用"
+  default_prompt: "使用 $workbench-verification 完成当前请求并保存相关方案与证据。"

@@ -1,0 +1,74 @@
+{
+  "checked_at": "2026-10-10T06:52:36.534100+00:00",
+  "status": "passed",
+  "skill_formats": [
+    {
+      "skill": "qa-workflow",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "qa-test-design",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "qa-functional-execution",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "jira-defect-delivery",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "qa-test-report",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    }
+  ],
+  "checks": [
+    {
+      "command": [
+        "scripts/validate.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"catalog_and_references\": \"passed\", \"errors\": []}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_active_requirement_cannot_disappear_from_coverage (test_qa.QATests) ... ok\ntest_evidence_cannot_escape_project (test_qa.QATests) ... ok\ntest_frozen_requirements_and_cases_need_revisions (test_qa.QATests) ... ok\ntest_history_truncation_detected (test_qa.QATests) ... ok\ntest_identity_idempotent_but_collision_rejected (test_qa.QATests) ... ok\ntest_mock_media_and_readback_must_be_complete (test_qa.QATests) ... ok\ntest_old_pass_not_inherited_and_withdrawn_not_in_denominator (test_qa.QATests) ... ok\ntest_pass_needs_evidence_and_real_mode_cannot_be_invented (test_qa.QATests) ... ok\ntest_relocated_workflow_replays_without_upstream_or_network (test_qa.QATests) ... ok\ntest_removal_of_frozen_identity_rejected (test_qa.QATests) ... ok\ntest_same_round_failure_survives_retry_new_round_retest_can_pass (test_qa.QATests) ... ok\ntest_scope_and_dimension_cannot_be_silently_expanded (test_qa.QATests) ... ok\ntest_snapshot_and_evidence_tampering_detected (test_qa.QATests) ... ok\ntest_snapshot_refuses_replacement_and_paths (test_qa.QATests) ... ok\ntest_sources_change_requires_new_snapshot_reference (test_qa.QATests) ... ok\ntest_unknown_rules_cannot_be_executable (test_qa.QATests) ... ok\ntest_existing_baseline_not_silently_replaced (test_workflow.StyleLockTests) ... ok\ntest_relocated_provider_search_works_offline (test_workflow.StyleLockTests) ... ok\ntest_tokens_drift_rejected_but_new_component_allowed (test_workflow.StyleLockTests) ... ok\ntest_dependency_cycle_rejected (test_workflow.WorkflowTests) ... ok\ntest_draft_is_not_claimed_complete (test_workflow.WorkflowTests) ... ok\ntest_empty_complete_is_rejected (test_workflow.WorkflowTests) ... ok\ntest_evidence_cannot_escape_project (test_workflow.WorkflowTests) ... ok\ntest_failed_acceptance_blocks_completion (test_workflow.WorkflowTests) ... ok\ntest_install_does_not_overwrite (test_workflow.WorkflowTests) ... ok\ntest_install_resolves_workflow_dependencies (test_workflow.WorkflowTests) ... ok\ntest_resume_preserves_spec_and_design (test_workflow.WorkflowTests) ... ok\ntest_symlink_escape_rejected (test_workflow.WorkflowTests) ... ok\n\n----------------------------------------------------------------------\nRan 28 tests in 0.880s\n\nOK"
+    },
+    {
+      "command": [
+        "skills/qa-test-design/scripts/qa.py",
+        "check",
+        "--project",
+        "examples/qa-continuous-change"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"documentary_check\": \"passed\", \"errors\": [], \"business_or_execution_verified\": false}",
+      "stderr": ""
+    }
+  ],
+  "privacy_scan": {
+    "files_checked": 154,
+    "specified_marks_and_separator_variants": 0,
+    "personal_paths_or_emails": 0,
+    "cryptographic_sha_values_excluded": true,
+    "scope": "new QA skills, synthetic example and QA guidance only"
+  },
+  "other_os_hardware_verified": false,
+  "real_device_or_remote_jira_verified": false
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "FD-001",
+    "classification": "confirmed-bug",
+    "status": "resolved",
+    "found_execution_id": "r2-bug-TC-007",
+    "resolution_execution_id": "r2-fixed-TC-007",
+    "current_draft": ".qa/defect-drafts/FD-001-v2.md"
+  }
+]

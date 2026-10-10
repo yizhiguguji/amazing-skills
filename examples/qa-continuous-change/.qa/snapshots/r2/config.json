@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "project_id": "synthetic-note-feature",
+  "source_policy": "Explicit r2/r3 decisions supersede matching r1 behavior; design excerpt only supplies visible controls.",
+  "severity_mapping": {},
+  "priority_mapping": {},
+  "review_policy": "No real approval; model-authored evaluation only.",
+  "jira": {
+    "project_key": null,
+    "target_transition": null,
+    "connector": null
+  },
+  "execution": {
+    "platforms": [],
+    "devices": [],
+    "network_profiles": [],
+    "thermal_criteria": null
+  },
+  "export_format": "markdown+json"
+}

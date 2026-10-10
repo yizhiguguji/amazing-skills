@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-10T06:24:21.917136+00:00",
+  "title": "Design System: 项目工作台",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Canvas",
+        "tonalRamp": [
+          "oklch(15.00% 0.00786 177.33)",
+          "oklch(26.43% 0.00786 177.33)",
+          "oklch(37.86% 0.00786 177.33)",
+          "oklch(49.29% 0.00786 177.33)",
+          "oklch(60.71% 0.00786 177.33)",
+          "oklch(72.14% 0.00786 177.33)",
+          "oklch(83.57% 0.00786 177.33)",
+          "oklch(95.00% 0.00786 177.33)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "rail": {
+        "role": "neutral",
+        "displayName": "Rail",
+        "tonalRamp": [
+          "oklch(15.00% 0.01779 170.07)",
+          "oklch(26.43% 0.01779 170.07)",
+          "oklch(37.86% 0.01779 170.07)",
+          "oklch(49.29% 0.01779 170.07)",
+          "oklch(60.71% 0.01779 170.07)",
+          "oklch(72.14% 0.01779 170.07)",
+          "oklch(83.57% 0.01779 170.07)",
+          "oklch(95.00% 0.01779 170.07)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.05902 188.42)",
+          "oklch(26.43% 0.05902 188.42)",
+          "oklch(37.86% 0.05902 188.42)",
+          "oklch(49.29% 0.05902 188.42)",
+          "oklch(60.71% 0.05902 188.42)",
+          "oklch(72.14% 0.05902 188.42)",
+          "oklch(83.57% 0.05902 188.42)",
+          "oklch(95.00% 0.05902 188.42)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.03745 257.28)",
+          "oklch(26.43% 0.03745 257.28)",
+          "oklch(37.86% 0.03745 257.28)",
+          "oklch(49.29% 0.03745 257.28)",
+          "oklch(60.71% 0.03745 257.28)",
+          "oklch(72.14% 0.03745 257.28)",
+          "oklch(83.57% 0.03745 257.28)",
+          "oklch(95.00% 0.03745 257.28)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Accent",
+        "tonalRamp": [
+          "oklch(15.00% 0.05902 188.42)",
+          "oklch(26.43% 0.05902 188.42)",
+          "oklch(37.86% 0.05902 188.42)",
+          "oklch(49.29% 0.05902 188.42)",
+          "oklch(60.71% 0.05902 188.42)",
+          "oklch(72.14% 0.05902 188.42)",
+          "oklch(83.57% 0.05902 188.42)",
+          "oklch(95.00% 0.05902 188.42)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "on-accent": {
+        "role": "neutral",
+        "displayName": "On Accent",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.02067 177.34)",
+          "oklch(26.43% 0.02067 177.34)",
+          "oklch(37.86% 0.02067 177.34)",
+          "oklch(49.29% 0.02067 177.34)",
+          "oklch(60.71% 0.02067 177.34)",
+          "oklch(72.14% 0.02067 177.34)",
+          "oklch(83.57% 0.02067 177.34)",
+          "oklch(95.00% 0.02067 177.34)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "danger": {
+        "role": "secondary",
+        "displayName": "Danger",
+        "tonalRamp": [
+          "oklch(15.00% 0.15591 29.17)",
+          "oklch(26.43% 0.15591 29.17)",
+          "oklch(37.86% 0.15591 29.17)",
+          "oklch(49.29% 0.15591 29.17)",
+          "oklch(60.71% 0.15591 29.17)",
+          "oklch(72.14% 0.15591 29.17)",
+          "oklch(83.57% 0.15591 29.17)",
+          "oklch(95.00% 0.15591 29.17)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus",
+        "tonalRamp": [
+          "oklch(15.00% 0.10384 184.70)",
+          "oklch(26.43% 0.10384 184.70)",
+          "oklch(37.86% 0.10384 184.70)",
+          "oklch(49.29% 0.10384 184.70)",
+          "oklch(60.71% 0.10384 184.70)",
+          "oklch(72.14% 0.10384 184.70)",
+          "oklch(83.57% 0.10384 184.70)",
+          "oklch(95.00% 0.10384 184.70)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Accent Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.04845 186.68)",
+          "oklch(26.43% 0.04845 186.68)",
+          "oklch(37.86% 0.04845 186.68)",
+          "oklch(49.29% 0.04845 186.68)",
+          "oklch(60.71% 0.04845 186.68)",
+          "oklch(72.14% 0.04845 186.68)",
+          "oklch(83.57% 0.04845 186.68)",
+          "oklch(95.00% 0.04845 186.68)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "warning-bg": {
+        "role": "secondary",
+        "displayName": "Warning Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.01949 50.16)",
+          "oklch(26.43% 0.01949 50.16)",
+          "oklch(37.86% 0.01949 50.16)",
+          "oklch(49.29% 0.01949 50.16)",
+          "oklch(60.71% 0.01949 50.16)",
+          "oklch(72.14% 0.01949 50.16)",
+          "oklch(83.57% 0.01949 50.16)",
+          "oklch(95.00% 0.01949 50.16)"
+        ],
+        "provenance": "Synthetic OKLCH preview ramp derived from source hue/chroma; not a shipped token. May be gamut-mapped by the browser."
+      },
+      "backdrop": {
+        "role": "neutral",
+        "displayName": "Teal scrim",
+        "tonalRamp": [
+          "oklch(15.00% 0.05902 188.42)",
+          "oklch(26.43% 0.05902 188.42)",
+          "oklch(37.86% 0.05902 188.42)",
+          "oklch(49.29% 0.05902 188.42)",
+          "oklch(60.71% 0.05902 188.42)",
+          "oklch(72.14% 0.05902 188.42)",
+          "oklch(83.57% 0.05902 188.42)",
+          "oklch(95.00% 0.05902 188.42)"
+        ],
+        "provenance": "Synthetic opaque preview ramp; actual source backdrop remains translucent."
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Source-derived typography role; see DESIGN.md."
+      },
+      "headline-mobile": {
+        "displayName": "Headline Mobile",
+        "purpose": "Source-derived typography role; see DESIGN.md."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Source-derived typography role; see DESIGN.md."
+      },
+      "status": {
+        "displayName": "Status",
+        "purpose": "Source-derived typography role; see DESIGN.md."
+      },
+      "project-title": {
+        "displayName": "Project Title",
+        "purpose": "Source-derived typography role; see DESIGN.md."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Source-derived typography role; see DESIGN.md."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Source-derived typography role; see DESIGN.md."
+      },
+      "support": {
+        "displayName": "Support",
+        "purpose": "Source-derived typography role; see DESIGN.md."
+      },
+      "metadata": {
+        "displayName": "Metadata",
+        "purpose": "Source-derived typography role; see DESIGN.md."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "button-background",
+        "value": "150ms ease",
+        "purpose": "Source background-color transition; reduced motion removes it."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "board-two-columns",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Source-derived primary button. Preview labels are synthetic.",
+      "html": "<button class=\"ds-primary\">录项目</button>",
+      "css": ".ds-primary{font-family:var(--font);font-size:16px;color:var(--ink);min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);cursor:pointer;transition:background-color var(--motion);background:var(--accent);color:var(--on-accent);border-color:var(--accent)}.ds-primary:hover,.ds-primary:active{background:#0f3c38}.ds-primary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.ds-primary:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Source-derived secondary button. Preview labels are synthetic.",
+      "html": "<button class=\"ds-secondary\">查看项目</button>",
+      "css": ".ds-secondary{font-family:var(--font);font-size:16px;color:var(--ink);min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);cursor:pointer;transition:background-color var(--motion);}.ds-secondary:hover{background:var(--rail)}.ds-secondary:active{background:var(--canvas)}.ds-secondary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.ds-secondary:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+    },
+    {
+      "name": "Search field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Source-derived search field. Preview labels are synthetic.",
+      "html": "<label class=\"ds-label\">搜索项目<input class=\"ds-field\" type=\"search\" placeholder=\"输入项目名称\"></label>",
+      "css": ".ds-label{display:block;font-family:var(--font);font-size:16px;color:var(--ink);font-size:14px;color:var(--muted)}.ds-field{font-family:var(--font);font-size:16px;color:var(--ink);display:block;width:100%;min-height:44px;margin-top:8px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);caret-color:var(--accent)}.ds-field::placeholder{color:var(--muted)}.ds-field:focus-visible{outline:3px solid var(--focus);outline-offset:3px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "button-secondary",
+      "description": "Source-derived navigation. Preview labels are synthetic.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"预览工作区\"><button aria-pressed=\"true\">待推进</button><button aria-pressed=\"false\">项目</button></nav>",
+      "css": ".ds-nav{display:grid;gap:8px;padding:20px;background:var(--rail)}.ds-nav button{font-family:var(--font);font-size:16px;color:var(--ink);min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);cursor:pointer;transition:background-color var(--motion);text-align:left;background:transparent;border-color:transparent}.ds-nav button[aria-pressed=\"true\"]{background:var(--surface);font-weight:650;border-color:var(--line)}.ds-nav button:hover{background:var(--rail)}.ds-nav button:active{background:var(--canvas)}.ds-nav button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}@media(max-width:760px){.ds-nav{display:flex;flex-wrap:wrap}.ds-nav button{font-size:14px;padding:8px 12px}}@media(prefers-reduced-motion:reduce){.ds-nav button{transition:none}}"
+    },
+    {
+      "name": "Project card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Source-derived project card. Preview labels are synthetic.",
+      "html": "<button class=\"ds-card\"><strong>示例项目（合成预览）</strong><small>交付 · 2026-10-17</small></button>",
+      "css": ".ds-card{font-family:var(--font);font-size:16px;color:var(--ink);min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);cursor:pointer;transition:background-color var(--motion);display:block;text-align:left;width:100%;padding:16px;overflow-wrap:anywhere}.ds-card strong{display:block;font-size:16px;font-weight:600;margin-bottom:12px;line-height:1.5}.ds-card small{display:block;color:var(--muted);font-size:12px;line-height:1.7}.ds-card:hover{background:var(--rail)}.ds-card:active{background:var(--canvas)}.ds-card:focus-visible{outline:3px solid var(--focus);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-card{transition:none}}"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Source-derived panel. Preview labels are synthetic.",
+      "html": "<section class=\"ds-panel\"><h2>每个阶段有多少项目</h2><p>合成组件预览，非生产数据。</p></section>",
+      "css": ".ds-panel{font-family:var(--font);font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;max-width:760px}.ds-panel h2{font-size:18px;line-height:1.5;margin:0 0 12px}.ds-panel p{font-size:14px;line-height:1.7;color:var(--muted);margin:0}@media(max-width:760px){.ds-panel{padding:20px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "明亮项目工作台",
+    "overview": "A restrained office tool: pale green-gray ground, a tinted navigation rail, deep teal text and actions, and familiar rounded controls. Its hierarchy makes project names, delivery dates, and recorded next steps easy to scan. Density comes from aligned stage columns and a small fixed type ramp rather than decorative treatment.\n\nProvenance: this is a post-build scan of `index.html`, `styles.css`, and `app.js`, corroborated by `evidence/baseline-empty.png`, `baseline-desktop.png`, `baseline-mobile.png`, `baseline-styles.json`, and `baseline-results.json`. The selected language and world come from `PRODUCT.md`, `.workbench/spec.md`, `.product/design-proposal.md`, and `.impeccable/surfaces/index.md`; all user context and captured sample records are synthetic, not customer evidence. `.product/finish-review.md` gives the baseline disposition **ship**. No shipping raster assets exist; evidence screenshots are not application assets. The authored geometric SVG brand mark is in the HTML.",
+    "keyCharacteristics": [
+      "Light tonal surfaces with fine structural borders.",
+      "One system Chinese font stack across text and controls.",
+      "Flat, rounded, keyboard-visible working controls.",
+      "Content-driven height and deliberate narrow-screen reflow."
+    ],
+    "rules": [
+      {
+        "name": "Meaningful Color",
+        "body": "Selection, action, focus, and exceptions receive color; stage identity remains text, without a separate decorative palette.",
+        "section": "colors"
+      },
+      {
+        "name": "Chinese Continuity",
+        "body": "Preserve the exact fallback order and avoid remote font loading. Long project names and notes wrap with `overflow-wrap:anywhere`; do not truncate them into unreadable fragments.",
+        "section": "typography"
+      },
+      {
+        "name": "Flat Working Surface",
+        "body": "Preserve tonal containment and thin borders for ordinary controls, cards, and panels.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** reuse the recorded Chinese font stack, semantic palette, shared radius, and working-control states.",
+      "**Do** pair exception color with meaningful text and retain visible keyboard outlines.",
+      "**Do** allow long Chinese names and notes to wrap and preserve the one-column mobile sequence.",
+      "**Do** use actual project data or honest empty states, with synthetic preview content identified as such."
+    ],
+    "donts": [
+      "**Don't** add a marketing hero, invented statistic cards, or decorative status kickers to this working-tool world.",
+      "**Don't** introduce a separate font, gradient lettering, glyph icons, or ornamental shadows as inherited system rules.",
+      "**Don't** treat evidence screenshots or synthesized sidecar color ramps as shipping assets or new normative palette tokens."
+    ]
+  }
+}

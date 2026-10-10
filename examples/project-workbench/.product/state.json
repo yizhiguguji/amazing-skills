@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "phase": "complete",
+  "status": "passed",
+  "selected": [
+    {
+      "id": "finesse-brief",
+      "provider": "finesse-brief",
+      "reason": "按原始指引生成产品规格"
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "provider": "ui-ux-pro-max",
+      "reason": "实际查询并裁剪不适用建议"
+    },
+    {
+      "id": "impeccable",
+      "provider": "impeccable",
+      "reason": "context/detect及独立视觉检查与文档固化"
+    }
+  ],
+  "open_questions": [],
+  "evidence": [
+    "evidence/baseline-results.json",
+    "evidence/revision-results.json",
+    "evidence/style-regression.json",
+    "evidence/portability.json",
+    ".product/finish-review.md",
+    ".product/followup-review.md",
+    ".product/verification.md"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-01",
+      "status": "passed",
+      "evidence": [
+        "evidence/revision-results.json"
+      ]
+    },
+    {
+      "id": "AC-02",
+      "status": "passed",
+      "evidence": [
+        "evidence/revision-results.json"
+      ]
+    },
+    {
+      "id": "AC-03",
+      "status": "passed",
+      "evidence": [
+        "evidence/revision-results.json"
+      ]
+    },
+    {
+      "id": "AC-04",
+      "status": "passed",
+      "evidence": [
+        "evidence/revision-results.json"
+      ]
+    },
+    {
+      "id": "AC-05",
+      "status": "passed",
+      "evidence": [
+        "evidence/revision-results.json"
+      ]
+    }
+  ],
+  "updated_at": "2026-10-10T06:26:29.866445+00:00"
+}

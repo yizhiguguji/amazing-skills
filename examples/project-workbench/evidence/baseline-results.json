@@ -1,0 +1,32 @@
+{
+  "phase": "baseline",
+  "at": "2026-10-10T07:04:36.583Z",
+  "status": "passed",
+  "results": [
+    {
+      "id": "AC-01",
+      "status": "passed"
+    },
+    {
+      "id": "AC-02",
+      "status": "passed"
+    },
+    {
+      "id": "AC-03",
+      "status": "passed"
+    },
+    {
+      "id": "AC-04",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "environment": {
+    "timezone": "Asia/Tokyo",
+    "browser": "Installed Chrome via Playwright",
+    "viewportWidths": [
+      1440,
+      390
+    ]
+  }
+}

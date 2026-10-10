@@ -1,0 +1,4 @@
+interface:
+  display_name: "interface-delivery"
+  short_description: "按明确规格实现或修改 Web 界面，保存明确方案与完成证据供后续复用"
+  default_prompt: "使用 $interface-delivery 完成当前请求并保存相关方案与证据。"

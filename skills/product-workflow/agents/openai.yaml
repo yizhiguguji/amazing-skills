@@ -1,0 +1,4 @@
+interface:
+  display_name: "工作台 · 从需求到实现检查"
+  short_description: "模糊工作台需求到本地实现检查，或继续已有工作台，保存明确方案与完成证据供后续复用"
+  default_prompt: "使用 $product-workflow 完成当前请求并保存相关方案与证据。"

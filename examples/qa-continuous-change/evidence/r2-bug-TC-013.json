@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "failure": null,
+  "observation": {
+    "draft": "   ",
+    "saved": "",
+    "status": "invalid",
+    "writes": 0,
+    "events": [
+      {
+        "event": "input",
+        "codepoints": 3
+      },
+      {
+        "event": "save",
+        "valid": false
+      }
+    ]
+  },
+  "scope": "Synthetic model only; no native app, OS event, radio network or temperature tested."
+}

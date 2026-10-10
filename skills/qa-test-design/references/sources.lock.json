@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "manual-qa",
+      "repository": "https://github.com/fugazi/test-automation-skills-agents",
+      "revision": "65a72d5e74def3c23143bef8757e72cb68e91032",
+      "reviewed_file": "skills/qa-manual-istqb/references/test-design-techniques.md",
+      "reviewed_sha256": "2293bd4a2897b800bcecfc6ded9ed15078a204378cc1f4369e640a517227271c",
+      "license": "MIT",
+      "license_file": "docs/licenses/qa-manual-qa-MIT.txt",
+      "license_sha256": "7f06446a677816d15831f0b98823a2cf995cbdb26c9ee72512692779594e095d",
+      "relationship": "Reference only; locally authored synthesis, no runtime dependency or upstream Skill installation"
+    },
+    {
+      "id": "playwright",
+      "repository": "https://github.com/currents-dev/playwright-best-practices-skill",
+      "revision": "283d5cbc5d11aac1abda058b16ad22c317d54dc0",
+      "reviewed_file": "playwright-best-practices/core/assertions-waiting.md",
+      "reviewed_sha256": "8cdc5673d148aa3a187544aae13973996c690c8c125bd770a243c0ba5c6744cd",
+      "license": "MIT",
+      "license_file": "docs/licenses/qa-playwright-MIT.txt",
+      "license_sha256": "2b98cdd2800845a1230f2ad4b310901e3c9ae9364ddebb01e90a2ebe6d953d82",
+      "relationship": "Reference only; locally authored synthesis, no runtime dependency or upstream Skill installation"
+    },
+    {
+      "id": "verification",
+      "repository": "https://github.com/obra/superpowers",
+      "revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "reviewed_file": "skills/verification-before-completion/SKILL.md",
+      "reviewed_sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+      "license": "MIT",
+      "license_file": "docs/licenses/qa-verification-MIT.txt",
+      "license_sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+      "relationship": "Reference only; locally authored synthesis, no runtime dependency or upstream Skill installation"
+    }
+  ]
+}

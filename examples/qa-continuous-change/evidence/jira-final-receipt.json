@@ -1,0 +1,18 @@
+{
+  "mode": "mock",
+  "operation_id": "create-FD-001",
+  "operation": "create",
+  "issue_url": "mock://issues/MOCK-1",
+  "write_outcome": "saved",
+  "readback_confirmed": true,
+  "expected_payload_hash": "a29e7203d18de81190c07f65a5fbbccf5eeaedcc59cec15ce2587a68424857f6",
+  "readback_payload_hash": "a29e7203d18de81190c07f65a5fbbccf5eeaedcc59cec15ce2587a68424857f6",
+  "evidence_entries": [
+    {
+      "local": "evidence/r2-bug-TC-007.json",
+      "uploaded": true,
+      "visible": true,
+      "remote_id": "mock-attachment-1"
+    }
+  ]
+}

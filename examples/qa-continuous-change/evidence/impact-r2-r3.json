@@ -1,0 +1,27 @@
+{
+  "changed_sources": [
+    "S3"
+  ],
+  "changed_requirements": [
+    "R-CANCEL",
+    "R-LIMIT"
+  ],
+  "candidate_cases": [
+    "TC-004",
+    "TC-005",
+    "TC-006",
+    "TC-007",
+    "TC-008"
+  ],
+  "unchanged_cases": [
+    "TC-001",
+    "TC-002",
+    "TC-003",
+    "TC-009",
+    "TC-010",
+    "TC-011",
+    "TC-012",
+    "TC-013"
+  ],
+  "note": "Deterministic candidates only; review source, UI and dependency changes separately."
+}

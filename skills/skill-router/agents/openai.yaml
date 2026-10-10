@@ -1,0 +1,4 @@
+interface:
+  display_name: "总入口 · 自动选择技能"
+  short_description: "按需求从通用技能目录选择独立能力或领域工作流，保留已有方案与用户范围"
+  default_prompt: "使用 $skill-router 选择适合当前任务的技能并完成请求。"

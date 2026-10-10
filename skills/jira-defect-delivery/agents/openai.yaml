@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jira缺陷交付"
+  short_description: "确认异常后准备缺陷稿，按授权写入并逐动作回读"
+  default_prompt: "使用 $jira-defect-delivery 完成本次授权范围内的QA任务，明确来源、版本和未验证事项。"

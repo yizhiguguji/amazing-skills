@@ -1,0 +1,20 @@
+{
+  "kind": "model-instruction-use",
+  "loaded_skills": [
+    "qa-workflow",
+    "qa-test-design",
+    "qa-functional-execution",
+    "jira-defect-delivery",
+    "qa-test-report"
+  ],
+  "source_context": "Authored/read in this model session; replay is fixed scenario validation, not a separate autonomous model run",
+  "inputs": [
+    "sources/r1.md",
+    "sources/design-excerpt.md",
+    "sources/r2.md",
+    "sources/r3.md"
+  ],
+  "output": ".qa/plan.json",
+  "real_device_execution": false,
+  "real_jira_write": false
+}

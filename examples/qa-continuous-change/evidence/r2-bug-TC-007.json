@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "failure": "提交有效性不符合长度/空白规则",
+  "observation": {
+    "draft": "中中中中中中中中中中中中中中中中中中中中中",
+    "saved": "",
+    "status": "pending",
+    "writes": 0,
+    "events": [
+      {
+        "event": "input",
+        "codepoints": 21
+      },
+      {
+        "event": "save",
+        "valid": true
+      }
+    ]
+  },
+  "scope": "Synthetic model only; no native app, OS event, radio network or temperature tested."
+}

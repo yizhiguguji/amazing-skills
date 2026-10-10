@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-10T06:44:14.736506+00:00",
+  "plan_sha256": "6bbbd44c7b220dcf3dcf6cfa22803978610fb3837891fb6ec0f0e921d3aaa03b",
+  "run": "r1",
+  "counts": {
+    "passed": 5,
+    "failed": 0,
+    "blocked": 0,
+    "deferred": 0,
+    "not-run": 0
+  },
+  "total": 5,
+  "executed_definition": "passed + failed",
+  "pass_rate": 1.0,
+  "modes": {
+    "synthetic-fixture": 5
+  },
+  "quality_status": "synthetic-only",
+  "release_decision": "unverified; never inferred from counts alone",
+  "cases": [
+    {
+      "case_id": "TC-001",
+      "revision": 1,
+      "status": "passed",
+      "execution_id": "r1-TC-001",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-002",
+      "revision": 1,
+      "status": "passed",
+      "execution_id": "r1-TC-002",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-003",
+      "revision": 1,
+      "status": "passed",
+      "execution_id": "r1-TC-003",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-004",
+      "revision": 1,
+      "status": "passed",
+      "execution_id": "r1-TC-004",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-012",
+      "revision": 1,
+      "status": "passed",
+      "execution_id": "r1-TC-012",
+      "mode": "synthetic-fixture"
+    }
+  ],
+  "historical_failures": [],
+  "proposed_cases": [
+    "TC-005",
+    "TC-006",
+    "TC-007",
+    "TC-008",
+    "TC-009",
+    "TC-010",
+    "TC-011"
+  ],
+  "retired_cases": [],
+  "gaps": [
+    {
+      "id": "G-LIMIT",
+      "question": "长度上限、单位及空白规则？",
+      "close_condition": "有明确范围、计数与空白说明"
+    },
+    {
+      "id": "G-RESUME",
+      "question": "同进程切应用、后台、锁屏后的输入规则？",
+      "close_condition": "三个事件的规则及进程范围明确"
+    }
+  ],
+  "defect_summary": {
+    "source": "not-provided",
+    "confirmed_total": null,
+    "current_open": null
+  }
+}

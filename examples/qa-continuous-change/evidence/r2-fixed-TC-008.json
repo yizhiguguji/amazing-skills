@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "failure": null,
+  "observation": {
+    "draft": "🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂",
+    "saved": "🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂",
+    "status": "saved",
+    "writes": 1,
+    "events": [
+      {
+        "event": "input",
+        "codepoints": 20
+      },
+      {
+        "event": "save",
+        "valid": true
+      },
+      {
+        "event": "response",
+        "success": true
+      }
+    ]
+  },
+  "scope": "Synthetic model only; no native app, OS event, radio network or temperature tested."
+}

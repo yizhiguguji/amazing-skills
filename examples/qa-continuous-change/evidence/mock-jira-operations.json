@@ -1,0 +1,17 @@
+{
+  "mode": "mock",
+  "operations": [
+    {
+      "action": "create-or-read",
+      "operation_id": "create-FD-001",
+      "issue": "MOCK-1"
+    },
+    {
+      "action": "create-or-read",
+      "operation_id": "create-FD-001",
+      "issue": "MOCK-1"
+    }
+  ],
+  "issue_count": 1,
+  "attachment_count": 1
+}

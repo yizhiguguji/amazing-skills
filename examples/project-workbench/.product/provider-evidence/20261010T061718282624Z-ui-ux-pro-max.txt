@@ -1,0 +1,119 @@
+{
+  "design_system": {
+    "project_name": "PROJECT TASK DASHBOARD RESTRAINED",
+    "category": "Productivity Tool",
+    "pattern": {
+      "name": "Product Demo + Features",
+      "sections": "Hero > Product video/mockup (center) > Feature breakdown per section > Comparison (optional) > CTA",
+      "cta_placement": "Video center + CTA right/bottom",
+      "color_strategy": "Video surround: Brand color overlay. Features: Icon color #0080FF. Text: Dark #222",
+      "conversion": "Use an interactive demo only when it explains value better than static media. Provide captions, transcript, visible play/pause controls, and a non-video fallback; do not autoplay under reduced motion. Pause media when offscreen or hidden and keep the final product state available as static content."
+    },
+    "style": {
+      "id": "minimalism-and-swiss-style",
+      "name": "Minimalism & Swiss Style",
+      "type": "General",
+      "effects": "Subtle hover (200-250ms), smooth transitions, sharp shadows if any, clear type hierarchy, fast loading",
+      "keywords": "Clean, simple, spacious, functional, white space, high contrast, geometric, sans-serif, grid-based, essential",
+      "best_for": "Enterprise apps, dashboards, documentation sites, SaaS platforms, professional tools",
+      "performance": "cost:low|drivers:none",
+      "accessibility": "risk:low|requires:contrast-text-4.5,keyboard,visible-focus,reduced-motion",
+      "light_mode": "supported",
+      "dark_mode": "supported"
+    },
+    "colors": {
+      "primary": "#0D9488",
+      "on_primary": "#000000",
+      "secondary": "#14B8A6",
+      "on_secondary": "#0F172A",
+      "accent": "#EA580C",
+      "on_accent": "#000000",
+      "background": "#F0FDFA",
+      "foreground": "#134E4A",
+      "card": "#FFFFFF",
+      "card_foreground": "#134E4A",
+      "muted": "#E8F1F4",
+      "muted_foreground": "#475569",
+      "border": "#99F6E4",
+      "destructive": "#DC2626",
+      "on_destructive": "#FFFFFF",
+      "ring": "#0D9488",
+      "notes": "Teal focus + action orange [Accent adjusted from #F97316]",
+      "cta": "#EA580C",
+      "text": "#134E4A",
+      "on_cta": "#000000"
+    },
+    "typography": {
+      "heading": "Fira Code",
+      "body": "Fira Sans",
+      "mood": "dashboard, data, analytics, code, technical, precise",
+      "best_for": "Dashboards, analytics, data visualization, admin panels",
+      "google_fonts_url": "https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap",
+      "css_import": "@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap');"
+    },
+    "key_effects": "Subtle hover (200-250ms), smooth transitions, sharp shadows if any, clear type hierarchy, fast loading",
+    "anti_patterns": "Complex onboarding + Slow performance",
+    "decision_rules": {
+      "must_have": [
+        "constraint:keyboard-shortcuts"
+      ],
+      "if_collaboration": [
+        "constraint:add-real-time-cursors"
+      ]
+    },
+    "activated_rules": [
+      {
+        "condition": "must_have",
+        "actions": [
+          "constraint:keyboard-shortcuts"
+        ]
+      }
+    ],
+    "constraints": [
+      "keyboard-shortcuts"
+    ],
+    "reasoning_default": false,
+    "source_identities": {
+      "product": "Productivity Tool",
+      "reasoning": "Productivity Tool",
+      "style": "minimalism-and-swiss-style",
+      "color": "Productivity Tool",
+      "typography": "Dashboard Data",
+      "landing": "Product Demo + Features"
+    },
+    "source_derivations": {
+      "color_mode": null
+    },
+    "severity": "HIGH",
+    "dials": {
+      "variance": 2,
+      "variance_label": "Centered / Minimal",
+      "motion": 2,
+      "motion_label": "Subtle",
+      "density": 8,
+      "density_label": "Dense / Dashboard"
+    },
+    "motion_snippet": {
+      "Category": "Scroll Reveal",
+      "Intensity Tier": "Subtle",
+      "Trigger": "scroll (viewport enter)",
+      "Duration": "300-400ms",
+      "Easing": "power1.out",
+      "GSAP Snippet": "gsap.from(el, { opacity: 0, y: 12, duration: 0.35, ease: 'power1.out', scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none reverse' } });",
+      "Framework Notes": "Requires the ScrollTrigger plugin registered once via gsap.registerPlugin(ScrollTrigger); Use matchMedia('(prefers-reduced-motion: reduce)') to skip non-essential motion and render the final state immediately",
+      "Do": "Keep the y offset small (8-16px) so it reads as a fade, not a slide",
+      "Don't": "Don't reveal below-the-fold content needed for SEO/crawlers as invisible-by-default without a no-JS fallback",
+      "Performance Notes": "toggleActions 'play none none reverse' avoids re-triggering on every scroll direction change"
+    },
+    "spacing_scale": {
+      "xs": "2px",
+      "sm": "4px",
+      "md": "8px",
+      "lg": "12px",
+      "xl": "16px",
+      "2xl": "24px",
+      "3xl": "32px"
+    }
+  },
+  "persistence": null
+}

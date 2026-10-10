@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-10T06:50:06.901806+00:00",
+  "plan_sha256": "f2f302a3f8f0a8d338ebbc8dfb3f0709b60a267944b6601b7e2288a3780f1060",
+  "run": "r4-case-clarity",
+  "counts": {
+    "passed": 12,
+    "failed": 0,
+    "blocked": 0,
+    "deferred": 0,
+    "not-run": 0
+  },
+  "total": 12,
+  "executed_definition": "passed + failed",
+  "pass_rate": 1.0,
+  "modes": {
+    "synthetic-fixture": 12
+  },
+  "quality_status": "synthetic-only",
+  "release_decision": "unverified; never inferred from counts alone",
+  "cases": [
+    {
+      "case_id": "TC-001",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-001",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-002",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-002",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-003",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-003",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-012",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-012",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-005",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-005",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-006",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-006",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-007",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-007",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-008",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-008",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-009",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-009",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-010",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-010",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-011",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-011",
+      "mode": "synthetic-fixture"
+    },
+    {
+      "case_id": "TC-013",
+      "revision": 4,
+      "status": "passed",
+      "execution_id": "r4-case-clarity-TC-013",
+      "mode": "synthetic-fixture"
+    }
+  ],
+  "historical_failures": [
+    "r2-bug-TC-007"
+  ],
+  "proposed_cases": [],
+  "retired_cases": [
+    "TC-004"
+  ],
+  "gaps": [],
+  "defect_summary": {
+    "source": "saved-local-records",
+    "confirmed_total": 1,
+    "current_open": 0
+  }
+}

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+
+**/.product/tool-cache/
+**/.impeccable/review/
+**/.impeccable/live/
+
+dist/

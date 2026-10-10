@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "upstream_repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
+  "upstream_commit": "50d8a7de0900119855614541f15a1a616691eb33",
+  "original_files_unchanged": true,
+  "reference_runtime": "Existing development Python interpreter, oracle generation only; not distributed or executed by Go",
+  "implementation": "amazing-skills-go-promax",
+  "python_required_at_runtime": false,
+  "go_dependencies": "standard library only",
+  "counts": {
+    "search": 988,
+    "design": 808,
+    "pages": 11
+  },
+  "total_comparisons": 1807,
+  "comparison": "All structured fields and result order; BM25 scores 1e-10 absolute/relative tolerance",
+  "checks": {
+    "pinned_original_parity": "passed",
+    "go_tests_35": "passed",
+    "go_vet": "passed",
+    "repository_sync_and_validation": "passed",
+    "portable_moved_workbench_no_go_python_path": "passed",
+    "full_design_system_persistence": "passed",
+    "default_master_no_overwrite": "passed",
+    "page_override_preserves_master": "passed",
+    "explicit_force_replaces": "passed",
+    "closed_rule_grammar": "passed",
+    "symlink_escape_rejected": "passed",
+    "final_darwin_arm64_distribution_no_go_python_path": "passed"
+  },
+  "differences": [
+    "Human-facing formatting differs; structured result data covered by parity fixtures",
+    "Stricter path and symlink protections",
+    "Other OS/architecture binaries cross-compiled, not executed",
+    "Finite fixtures do not establish equivalence for every input or real UI quality"
+  ],
+  "fixture_sha256": "456196fdeba03bcc6a5f9fc76f9285f4c31856aa98f07e39e7aba7bc855def3e",
+  "derived_contract_sha256": "d9e68fa628b13eff0d7cb711fb058c5ec3493506df1d76edcdabee024208ef2c",
+  "original_source_sha256": {
+    "scripts/core.py": "c3be4b23e7150e6b45095213158cfa3c8ad96502f01dde3f6ffff9de64a4f481",
+    "scripts/design_system.py": "e7d1c94c4b2eada17c5551157668362659ccf9626d34dbd58e68142410f90103",
+    "scripts/reasoning_contract.py": "b8bac1af82aa280d3e06f00aabaeac4337e632996b07fed874e2b6ee6e9c5913"
+  },
+  "distribution": {
+    "cross_compiled_only": "Other operating systems require actual execution validation",
+    "platforms": {
+      "amazing-skills-darwin-amd64": "90a645661e77bf87897c377603267c98d84b7db8cc5782574dfa11b3d5f85d1e",
+      "amazing-skills-darwin-arm64": "14a3dbb63f343ed179f015f85e86eeeb1987a706e477f8b34b6521dd3c5b7e7c",
+      "amazing-skills-linux-amd64": "ac7af7b289d30d5e136ed13f81c697b843c3b6cb3b12dad0a45bfd934d7bb7e5",
+      "amazing-skills-linux-arm64": "c165063d9e4e9da3807285627bc1c80cc2a9970ebdb5a600da4b78db1ce72d75",
+      "amazing-skills-windows-amd64.exe": "5d52deba2322590bfedd8e5acd69767877724f65b0bf0e5fc7e791e1f955bdd6",
+      "amazing-skills-windows-arm64.exe": "6451fd57908be9967dbc7bc39c4addd6b141fc156a855575a029fe48d397ad7f"
+    },
+    "python_required": false,
+    "runtime": "Go standalone binary"
+  }
+}

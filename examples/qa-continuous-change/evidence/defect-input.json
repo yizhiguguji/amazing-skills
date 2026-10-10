@@ -1,0 +1,15 @@
+{
+  "id": "FD-001",
+  "summary": "长度上限外的备注仍可保存",
+  "environment": "Synthetic Python fixture r2, configured boundary defect",
+  "steps": [
+    "打开详情输入21个Unicode码点",
+    "点击保存并观察提交有效性"
+  ],
+  "actual": "模拟模型允许提交21个码点",
+  "expected": "上限20，21应拒绝且不写入",
+  "basis": "合成r2 AC-LIMIT；实际失败r2-bug-TC-007",
+  "evidence": [
+    "evidence/r2-bug-TC-007.json"
+  ]
+}

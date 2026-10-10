@@ -1,0 +1,4 @@
+interface:
+  display_name: "功能执行与复测"
+  short_description: "按当前用例修订执行并区分模拟、浏览器和真机证据"
+  default_prompt: "使用 $qa-functional-execution 完成本次授权范围内的QA任务，明确来源、版本和未验证事项。"

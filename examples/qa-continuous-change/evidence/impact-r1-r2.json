@@ -1,0 +1,29 @@
+{
+  "changed_sources": [
+    "S2"
+  ],
+  "changed_requirements": [
+    "R-EMPTY",
+    "R-LIMIT",
+    "R-RESUME",
+    "R-SAVE"
+  ],
+  "candidate_cases": [
+    "TC-001",
+    "TC-002",
+    "TC-005",
+    "TC-006",
+    "TC-007",
+    "TC-008",
+    "TC-009",
+    "TC-010",
+    "TC-011",
+    "TC-013"
+  ],
+  "unchanged_cases": [
+    "TC-003",
+    "TC-004",
+    "TC-012"
+  ],
+  "note": "Deterministic candidates only; review source, UI and dependency changes separately."
+}

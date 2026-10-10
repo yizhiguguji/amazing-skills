@@ -1,0 +1,22 @@
+---
+name: qa-test-report
+description: 根据保存的实际执行与缺陷证据生成或更新范围限定的功能测试报告，复算当前修订/轮次及历史统计，揭示风险与未测项；不以Jira状态、计划或模拟代替真实通过，不修改原始结果。
+---
+# 测试报告
+
+运行工具为Go独立程序；下文 `amazing-skills` 指 skills 根下 `.amazing-skills/amazing-skills`（Windows加.exe）。优先使用实际安装位置的绝对路径；仓库开发可在根目录用 `go run ./cmd/amazing-skills`。仅阅读Skill不需要任何语言运行时。
+
+读取 [专业规则](../qa-test-design/references/professional-rules.md) 与 [统计和交付](references/reporting.md)。核对目标需求、当前修订、轮次、平台/构建、环境、设备及统计截止点/时区。用户要最新轮次还是跨轮次须明确，不能混历史通过率到当前。
+
+用同一份保存结果快照复算，通过/失败/阻塞/延期/未执行之和等于范围总数。缺陷数与失败用例数分开；零分母不适用；Jira状态只说明处理进度，不决定测试结论。
+
+本地契约可运行：
+
+```bash
+/安装目录/.amazing-skills/amazing-skills qa check --project /项目
+/安装目录/.amazing-skills/amazing-skills qa summary --project /项目 --run 当前轮次
+```
+
+未执行或只模拟明确写证据不足/仅模拟；不可宣称真机已测、零缺陷或可发布。查看实际日志/媒体，程序复算不能证明业务通过。人工报告补主要风险、影响、下一步及未覆盖，缺排期写未提供，不虚构承诺、工时或费用。
+
+保存/导出后回读核对同一结论，原稿与表格独立，不覆盖正式用例、审批和原始执行。缺陷更新或Jira同步不是本技能副作用，只在用户同时要求时交接独立技能。

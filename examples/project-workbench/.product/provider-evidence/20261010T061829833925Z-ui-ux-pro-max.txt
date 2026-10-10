@@ -1,0 +1,56 @@
+{
+  "domain": "chart",
+  "query": "category count comparison",
+  "file": "charts.csv",
+  "count": 3,
+  "results": [
+    {
+      "Data Type": "Compare Categories",
+      "Keywords": "compare, categories, bar, comparison, ranking, accessible chart, keyboard accessible chart",
+      "Best Chart Type": "Bar Chart (Horizontal or Vertical)",
+      "Secondary Options": "Column Chart, Grouped Bar",
+      "When to Use": "Comparing discrete categories by magnitude; ranking or ordering is the core insight; categories ≤ 15",
+      "When NOT to Use": "Categories > 15 (use table or search); data has time dimension (use line); showing proportions (use waffle/stacked)",
+      "Data Volume Threshold": "<20 categories: vertical bar; 20–50: horizontal bar; >50: paginated table",
+      "Color Guidance": "Each bar: distinct color. Grouped: same hue family. Always sort descending by value",
+      "Accessibility Grade": "deprecated: use Accessibility Risk",
+      "Accessibility Risk": "risk:low",
+      "Accessibility Notes": "Use direct category/value labels and group outlines or patterns; never encode category solely by bar color. Do not rely on color alone.",
+      "A11y Fallback": "Visible sortable data table plus concise comparison summary. Keyboard: focus reveals hover values; focusable headers with Enter/Space sort and aria-sort reports direction.",
+      "Library Recommendation": "Chart.js, Recharts, D3.js",
+      "Interactive Level": "Hover + Sort"
+    },
+    {
+      "Data Type": "Multi-Variable Comparison",
+      "Keywords": "radar, spider, multi-variable, attributes, dimensions, comparison, accessible chart, keyboard accessible chart",
+      "Best Chart Type": "Radar / Spider Chart",
+      "Secondary Options": "Parallel Coordinates, Grouped Bar",
+      "When to Use": "Comparing multiple entities across the same fixed set of attributes (e.g., product feature comparison)",
+      "When NOT to Use": "Axes > 8 (unreadable); values need precise comparison (use grouped bar); audience unfamiliar with radar charts",
+      "Data Volume Threshold": "2–3 datasets maximum per chart; 5–8 axes; beyond 8 axes switch to parallel coordinates",
+      "Color Guidance": "Single dataset: #0080FF at 20% fill. Multiple: distinct hues with 30% fill. Border: full opacity",
+      "Accessibility Grade": "deprecated: use Accessibility Risk",
+      "Accessibility Risk": "risk:conditional",
+      "Accessibility Notes": "Use line styles, point shapes, and direct series labels in addition to color. Do not rely on color alone.",
+      "A11y Fallback": "Raw data table and grouped-bar alternative plus comparison summary. Keyboard: focus reveals values; buttons toggle series.",
+      "Library Recommendation": "Chart.js, Recharts, ApexCharts",
+      "Interactive Level": "Hover + Toggle"
+    },
+    {
+      "Data Type": "Proportional / Percentage",
+      "Keywords": "waffle, percentage, proportion, progress, filled, grid, accessible chart, keyboard accessible chart",
+      "Best Chart Type": "Waffle Chart",
+      "Secondary Options": "Pictogram, Stacked Bar 100%",
+      "When to Use": "Showing what fraction of a whole is filled; percentage progress in a visually engaging and accessible format",
+      "When NOT to Use": "More than 5 categories (use stacked bar); exact values matter over visual proportion; very tight space",
+      "Data Volume Threshold": "10×10 grid standard (100 cells); for > 5 categories switch to stacked 100% bar",
+      "Color Guidance": "3–5 categories max. 2–3px gap between cells. Each category a distinct accessible color pair",
+      "Accessibility Grade": "deprecated: use Accessibility Risk",
+      "Accessibility Risk": "risk:low",
+      "Accessibility Notes": "Label each category and percentage and add patterns or symbols; filled-cell color alone is insufficient.",
+      "A11y Fallback": "Percentage table/list plus part-to-whole summary. Keyboard: focus reveals each cell value.",
+      "Library Recommendation": "D3.js, React-Waffle, Custom CSS Grid",
+      "Interactive Level": "Hover"
+    }
+  ]
+}

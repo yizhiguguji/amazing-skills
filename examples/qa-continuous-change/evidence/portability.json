@@ -1,0 +1,20 @@
+{
+  "installed_skills": [
+    "qa-test-design",
+    "qa-functional-execution",
+    "jira-defect-delivery",
+    "qa-test-report",
+    "qa-workflow"
+  ],
+  "relocated_installed_helpers_replay": "passed",
+  "offline_qa_runtime": true,
+  "directory_with_spaces": true,
+  "documentary_check": {
+    "documentary_check": "passed",
+    "errors": [],
+    "business_or_execution_verified": false
+  },
+  "native_other_os_verified": false,
+  "runtime": "Python 3.9+ standard library, actual host macOS",
+  "fixture_cases": 12
+}

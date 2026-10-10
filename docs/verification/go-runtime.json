@@ -1,0 +1,72 @@
+{
+  "version": "0.4.0",
+  "platform": "darwin-arm64",
+  "runtime": "Go standalone binary",
+  "go_unit_tests": 31,
+  "go_vet": "passed",
+  "customer_browser_scenarios": 7,
+  "checks": [
+    {
+      "name": "repository-validation",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "legacy-qa-history",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "style-lock",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "provider-doctor",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "native-promax-chart",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "official-impeccable-context",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "full-install",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "relocated-standalone-replay",
+      "exit_code": 0,
+      "status": "passed",
+      "python_and_go_on_path": false
+    },
+    {
+      "name": "relocated-standalone-check",
+      "exit_code": 0,
+      "status": "passed",
+      "python_and_go_on_path": false
+    },
+    {
+      "name": "relocated-standalone-provider-doctor",
+      "exit_code": 0,
+      "status": "passed",
+      "python_and_go_on_path": false
+    },
+    {
+      "name": "relocated-standalone-search",
+      "exit_code": 0,
+      "status": "passed",
+      "python_and_go_on_path": false
+    }
+  ],
+  "other_platforms": "Cross-compiled; not executed",
+  "upstream_python_source": "Retained unchanged; never executed by normal Go path",
+  "upstream_search_parity": false
+}

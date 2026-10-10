@@ -1,0 +1,4 @@
+interface:
+  display_name: "测试报告"
+  short_description: "依据保存的真实结果复算报告，保留未执行和历史失败"
+  default_prompt: "使用 $qa-test-report 完成本次授权范围内的QA任务，明确来源、版本和未验证事项。"
