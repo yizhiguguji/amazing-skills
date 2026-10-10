@@ -1,0 +1,373 @@
+{
+  "checks": {
+    "new_revision_not_inheriting_pass": "passed",
+    "same_run_failure_retained": "passed",
+    "scope_expansion_rejected": "passed",
+    "specialist_without_authorization_rejected": "passed",
+    "unknown_expectation_rejected": "passed",
+    "withdrawal_and_changed_revision": "passed"
+  },
+  "current_run": {
+    "cases": [
+      {
+        "case_id": "TC-001",
+        "execution_id": null,
+        "mode": null,
+        "revision": 2,
+        "status": "not-run"
+      },
+      {
+        "case_id": "TC-002",
+        "execution_id": null,
+        "mode": null,
+        "revision": 2,
+        "status": "not-run"
+      },
+      {
+        "case_id": "TC-003",
+        "execution_id": "r2-TC-003-passed",
+        "mode": "synthetic-fixture",
+        "revision": 1,
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "blocked": 0,
+      "deferred": 0,
+      "failed": 0,
+      "not-run": 2,
+      "passed": 1
+    },
+    "defect_summary": {
+      "confirmed_total": null,
+      "current_open": null,
+      "source": "not-provided"
+    },
+    "executed_definition": "passed + failed",
+    "gaps": [
+      {
+        "close_condition": "项目确认该行为基线及其版本；再修订用例为ready。",
+        "id": "G1",
+        "question": "昵称保存时会话失效如何处理？时限与提示未定义。",
+        "requirement_ids": [
+          "R2"
+        ]
+      }
+    ],
+    "generated_at": "2026-10-10T08:39:47.776892Z",
+    "historical_failures": [
+      "r1-TC-003-failed"
+    ],
+    "modes": {
+      "synthetic-fixture": 1
+    },
+    "pass_rate": 1,
+    "plan_sha256": "e245739cfb5db6d82c6762574f2af94ba94282a65b5bfbb23f319e1b276dc58b",
+    "proposed_cases": [
+      "TC-005"
+    ],
+    "quality_status": "synthetic-only",
+    "release_decision": "unverified; never inferred from counts alone",
+    "retired_cases": [
+      "TC-004"
+    ],
+    "run": "r2",
+    "schema_version": 1,
+    "security_review": {
+      "checks": [
+        {
+          "case_ids": [
+            "TC-001",
+            "TC-002"
+          ],
+          "decision": "include",
+          "family": "input-integrity",
+          "id": "SC1",
+          "reason": "本期昵称有明确码点长度与保存规则",
+          "requirement_ids": [
+            "R1"
+          ],
+          "target_ids": [
+            "T1"
+          ]
+        },
+        {
+          "case_ids": [
+            "TC-003"
+          ],
+          "decision": "include",
+          "family": "authorization",
+          "id": "SC2",
+          "reason": "同功能确认基线只允许读写自己的昵称",
+          "requirement_ids": [
+            "R2"
+          ],
+          "target_ids": [
+            "T1"
+          ]
+        },
+        {
+          "case_ids": [],
+          "decision": "not-applicable",
+          "family": "output-context",
+          "id": "SC3",
+          "reason": "预览入口已撤回，不继续覆盖已撤回行为",
+          "requirement_ids": [
+            "R1"
+          ],
+          "target_ids": []
+        },
+        {
+          "case_ids": [
+            "TC-005"
+          ],
+          "decision": "clarify",
+          "family": "session",
+          "gap_ids": [
+            "G1"
+          ],
+          "id": "SC4",
+          "reason": "保存的会话失效预期与时限未知，不造固定规则",
+          "requirement_ids": [
+            "R2"
+          ],
+          "target_ids": [
+            "T1"
+          ]
+        }
+      ],
+      "exclusions": [
+        "头像/支付/上传/密码重置",
+        "其他接口和全站扫描",
+        "真实服务与真实设备"
+      ],
+      "execution": {
+        "allowed_actions": [
+          "observe",
+          "request-modification"
+        ],
+        "budget": "At most 10 isolated model calls; no network",
+        "source_refs": [
+          {
+            "locator": "AUTH-1",
+            "source_id": "S1"
+          }
+        ],
+        "status": "authorized",
+        "stop_conditions": [
+          "Target escape, unexpected data, or model failure"
+        ],
+        "target_ids": [
+          "T1"
+        ]
+      },
+      "mode": "specialist",
+      "scope_requirement_ids": [
+        "R1",
+        "R2"
+      ],
+      "targets": [
+        {
+          "id": "T1",
+          "locator": "fixture:profile/nickname",
+          "platform": "web-model",
+          "requirement_ids": [
+            "R1",
+            "R2"
+          ]
+        }
+      ]
+    },
+    "total": 3
+  },
+  "first_run": {
+    "cases": [
+      {
+        "case_id": "TC-001",
+        "execution_id": "r1-TC-001-passed",
+        "mode": "synthetic-fixture",
+        "revision": 1,
+        "status": "passed"
+      },
+      {
+        "case_id": "TC-002",
+        "execution_id": "r1-TC-002-passed",
+        "mode": "synthetic-fixture",
+        "revision": 1,
+        "status": "passed"
+      },
+      {
+        "case_id": "TC-003",
+        "execution_id": "r1-TC-003-failed",
+        "mode": "synthetic-fixture",
+        "revision": 1,
+        "status": "failed"
+      },
+      {
+        "case_id": "TC-004",
+        "execution_id": "r1-TC-004-passed",
+        "mode": "synthetic-fixture",
+        "revision": 1,
+        "status": "passed"
+      }
+    ],
+    "counts": {
+      "blocked": 0,
+      "deferred": 0,
+      "failed": 1,
+      "not-run": 0,
+      "passed": 3
+    },
+    "defect_summary": {
+      "confirmed_total": null,
+      "current_open": null,
+      "source": "not-provided"
+    },
+    "executed_definition": "passed + failed",
+    "gaps": [
+      {
+        "close_condition": "项目确认该行为基线及其版本；再修订用例为ready。",
+        "id": "G1",
+        "question": "昵称保存时会话失效如何处理？时限与提示未定义。",
+        "requirement_ids": [
+          "R2"
+        ]
+      }
+    ],
+    "generated_at": "2026-10-10T08:39:47.758533Z",
+    "historical_failures": [
+      "r1-TC-003-failed"
+    ],
+    "modes": {
+      "synthetic-fixture": 4
+    },
+    "pass_rate": 0.75,
+    "plan_sha256": "cb817a01a26244cc91eb5ff1be32f53593ce8894d4ccacbc12a5072d719b940c",
+    "proposed_cases": [
+      "TC-005"
+    ],
+    "quality_status": "synthetic-only",
+    "release_decision": "unverified; never inferred from counts alone",
+    "retired_cases": [],
+    "run": "r1",
+    "schema_version": 1,
+    "security_review": {
+      "checks": [
+        {
+          "case_ids": [
+            "TC-001",
+            "TC-002"
+          ],
+          "decision": "include",
+          "family": "input-integrity",
+          "id": "SC1",
+          "reason": "本期昵称有明确码点长度与保存规则",
+          "requirement_ids": [
+            "R1"
+          ],
+          "target_ids": [
+            "T1"
+          ]
+        },
+        {
+          "case_ids": [
+            "TC-003"
+          ],
+          "decision": "include",
+          "family": "authorization",
+          "id": "SC2",
+          "reason": "同功能确认基线只允许读写自己的昵称",
+          "requirement_ids": [
+            "R2"
+          ],
+          "target_ids": [
+            "T1"
+          ]
+        },
+        {
+          "case_ids": [
+            "TC-004"
+          ],
+          "decision": "include",
+          "family": "output-context",
+          "id": "SC3",
+          "reason": "本期存在按文本显示昵称的预览",
+          "requirement_ids": [
+            "R3"
+          ],
+          "target_ids": [
+            "T1"
+          ]
+        },
+        {
+          "case_ids": [
+            "TC-005"
+          ],
+          "decision": "clarify",
+          "family": "session",
+          "gap_ids": [
+            "G1"
+          ],
+          "id": "SC4",
+          "reason": "保存的会话失效预期与时限未知，不造固定规则",
+          "requirement_ids": [
+            "R2"
+          ],
+          "target_ids": [
+            "T1"
+          ]
+        }
+      ],
+      "exclusions": [
+        "头像/支付/上传/密码重置",
+        "其他接口和全站扫描",
+        "真实服务与真实设备"
+      ],
+      "mode": "functional",
+      "scope_requirement_ids": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "targets": [
+        {
+          "id": "T1",
+          "locator": "fixture:profile/nickname",
+          "platform": "web-model",
+          "requirement_ids": [
+            "R1",
+            "R2",
+            "R3"
+          ]
+        }
+      ]
+    },
+    "total": 4
+  },
+  "impact": {
+    "candidate_cases": [
+      "TC-001",
+      "TC-002",
+      "TC-004"
+    ],
+    "changed_requirements": [
+      "R1",
+      "R3"
+    ],
+    "changed_sources": [
+      "S2"
+    ],
+    "note": "Deterministic candidates only; review source, UI and dependency changes separately.",
+    "unchanged_cases": [
+      "TC-003",
+      "TC-005"
+    ]
+  },
+  "mode": "synthetic-fixture",
+  "not_verified": [
+    "Natural-language routing by a separate AI",
+    "Real application/browser/native device",
+    "Real security vulnerabilities or compliance",
+    "External Jira submission"
+  ]
+}

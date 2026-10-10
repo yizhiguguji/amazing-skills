@@ -1,4 +1,4 @@
-# Go运行工具（0.4.0）
+# Go运行工具（0.5.0）
 
 统一程序`amazing-skills`负责安装、目录校验、快照同步、项目初始化与风格锁、QA冻结/记录/报告、Jira草稿/回执、提供者适配、合成QA演练和受限示例预览。只用Go标准库，无go.sum及第三方Go依赖。
 
@@ -41,7 +41,7 @@ go run ./cmd/amazing-skills jira draft --project /项目 --input /项目/defect.
 go run ./cmd/amazing-skills replay --output /新目录/qa-demo
 ```
 
-`--skills`支持一个ID或逗号分隔的多个ID；安装依赖闭包。默认十三技能，QA子包五技能，工作台子包八技能；都附带同平台Go程序。已有技能目录或运行工具拒绝覆盖，重装需选择新目录或自行明确管理旧安装。
+`--skills`支持一个ID或逗号分隔的多个ID；安装依赖闭包。默认十四技能，QA子包六技能，工作台子包八技能；都附带同平台Go程序。已有技能目录或运行工具拒绝覆盖，重装需选择新目录或自行明确管理旧安装。
 
 目录更新先运行sync，再重新构建，避免二进制中的嵌入快照过期。修改源文件不会自动更新已经安装的副本或已经构建的dist文件。
 
@@ -58,3 +58,5 @@ Pro Max已从简化适配升级为原版查询与结构化设计系统逻辑的G
 最初迁移的31项Go测试与go vet通过，另有11项独立程序检查、7项客户示例浏览器场景通过。移动安装目录且PATH不含Python/Go的情况下，完整合成QA演练、当前计划检查、提供者校验及Go查询都通过。实际调用了校验过的Impeccable官方引擎和原生Pro Max适配器。具体结果见 [验证记录](verification/go-runtime.json)。六平台构建结果及摘要见dist/manifest.json和SHA256SUMS，尚未发布远程release。
 
 后续Pro Max补齐及最新验证见 [兼容说明](promax-parity.md) 和 [对照记录](verification/promax-parity.json)。
+
+0.5.0新增通用功能安全筛选、独立qa-security-review与可选安全计划约束；完整安装14技能，QA子包6技能。`security-replay --output <全新目录>`运行合成安全范围演练；最新证据见docs/verification/security.json，不代表真实应用扫描。

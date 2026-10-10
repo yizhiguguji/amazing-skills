@@ -1,0 +1,4 @@
+interface:
+  display_name: "安全专项 · 范围与依据检查"
+  short_description: "按指定功能与授权设计或验证安全场景，保留未知预期与证据，避免扩展范围"
+  default_prompt: "使用 $qa-security-review 检查当前需求的安全风险，按已确认范围和实际授权推进。"

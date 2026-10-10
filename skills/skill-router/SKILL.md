@@ -14,7 +14,7 @@ description: 从 Amazing Skills 目录按请求选择独立能力或领域工作
 
 有领域工作流且任务需要多个阶段时选择工作流；单点任务选择能力。Jira、测试用例等不需要产品定义或设计规范，不进入 product-workflow。工作台完整请求才使用该工作流。未登记的能力不伪造技能名称、工具或执行结果；说明目录缺口并利用实际已有能力继续合理范围，必要时询问关键信息。
 
-功能QA整流程或能力选择不明时用 `qa-workflow`；只写/改用例用 `qa-test-design`，执行用 `qa-functional-execution`，Jira缺陷用 `jira-defect-delivery`，报告用 `qa-test-report`。需求简单也按验收与风险选择相关维度，不因“QA”自动加载全部测试类型或UI设计Skill。
+功能QA整流程或能力选择不明时用 `qa-workflow`；只写/改用例用 `qa-test-design`，执行用 `qa-functional-execution`，Jira缺陷用 `jira-defect-delivery`，报告用 `qa-test-report`。明确安全专项或“看看安全问题”在既有目标上下文内用 `qa-security-review`；普通用例含相关功能安全筛选，不自动升级成扫描。需求简单也按验收与风险选择相关维度，不因“QA”自动加载全部测试类型或UI设计Skill。
 
 候选文件存在才可读取。目录是安装时快照，不代表其他技能一定已安装；缺失时报告准确路径，继续可用部分。不要为选择技能自动联网下载安装。已捆绑的上游能力属于本地技能；未捆绑的外部能力只有实际可用时才能调用。
 

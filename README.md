@@ -6,7 +6,7 @@
 
 **第一次使用只看 [START_HERE.md](START_HERE.md)。唯一推荐总入口是 [skill-router · 自动选择技能](skills/skill-router/SKILL.md)。**
 
-不需要从十三个技能中挑一个，也不用先认识 finesse-brief、Impeccable 或 QA 的内部步骤。
+不需要从十四个技能中挑一个，也不用先认识 finesse-brief、Impeccable 或 QA 的内部步骤。
 
 ```text
 读取这个仓库的 START_HERE.md，帮我根据这份需求出测试用例。
@@ -35,9 +35,9 @@
 go run ./cmd/amazing-skills install --target /你的项目/.agents/skills
 ```
 
-默认复制十三个技能、相对引用及Go运行工具，不修改目标项目的AGENTS.md，拒绝覆盖现有目录。安装并被工具发现后，可直接用中文提出需求；显式调用总入口为 `$skill-router 你的需求`。其他工具可换成其支持的目录；不支持发现时让AI读取入口文件。
+默认复制十四个技能、相对引用及Go运行工具，不修改目标项目的AGENTS.md，拒绝覆盖现有目录。安装并被工具发现后，可直接用中文提出需求；显式调用总入口为 `$skill-router 你的需求`。其他工具可换成其支持的目录；不支持发现时让AI读取入口文件。
 
-`--skills product-workflow` 可仅安装工作台八技能子包；QA五技能子包见下文。子包使用对应领域入口，只有实际安装的能力才能调用。单独安装 `skill-router` 只提供选择器，不会自动安装全部能力。
+`--skills product-workflow` 可仅安装工作台八技能子包；QA六技能子包见下文。子包使用对应领域入口，只有实际安装的能力才能调用。单独安装 `skill-router` 只提供选择器，不会自动安装全部能力。
 
 ## 第一条工作流
 
@@ -77,9 +77,11 @@ go run ./cmd/amazing-skills serve --example customer-followup --port 8765
 
 阅读 [架构与扩展约定](docs/architecture.md)。`catalog.json` 是仓库总目录；工作流只管理自己的步骤。添加 Jira 或测试技能无需修改工作台模板。修改目录后运行 `go run ./cmd/amazing-skills sync` 更新入口的可安装目录快照，然后验证。
 
-原创新增内容采用 MIT；捆绑第三方目录保留各自许可证与锁定版本。版本：0.4.0。
+原创新增内容采用 MIT；捆绑第三方目录保留各自许可证与锁定版本。版本：0.5.0。
 
-## 功能 QA（0.4.0）
+功能安全筛选与独立专项使用见 [安全能力说明](docs/security.md)，模拟验证见 [安全范围演练](examples/qa-security-scope/README.md)。
+
+## 功能 QA（0.5.0）
 
 [使用与选择指南](docs/qa.md)解释简单需求如何覆盖相关行为而不扩大范围，以及持续变更如何保护旧结果。总入口会将多阶段功能测试任务交给 qa-workflow；熟悉后也可直接调用领域工作流或单点能力。
 
@@ -88,7 +90,7 @@ go run ./cmd/amazing-skills install --target /目标项目/.agents/skills --skil
 /目标项目/.agents/skills/.amazing-skills/amazing-skills qa init --project /目标项目
 ```
 
-QA子包只有五技能，不依赖三个设计提供者、私有QA系统、Jira凭证或网络即可生成和维护本地稿。Go独立运行工具，Windows使用对应.exe，；实际设备/浏览器执行与真实Jira写入按目标电脑能力和授权，不存在时记录未验证/未提交。原技能名称迁移见指南。
+QA子包只有六技能，不依赖三个设计提供者、私有QA系统、Jira凭证或网络即可生成和维护本地稿。Go独立运行工具，Windows使用对应.exe，；实际设备/浏览器执行与真实Jira写入按目标电脑能力和授权，不存在时记录未验证/未提交。原技能名称迁移见指南。
 
 [持续需求模拟样例](examples/qa-continuous-change/README.md)包含三版本、一次实际运行的模型失败、修订隔离、撤回、模拟Jira部分失败及报告复算。它不代表真机或远程Jira验收。
 

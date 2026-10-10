@@ -8,6 +8,7 @@
 | 按用例执行/复测 | qa-functional-execution | 本轮实际观察、环境、结果和证据 |
 | 提Jira、改缺陷、写复测备注、流转 | jira-defect-delivery | 草稿或逐动作回读回执 |
 | 汇总/更新测试报告 | qa-test-report | 同一结果快照复算、风险、未测项 |
+| 指定功能安全专项、越权等风险审查 | qa-security-review | 范围章程、用例/探索目标、授权内证据与限定结论 |
 | 上述多个阶段或选择不明 | qa-workflow | 只加载适用能力，保留交接与授权边界 |
 
 QA不经过finesse-brief、Impeccable、UI UX Pro Max的产品/界面设计流程：测试需要验证既有需求，不能为了写用例重新定义产品或增加功能。Figma作为相关视觉与交互证据，按项目约定优先级使用；访问不到就记录缺取证，不能假装看过节点。
@@ -43,7 +44,7 @@ go run ./cmd/amazing-skills install --target /项目/.agents/skills --skills qa-
 /项目/.agents/skills/.amazing-skills/amazing-skills qa init --project /项目
 ```
 
-QA工作流复制五个自包含技能，使用Go编译的独立运行工具。Windows使用对应.exe，其他工具按其支持的Skill目录放置；不支持自动发现时AI直接读取SKILL.md即可。脚本根据自身位置找模板，不读创作者HOME或私有地址。写入辅助工具采用串行单写，不是多人服务后端。
+QA工作流复制六个自包含技能，使用Go编译的独立运行工具。Windows使用对应.exe，其他工具按其支持的Skill目录放置；不支持自动发现时AI直接读取SKILL.md即可。脚本根据自身位置找模板，不读创作者HOME或私有地址。写入辅助工具采用串行单写，不是多人服务后端。
 
 没有实际设备/浏览器可完成用例设计并标未执行；没有已配置的Jira连接器可交付草稿并标未提交。Skill不是工具连接器；不能凭可读文本承诺任意电脑能控制原生应用。结构、引用和哈希检查不能证明业务覆盖或真实执行。
 
@@ -66,3 +67,5 @@ AI从当前材料、项目基线和上下文调度技能；方法、维度、范
 参考三个MIT项目的方法组织并保留commit、文件/许可摘要和声明；没有捆绑新上游运行Skill，不引入非商业许可内容。见qa-sources.lock.json和技能内的open-source-sources.md。
 
 验证样例见 [持续需求与模拟交付](../examples/qa-continuous-change/README.md)。实测环境是macOS，同机新目录迁移通过；Windows/Linux未实机验证。样例的模型和Jira都是模拟，不是原生设备或生产验收。
+
+功能用例设计内置相关安全候选筛选；未知预期不转ready、不判通过；专项不会因为“全面”扩大到所有资产。具体使用和数据扩展见 [安全能力](security.md)。

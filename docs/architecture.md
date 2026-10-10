@@ -49,10 +49,12 @@ id、kind（workflow/capability）、category、tags、path、use_when、not_for
 
 ## QA领域边界
 
-qa-workflow按任务选择四能力，独立于product-workflow。qa-test-design提供共用专业规则、标准库辅助工具与本地数据契约；其他QA能力声明它为本地依赖，不因此强制重新设计用例。当前计划放项目.qa，冻结计划/来源与追加执行分开。源、需求、用例都有身份和修订，改需求不继承旧通过。私有Jira连接、分级、评审与设备参数放用户项目配置，不进入共享技能。
+qa-workflow按任务选择五能力，独立于product-workflow。qa-test-design提供共用专业规则、标准库辅助工具与本地数据契约；其他QA能力声明它为本地依赖，不因此强制重新设计用例。当前计划放项目.qa，冻结计划/来源与追加执行分开。源、需求、用例都有身份和修订，改需求不继承旧通过。私有Jira连接、分级、评审与设备参数放用户项目配置，不进入共享技能。
 
 QA参考项目的commit/许可摘要在qa-sources.lock.json；它们只是MIT参考，不是新增运行提供者。sync_catalog同步安装包内的来源记录与许可声明，validate检查摘要；不要把它们写进providers.lock假装调用了上游。
 
 ## Go运行与安装
 
 所有自有确定性逻辑在Go标准库模块中，cmd/amazing-skills为唯一CLI。编译时嵌入当前技能/目录快照；安装将所选技能与同平台运行工具一起复制。修改嵌入材料后必须重新构建。完整操作见docs/go-runtime.md。
+
+功能安全筛选放在qa-test-design内；qa-security-review独立处理指定目标专项。范围、目标和预期依据可选扩展沿用schema1，不新增必填功能维度。OWASP参考只提供方法，不自动采纳为产品规则。

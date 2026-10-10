@@ -1,0 +1,1 @@
+Synthetic model only. Authorized synthetic retest refuses cross-user read/write; no real scan

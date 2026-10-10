@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "0.4.0",
+  "version": "0.5.0",
   "path_base": "skills/",
   "categories": [
     "product",
@@ -255,7 +255,7 @@
         "portable"
       ],
       "path": "qa-workflow/SKILL.md",
-      "use_when": "持续功能QA任务的能力选择、交接与阶段推进",
+      "use_when": "持续功能QA任务或范围限定安全专项的能力选择、交接与阶段推进",
       "not_for": "单纯产品设计或未经授权的外部操作",
       "inputs": [
         "需求、设计和当前QA资产"
@@ -267,7 +267,8 @@
         "qa-test-design",
         "qa-functional-execution",
         "jira-defect-delivery",
-        "qa-test-report"
+        "qa-test-report",
+        "qa-security-review"
       ],
       "side_effects": [
         "本地QA产物；外部写入按独立授权"
@@ -286,7 +287,7 @@
         "portable"
       ],
       "path": "qa-test-design/SKILL.md",
-      "use_when": "从需求与可选Figma编写、审查或持续修订功能用例",
+      "use_when": "从需求与可选Figma编写、审查或持续修订功能用例，筛选范围内功能安全场景",
       "not_for": "直接执行设备操作或自动建Jira",
       "inputs": [
         "需求/设计依据、项目策略、旧用例"
@@ -384,6 +385,35 @@
       ],
       "completion": "范围、来源、结果和未完成项可追溯；结构检查不冒充业务或真实执行",
       "display_name": "测试报告",
+      "level": "capability"
+    },
+    {
+      "id": "qa-security-review",
+      "kind": "capability",
+      "category": "testing",
+      "tags": [
+        "qa",
+        "security",
+        "scope",
+        "portable"
+      ],
+      "path": "qa-security-review/SKILL.md",
+      "use_when": "为指定功能设计或验证安全专项，处理安全风险、越权、会话与数据泄露等模糊请求",
+      "not_for": "普通功能需求自动扩大为全产品扫描，或缺少依据时宣称通过/合规",
+      "inputs": [
+        "目标需求/确认安全基线、当前QA资产、环境与动作授权"
+      ],
+      "outputs": [
+        "安全范围章程、候选与用例/探索目标、缺口、证据和范围限定结论"
+      ],
+      "requires": [
+        "qa-test-design"
+      ],
+      "side_effects": [
+        "本地安全计划；仅授权范围内执行实际检查，不自动安装扫描器或提交Jira"
+      ],
+      "completion": "目标和预期依据可追溯，未知保持缺口，执行与结论不超出范围",
+      "display_name": "安全专项 · 范围与依据检查",
       "level": "capability"
     }
   ],

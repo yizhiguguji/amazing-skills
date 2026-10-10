@@ -117,6 +117,7 @@ Usage: amazing-skills <command> [options]
   providers doctor|setup-engine|run [--skills-root <directory>] [--provider <id>]
   search <quoted query> [--domain chart|style|color|ux|...] [--stack react]
   serve --example customer-followup|project-workbench [--port 8765]
+  security-replay --output <fresh-directory>  (synthetic security model only)
   replay --output <fresh project directory>
 Use --skills-root after installing only where auto-discovery is insufficient.
 Skills are model instructions; tool success does not prove product acceptance.`)
@@ -151,7 +152,7 @@ Skills are model instructions; tool success does not prove product acceptance.`)
 	allowed := map[string][]string{
 		"install": {"target", "skills"}, "validate": {"repo"}, "sync": {"repo"}, "build": {"repo", "output"},
 		"project": {"project", "tokens", "replace"}, "qa": {"project", "label", "before", "input", "run"}, "jira": {"project", "input"},
-		"providers": {"project", "provider", "skills-root"}, "serve": {"repo", "example", "port"}, "replay": {"output"},
+		"providers": {"project", "provider", "skills-root"}, "serve": {"repo", "example", "port"}, "replay": {"output"}, "security-replay": {"output"},
 		"search": {"skills-root", "domain", "stack", "max-results", "json", "full", "design-system", "project-name", "format", "variance", "motion", "density", "persist", "page", "force", "output-dir", "diagnostics"},
 	}
 	for key := range o.Values {
@@ -377,6 +378,17 @@ Skills are model instructions; tool success does not prove product acceptance.`)
 				return err
 			}
 			r, err := Replay(root)
+			result = r
+			return err
+		case "security-replay":
+			if o.Values["output"] == "" {
+				return fmt.Errorf("--output required")
+			}
+			root, err := rootPath(o.Values["output"])
+			if err != nil {
+				return err
+			}
+			r, err := SecurityReplay(root)
 			result = r
 			return err
 		case "build":

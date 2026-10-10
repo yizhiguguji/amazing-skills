@@ -49,6 +49,7 @@ func QACheck(root string) []string {
 		cases := index(plan["cases"], "cases", &errs)
 		dims := index(plan["dimensions"], "dimensions", &errs)
 		gaps := index(plan["gaps"], "gaps", &errs)
+		errs = append(errs, SecurityCheck(plan)...)
 		if len(reqs) == 0 || len(cases) == 0 {
 			errs = append(errs, "Plan needs requirements and cases")
 		}
@@ -236,6 +237,15 @@ func QACheck(root string) []string {
 					}
 				}
 				p := obj(mustRead(path(root, base+"plan.json")))
+				for _, cv := range arr(p["cases"]) {
+					oldCase := obj(cv)
+					for _, tv := range arr(obj(p["security"])["targets"]) {
+						target := obj(tv)
+						if target["id"] == obj(oldCase["security"])["target_id"] {
+							errs = append(errs, SecurityTargetHistory(plan, oldCase, target)...)
+						}
+					}
+				}
 				history = append(history, arr(p["cases"])...)
 				reqHistory = append(reqHistory, arr(p["requirements"])...)
 			}
@@ -246,6 +256,7 @@ func QACheck(root string) []string {
 		}
 		observations := map[string]M{}
 		for _, event := range events {
+			errs = append(errs, SecurityTargetHistory(plan, obj(event["case_snapshot"]), obj(obj(event["security_context"])["target"]))...)
 			history = append(history, event["case_snapshot"])
 			observations[str(event["execution_id"])] = event
 		}
@@ -505,6 +516,9 @@ func Record(root string, observation M) (M, error) {
 		if c == nil || c["status"] != "ready" || num(c["revision"]) != num(observation["case_revision"]) {
 			return fmt.Errorf("Execution needs a ready current case revision")
 		}
+		if e := SecurityRecordAllowed(plan, c, observation); e != nil {
+			return e
+		}
 		for _, key := range []string{"execution_id", "run_id", "environment", "actual"} {
 			if !present(observation[key]) {
 				return fmt.Errorf("Execution missing %s", key)
@@ -555,6 +569,17 @@ func Record(root string, observation M) (M, error) {
 		ev := obj(clone(observation))
 		ev["observation"] = clone(observation)
 		ev["case_snapshot"] = c
+		if c["security"] != nil {
+			meta := obj(c["security"])
+			security := obj(plan["security"])
+			context := M{"mode": security["mode"], "execution": clone(security["execution"])}
+			for _, v := range arr(security["targets"]) {
+				if obj(v)["id"] == meta["target_id"] {
+					context["target"] = clone(v)
+				}
+			}
+			ev["security_context"] = context
+		}
 		ev["evidence_hashes"] = digests
 		previous := ""
 		if len(events) > 0 {
@@ -696,6 +721,9 @@ func Summary(root, run string) (M, error) {
 			defects = M{"source": "saved-local-records", "confirmed_total": n, "current_open": open}
 		}
 		out["defect_summary"] = defects
+		if plan["security"] != nil {
+			out["security_review"] = clone(plan["security"])
+		}
 		if e = write(path(root, ".qa/report.json"), out, false); e != nil {
 			return e
 		}
@@ -712,6 +740,9 @@ func Summary(root, run string) (M, error) {
 		for _, v := range arr(plan["gaps"]) {
 			g := obj(v)
 			lines = append(lines, "- "+str(g["id"])+": "+str(g["question"]))
+		}
+		if plan["security"] != nil {
+			lines = append(lines, "", "## Security scope and candidate decisions", "", "Only the recorded targets and executed evidence are covered; this is not a system security or compliance conclusion.", "", "```json", string(canonical(plan["security"])), "```")
 		}
 		return writeBytes(path(root, ".qa/report.md"), []byte(strings.Join(lines, "\n")+"\n"), false)
 	})
@@ -758,6 +789,16 @@ func ExportCases(root string) (M, error) {
 			}
 			lines = append(lines, "| "+strings.Join(cells, " | ")+" |")
 		}
+		if p["security"] != nil {
+			lines = append(lines, "", "## 安全用例依据与操作边界", "", "| 用例 | 候选/目标 | 判定来源 | 预期状态 | 操作 |", "| --- | --- | --- | --- | --- |")
+			for _, v := range arr(p["cases"]) {
+				c := obj(v)
+				m := obj(c["security"])
+				if len(m) > 0 {
+					lines = append(lines, fmt.Sprintf("| %s@%d | %s/%s | %s | %s | %s |", cell(c["id"]), num(c["revision"]), cell(m["check_id"]), cell(m["target_id"]), cell(string(canonical(m["oracle_refs"]))), cell(m["oracle"]), cell(m["action"])))
+				}
+			}
+		}
 		if e := writeBytes(path(root, ".qa/cases.md"), []byte(strings.Join(lines, "\n")+"\n"), false); e != nil {
 			return e
 		}
@@ -785,6 +826,9 @@ func ExportCases(root string) (M, error) {
 		for _, v := range arr(p["gaps"]) {
 			g := obj(v)
 			lines = append(lines, "- "+str(g["id"])+": "+str(g["question"])+" 关闭条件："+str(g["close_condition"]))
+		}
+		if p["security"] != nil {
+			lines = append(lines, "", "## 安全候选筛选与范围", "", "```json", string(canonical(p["security"])), "```")
 		}
 		return writeBytes(path(root, ".qa/coverage.md"), []byte(strings.Join(lines, "\n")+"\n"), false)
 	})

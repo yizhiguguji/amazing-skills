@@ -34,3 +34,5 @@ amazing-skills qa summary --project /项目
 --run用当前计划中的用例修订对该轮统计。跨轮次每个当前修订取最近有正式结果的轮次；not-run不覆盖旧执行。同轮正式failed不被重试passed覆盖，独立新run复测可呈现最新passed，同时列历史失败。retired/proposed不进当前承诺分母；deferred用例单列延期。状态之和=总数；通过率以passed/(passed+failed)，零分母null。人工/实机、浏览器和模拟分别统计，不能混成实机结论。
 
 脚本只验证结构/引用/版本和复算事实，不确认业务正确、全面覆盖、审批或外部保存。summary自动写report.json/report.md并注明当前来源与范围限制；报告前需模型审查风险、缺口及证据内容。
+
+功能安全候选与独立专项可以使用 [可选安全扩展](security-contract.md)。保持schema_version 1及原11维度；scope/target/check/oracle附加记录范围和判定来源。

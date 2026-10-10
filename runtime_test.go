@@ -60,7 +60,7 @@ func TestCatalogAndProviderIntegrity(t *testing.T) {
 func TestClosure(t *testing.T) {
 	c, e := Catalog(Bundle)
 	need(t, e)
-	for id, n := range map[string]int{"product-workflow": 8, "qa-workflow": 5} {
+	for id, n := range map[string]int{"product-workflow": 8, "qa-workflow": 6} {
 		names, e := Closure(c, []string{id})
 		need(t, e)
 		if len(names) != n {
@@ -83,7 +83,7 @@ func TestInstallAndRelocateRuntimeWithoutPython(t *testing.T) {
 	target := filepath.Join(dir, "portable skills")
 	names, e := Install(Bundle, target, []string{"qa-workflow"}, binary)
 	need(t, e)
-	if len(names) != 5 {
+	if len(names) != 6 {
 		t.Fatal(names)
 	}
 	newTarget := filepath.Join(dir, "moved skills")
@@ -111,6 +111,16 @@ func TestInstallAndRelocateRuntimeWithoutPython(t *testing.T) {
 		t.Fatal(string(out))
 	}
 
+	cmd = exec.Command(installed, "security-replay", "--output", filepath.Join(dir, "security demo"))
+	cmd.Dir = dir
+	cmd.Env = []string{"PATH=" + filepath.Join(dir, "empty-path")}
+	out, e = cmd.CombinedOutput()
+	if e != nil {
+		t.Fatalf("Portable security replay: %v %s", e, out)
+	}
+	if !strings.Contains(string(out), "unknown_expectation_rejected") || !strings.Contains(string(out), "synthetic-fixture") {
+		t.Fatal(string(out))
+	}
 	designInstall := filepath.Join(dir, "workbench skills")
 	_, e = Install(Bundle, designInstall, []string{"product-workflow"}, binary)
 	need(t, e)
@@ -157,7 +167,7 @@ func TestInstalledEntryPoints(t *testing.T) {
 	target := filepath.Join(dir, "skills")
 	names, e := Install(Bundle, target, nil, exe)
 	need(t, e)
-	if len(names) != 13 {
+	if len(names) != 14 {
 		t.Fatal(names)
 	}
 	c := obj(mustRead(filepath.Join(target, "skill-router/references/catalog.json")))

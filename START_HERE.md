@@ -44,7 +44,7 @@ START_HERE.md → skill-router（总入口）
                  │           ├─ 产品定义 → finesse-brief
                  │           ├─ 界面交付 → Impeccable / UI UX Pro Max
                  │           └─ 实现验收
-                 ├─ 功能QA → qa-workflow → 用例 / 执行 / 缺陷 / 报告
+                 ├─ 功能QA → qa-workflow → 用例（含相关功能安全） / 安全专项 / 执行 / 缺陷 / 报告
                  └─ 单点任务 → 直接选择对应专业能力
 ```
 
@@ -53,3 +53,5 @@ START_HERE.md → skill-router（总入口）
 安装方法和维护说明见 [README](README.md)，完整机器目录见 [catalog.json](catalog.json)。
 
 运行工具已迁移到Go，纯读取Skill不需要Python。安装与独立程序使用见 [Go运行工具](docs/go-runtime.md)。
+
+“帮这份需求出用例，看看有没有安全风险”选择相关功能安全场景；“这个功能做一次安全专项”进入qa-security-review。都沿用本期目标和已确认预期，不扩大到全产品扫描。

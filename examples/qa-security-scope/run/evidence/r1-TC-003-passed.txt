@@ -1,0 +1,1 @@
+Synthetic model only. Fixed fixture refuses cross-user read/write; retry kept separate

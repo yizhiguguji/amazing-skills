@@ -1,0 +1,1 @@
+Synthetic model only. Model HTML encoding returns escaped text; no browser execution proven

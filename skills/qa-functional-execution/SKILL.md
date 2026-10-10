@@ -13,3 +13,5 @@ description: 执行或复测范围已确认的功能用例，按实际工具记�
 记录mode、profile、版本/设备、时间/时区和结果。fixture/浏览器模拟不能报告原生锁屏、弱网射频或热状态通过。热与性能没有可测指标/判据时只报观察或阻塞，不编阈值。
 
 本地结果按 [数据契约](../qa-test-design/references/data-contract.md) 用 amazing-skills qa record保存；缺工具用blocked/not-run及具体原因。交付真实结果、证据、失败/阻塞和未执行。格式/脚本检查通过不等于被测功能通过。新异常有依据才进入 `jira-defect-delivery`，执行授权不等于建单授权。
+
+安全相关用例先核对判定依据及实际动作边界；ready仅代表设计可执行。涉及修改/重放请求或专项工具的验证按qa-security-review的章程进行；未知预期只记观察，不保存passed/failed。

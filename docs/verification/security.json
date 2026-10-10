@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "version": "0.5.0",
+  "purpose": "Generic functional-security screening and separately scoped security review; example rules are synthetic only",
+  "checks": {
+    "go_tests_42": "passed",
+    "go_vet": "passed",
+    "catalog_sync_and_validation": "passed",
+    "new_security_skill_discovery_and_references": "passed",
+    "source_fixture_replay": "passed",
+    "scope_expansion_rejected": "passed",
+    "unknown_expectation_not_executable": "passed",
+    "unknown_policy_proposed_not_passed": "passed",
+    "specialist_execution_needs_authorized_target_and_action": "passed",
+    "functional_label_cannot_bypass_active_action_authorization": "passed",
+    "same_run_first_failure_retained": "passed",
+    "changed_requirement_revision_not_inheriting_pass": "passed",
+    "withdrawal_retains_history": "passed",
+    "changed_target_context_requires_case_revision": "passed",
+    "security_export_and_report_include_scope": "passed",
+    "portable_moved_install_without_go_python_path": "passed",
+    "local_14_skills_install_and_backup": "passed",
+    "local_installed_runtime_no_go_python_path_replay": "passed"
+  },
+  "pro_max_regression": {
+    "oracle_scenarios": 1807,
+    "status": "passed in full Go suite"
+  },
+  "routing_review": {
+    "mode": "authoring agent semantic review",
+    "scenario_count": 6,
+    "independent_agent_or_automatic_semantic_eval": false,
+    "record": "examples/qa-security-scope/README.md"
+  },
+  "replay": {
+    "mode": "synthetic-fixture",
+    "checks": {
+      "new_revision_not_inheriting_pass": "passed",
+      "same_run_failure_retained": "passed",
+      "scope_expansion_rejected": "passed",
+      "specialist_without_authorization_rejected": "passed",
+      "unknown_expectation_rejected": "passed",
+      "withdrawal_and_changed_revision": "passed"
+    },
+    "first_run_counts": {
+      "blocked": 0,
+      "deferred": 0,
+      "failed": 1,
+      "not-run": 0,
+      "passed": 3
+    },
+    "current_run_counts": {
+      "blocked": 0,
+      "deferred": 0,
+      "failed": 0,
+      "not-run": 2,
+      "passed": 1
+    },
+    "proposed": [
+      "TC-005"
+    ],
+    "retired": [
+      "TC-004"
+    ],
+    "historical_failures": [
+      "r1-TC-003-failed"
+    ]
+  },
+  "installed": {
+    "version": "0.5.0",
+    "skill_count": 14,
+    "location": "~/.codex/skills",
+    "previous_installation": "Preserved outside discovery directory under ~/.codex/skill-backups",
+    "providers": [
+      {
+        "id": "finesse-brief",
+        "revision": "d1f45618b605587b882a20d72eb0d8ec666990bd",
+        "integrity": "passed"
+      },
+      {
+        "id": "impeccable",
+        "revision": "d631a8827f99414d2b6daba4ef08b7f8701751d7",
+        "integrity": "passed"
+      },
+      {
+        "id": "ui-ux-pro-max",
+        "revision": "50d8a7de0900119855614541f15a1a616691eb33",
+        "integrity": "passed"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "examples/qa-security-scope/sources/r1.md",
+      "sha256": "3033eac8051838bfd2c82691d672d628f4a747bb88073a44f8bb2e690a572061"
+    },
+    {
+      "path": "examples/qa-security-scope/sources/r2.md",
+      "sha256": "6fd26d672406dd577d5e9d95c4df916cbb48b0c474c2cab6b79bc94b183b7f99"
+    }
+  ],
+  "distribution": {
+    "cross_compiled_only": "Other operating systems require actual execution validation",
+    "platforms": {
+      "amazing-skills-darwin-amd64": "930472359dcdbe56ce094fc7f0e6242030c41fc7ce664d6276eeb7866ce2a383",
+      "amazing-skills-darwin-arm64": "dbea768f84ab29c8f402311b77e944801ad388a92afc5fa84de37df18700078f",
+      "amazing-skills-linux-amd64": "b714e3856548a6e9279de115697e745c600850415f197c6d862d1e45500da060",
+      "amazing-skills-linux-arm64": "8c88301ab23ecb179f36738ce0d44b6623535f2af6e2b32794edbb669e32aeaa",
+      "amazing-skills-windows-amd64.exe": "e8812b8d19fe393aeeb98a0f6563f7e27730af8e8b94eb79e6e56bb8df879244",
+      "amazing-skills-windows-arm64.exe": "05503f84ca5545d01c1dd699bd315f32a7d36bae4df4581ae8a50898b739e029"
+    },
+    "python_required": false,
+    "runtime": "Go standalone binary"
+  },
+  "limitations": [
+    "Deterministic guards validate references, not natural language correctness or actual authorization",
+    "No actual application/browser/device penetration test, scanner, or external Jira submission",
+    "Other platform binaries cross-compiled but not executed",
+    "Existing QA storage and historical records remain compatible"
+  ]
+}

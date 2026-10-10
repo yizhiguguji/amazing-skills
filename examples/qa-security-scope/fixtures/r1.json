@@ -1,0 +1,451 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "S1",
+      "version": "1",
+      "kind": "document",
+      "status": "accepted",
+      "locator": "sources/r1.md",
+      "sha256": "3033eac8051838bfd2c82691d672d628f4a747bb88073a44f8bb2e690a572061"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "revision": 1,
+      "status": "active",
+      "text": "自己的昵称按明确长度范围保存；拒绝非法长度且数据不变",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "AC-1"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "revision": 1,
+      "status": "active",
+      "text": "测试用户仅能读写自己的昵称",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "AC-2"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "revision": 1,
+      "status": "active",
+      "text": "昵称预览按普通文本显示，不执行标记",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "AC-3"
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "TC-001",
+      "revision": 1,
+      "status": "ready",
+      "objective": "保存自己的合法昵称",
+      "module": "个人资料",
+      "subfunction": "昵称",
+      "category": "positive",
+      "impact": "medium",
+      "requirement_refs": [
+        {
+          "id": "R1",
+          "revision": 1
+        }
+      ],
+      "dimensions": [
+        "happy"
+      ],
+      "method": "scenario",
+      "preconditions": [
+        "使用合成测试用户甲和乙及模型内昵称资源；无真实服务"
+      ],
+      "data": "{\"owner\":\"test-user-a\",\"other\":\"test-user-b\"}",
+      "steps": [
+        "保存自己的合法昵称，观察返回和对应资源"
+      ],
+      "expected": [
+        "仅自己的昵称更新成功"
+      ],
+      "security": {
+        "check_id": "SC1",
+        "target_id": "T1",
+        "oracle": "confirmed",
+        "oracle_refs": [
+          {
+            "id": "R1",
+            "revision": 1
+          }
+        ],
+        "action": "observe"
+      }
+    },
+    {
+      "id": "TC-002",
+      "revision": 1,
+      "status": "ready",
+      "objective": "拒绝超过上限的昵称且数据不变",
+      "module": "个人资料",
+      "subfunction": "昵称",
+      "category": "negative",
+      "impact": "medium",
+      "requirement_refs": [
+        {
+          "id": "R1",
+          "revision": 1
+        }
+      ],
+      "dimensions": [
+        "boundary"
+      ],
+      "method": "boundary-value",
+      "preconditions": [
+        "使用合成测试用户甲和乙及模型内昵称资源；无真实服务"
+      ],
+      "data": "{\"max\":13}",
+      "steps": [
+        "拒绝超过上限的昵称且数据不变，观察返回和对应资源"
+      ],
+      "expected": [
+        "拒绝且原数据不变"
+      ],
+      "security": {
+        "check_id": "SC1",
+        "target_id": "T1",
+        "oracle": "confirmed",
+        "oracle_refs": [
+          {
+            "id": "R1",
+            "revision": 1
+          }
+        ],
+        "action": "observe"
+      }
+    },
+    {
+      "id": "TC-003",
+      "revision": 1,
+      "status": "ready",
+      "objective": "跨测试用户读写昵称被拒绝",
+      "module": "个人资料",
+      "subfunction": "昵称",
+      "category": "negative",
+      "impact": "medium",
+      "requirement_refs": [
+        {
+          "id": "R2",
+          "revision": 1
+        }
+      ],
+      "dimensions": [
+        "negative"
+      ],
+      "method": "decision-table",
+      "preconditions": [
+        "使用合成测试用户甲和乙及模型内昵称资源；无真实服务"
+      ],
+      "data": "{\"owner\":\"test-user-a\",\"other\":\"test-user-b\"}",
+      "steps": [
+        "跨测试用户读写昵称被拒绝，观察返回和对应资源"
+      ],
+      "expected": [
+        "读取不返回对方昵称，写入被拒绝且对方数据不变"
+      ],
+      "security": {
+        "check_id": "SC2",
+        "target_id": "T1",
+        "oracle": "confirmed",
+        "oracle_refs": [
+          {
+            "id": "R2",
+            "revision": 1
+          }
+        ],
+        "action": "observe"
+      }
+    },
+    {
+      "id": "TC-004",
+      "revision": 1,
+      "status": "ready",
+      "objective": "预览昵称为文本",
+      "module": "个人资料",
+      "subfunction": "昵称",
+      "category": "negative",
+      "impact": "medium",
+      "requirement_refs": [
+        {
+          "id": "R3",
+          "revision": 1
+        }
+      ],
+      "dimensions": [
+        "interaction"
+      ],
+      "method": "scenario",
+      "preconditions": [
+        "使用合成测试用户甲和乙及模型内昵称资源；无真实服务"
+      ],
+      "data": "<em>示例</em>",
+      "steps": [
+        "预览昵称为文本，观察返回和对应资源"
+      ],
+      "expected": [
+        "标记转为文本，不作为标记解析"
+      ],
+      "security": {
+        "check_id": "SC3",
+        "target_id": "T1",
+        "oracle": "confirmed",
+        "oracle_refs": [
+          {
+            "id": "R3",
+            "revision": 1
+          }
+        ],
+        "action": "observe"
+      }
+    },
+    {
+      "id": "TC-005",
+      "revision": 1,
+      "status": "proposed",
+      "objective": "会话失效时昵称保存的观察目标",
+      "module": "个人资料",
+      "subfunction": "昵称",
+      "category": "exploratory",
+      "impact": "medium",
+      "requirement_refs": [
+        {
+          "id": "R2",
+          "revision": 1
+        }
+      ],
+      "dimensions": [
+        "state"
+      ],
+      "method": "state-transition",
+      "preconditions": [
+        "使用合成测试用户甲和乙及模型内昵称资源；无真实服务"
+      ],
+      "data": "{\"owner\":\"test-user-a\",\"other\":\"test-user-b\"}",
+      "steps": [],
+      "expected": [],
+      "security": {
+        "check_id": "SC4",
+        "target_id": "T1",
+        "oracle": "unknown",
+        "oracle_refs": [],
+        "action": "observe"
+      }
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "interaction",
+      "decision": "include",
+      "reason": "本期确认规则的直接场景",
+      "requirement_ids": [
+        "R3"
+      ],
+      "case_ids": [
+        "TC-004"
+      ]
+    },
+    {
+      "id": "happy",
+      "decision": "include",
+      "reason": "本期确认规则的直接场景",
+      "requirement_ids": [
+        "R1"
+      ],
+      "case_ids": [
+        "TC-001"
+      ]
+    },
+    {
+      "id": "negative",
+      "decision": "include",
+      "reason": "本期确认规则的直接场景",
+      "requirement_ids": [
+        "R2"
+      ],
+      "case_ids": [
+        "TC-003"
+      ]
+    },
+    {
+      "id": "boundary",
+      "decision": "include",
+      "reason": "本期确认规则的直接场景",
+      "requirement_ids": [
+        "R1"
+      ],
+      "case_ids": [
+        "TC-002"
+      ]
+    },
+    {
+      "id": "state",
+      "decision": "clarify",
+      "reason": "会话失效行为未定义",
+      "gap_ids": [
+        "G1"
+      ]
+    },
+    {
+      "id": "app-switch",
+      "decision": "not-applicable",
+      "reason": "本模拟需求无此平台事件/行为，未扩大为专项",
+      "requirement_ids": [],
+      "case_ids": []
+    },
+    {
+      "id": "background",
+      "decision": "not-applicable",
+      "reason": "本模拟需求无此平台事件/行为，未扩大为专项",
+      "requirement_ids": [],
+      "case_ids": []
+    },
+    {
+      "id": "lock",
+      "decision": "not-applicable",
+      "reason": "本模拟需求无此平台事件/行为，未扩大为专项",
+      "requirement_ids": [],
+      "case_ids": []
+    },
+    {
+      "id": "offline",
+      "decision": "not-applicable",
+      "reason": "本模拟需求无此平台事件/行为，未扩大为专项",
+      "requirement_ids": [],
+      "case_ids": []
+    },
+    {
+      "id": "weak-network",
+      "decision": "not-applicable",
+      "reason": "本模拟需求无此平台事件/行为，未扩大为专项",
+      "requirement_ids": [],
+      "case_ids": []
+    },
+    {
+      "id": "thermal",
+      "decision": "not-applicable",
+      "reason": "本模拟需求无此平台事件/行为，未扩大为专项",
+      "requirement_ids": [],
+      "case_ids": []
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G1",
+      "requirement_ids": [
+        "R2"
+      ],
+      "question": "昵称保存时会话失效如何处理？时限与提示未定义。",
+      "close_condition": "项目确认该行为基线及其版本；再修订用例为ready。"
+    }
+  ],
+  "security": {
+    "mode": "functional",
+    "scope_requirement_ids": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "targets": [
+      {
+        "id": "T1",
+        "platform": "web-model",
+        "locator": "fixture:profile/nickname",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3"
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "id": "SC1",
+        "family": "input-integrity",
+        "decision": "include",
+        "reason": "本期昵称有明确码点长度与保存规则",
+        "requirement_ids": [
+          "R1"
+        ],
+        "target_ids": [
+          "T1"
+        ],
+        "case_ids": [
+          "TC-001",
+          "TC-002"
+        ]
+      },
+      {
+        "id": "SC2",
+        "family": "authorization",
+        "decision": "include",
+        "reason": "同功能确认基线只允许读写自己的昵称",
+        "requirement_ids": [
+          "R2"
+        ],
+        "target_ids": [
+          "T1"
+        ],
+        "case_ids": [
+          "TC-003"
+        ]
+      },
+      {
+        "id": "SC3",
+        "family": "output-context",
+        "decision": "include",
+        "reason": "本期存在按文本显示昵称的预览",
+        "requirement_ids": [
+          "R3"
+        ],
+        "target_ids": [
+          "T1"
+        ],
+        "case_ids": [
+          "TC-004"
+        ]
+      },
+      {
+        "id": "SC4",
+        "family": "session",
+        "decision": "clarify",
+        "reason": "保存的会话失效预期与时限未知，不造固定规则",
+        "requirement_ids": [
+          "R2"
+        ],
+        "target_ids": [
+          "T1"
+        ],
+        "case_ids": [
+          "TC-005"
+        ],
+        "gap_ids": [
+          "G1"
+        ]
+      }
+    ],
+    "exclusions": [
+      "头像/支付/上传/密码重置",
+      "其他接口和全站扫描",
+      "真实服务与真实设备"
+    ]
+  }
+}
