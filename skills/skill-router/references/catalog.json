@@ -455,7 +455,7 @@
   },
   "runtime": {
     "implementation": "go",
-    "minimum_build_version": "1.23",
+    "minimum_build_version": "1.27.2",
     "installed_directory": ".amazing-skills",
     "executable": "amazing-skills",
     "windows_executable": "amazing-skills.exe",

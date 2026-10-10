@@ -12,7 +12,7 @@ Go的`--design-system`按原版推理规则选择产品、风格、颜色、字�
 
 ## 准备和执行
 
-在仓库根目录（构建需要Go 1.23+）：
+在仓库根目录（构建需要Go 1.27.2+）：
 
 ```bash
 go run ./cmd/amazing-skills providers doctor

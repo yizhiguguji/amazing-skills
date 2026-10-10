@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-10",
+  "compiler": "go1.27.2",
+  "minimum_build_version": "1.27.2",
+  "release_source": "https://go.dev/doc/devel/release",
+  "checks": {
+    "catalog_sync": "passed",
+    "catalog_validate": "passed",
+    "go_test_all": "passed",
+    "go_vet_all": "passed",
+    "local_install": "updated with backup",
+    "installed_binary_compiler": "go1.27.2",
+    "security_replay_without_go_python": "six checks passed"
+  },
+  "distribution": {
+    "cross_compiled_only": "Other operating systems require actual execution validation",
+    "platforms": {
+      "amazing-skills-darwin-amd64": "58909980712d52b6f9d97288f427567b19889328ff570954ce82c4df3970abd8",
+      "amazing-skills-darwin-arm64": "864d6fad6eb5217e2926228dd4c6ad530e02bdc5d65b92a0edd71760e403e6f0",
+      "amazing-skills-linux-amd64": "4cda5ce5e71aea7c6b1531f348817c87e1bb60ef9026ffcdf83a363d88b1a27e",
+      "amazing-skills-linux-arm64": "7564a817e5039dd0b45ddba1e4894ab0bab8806cfd4b60c665162c6af3727069",
+      "amazing-skills-windows-amd64.exe": "47d1ff5de3ed2b0d40f937864abed1eda7177c40444404c10729d3b1b30b241d",
+      "amazing-skills-windows-arm64.exe": "e0f6a4c8406588a955e00bc00d437c372265b736762ec2515ef469564d0008cb"
+    },
+    "python_required": false,
+    "runtime": "Go standalone binary"
+  },
+  "limitations": [
+    "Only darwin-arm64 executed locally; other platforms cross-compiled only",
+    "Synthetic replay does not verify real application security",
+    "Future security patches require rebuilding distributed binaries"
+  ]
+}
