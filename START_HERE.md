@@ -42,6 +42,7 @@ $skill-router 帮我做一个客户跟进工作台，经常忘记联系客户，
 START_HERE.md → skill-router（总入口）
                  ├─ 工作台 → product-workflow
                  │           ├─ 产品定义 → finesse-brief
+                 │           ├─ 参考提取 → 设计系统包与组件预览（按需）
                  │           ├─ 界面交付 → Impeccable / UI UX Pro Max
                  │           └─ 实现验收
                  ├─ 功能QA → qa-workflow → 用例（含相关功能安全） / 安全专项 / 执行 / 缺陷 / 报告
@@ -49,6 +50,8 @@ START_HERE.md → skill-router（总入口）
 ```
 
 “只定义产品”停在规格，“只写用例”停在用例。图示表达按需交接，不代表所有请求都走完所有技能。finesse-brief面向Web工作台定义，不是所有产品的通用编排器。
+
+“想安静一点，还没想好样式”也能开始：AI先利用目标、任务和现有界面形成标明推断的方向，缺关键事实才提问；无需先写完整需求或选风格。参考提取与设计包可单独调用，完整实现请求才继续接入代码、设计锁和实际验收。
 
 安装方法和维护说明见 [README](README.md)，完整机器目录见 [catalog.json](catalog.json)。
 

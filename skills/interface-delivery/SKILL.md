@@ -1,10 +1,16 @@
 ---
 name: interface-delivery
-description: 依据明确产品规格和固定设计规范实现或修正 Web 界面，支持 Impeccable 与 UI UX Pro Max 适配；不重新定义业务范围。
+description: 依据产品目标和现有规范设计、实现或修正 Web 界面，可将模糊视觉意图接入参考提取与组件预览；不重新定义业务范围。
 ---
 # 界面交付
 
 输入规格、已有代码与 DESIGN.md。如核心数据源或任务仍不明确，报告具体缺口；不要自行增加模块填补空白。
+
+规格与视觉输入可以不完整。已有上下文能支持的部分先推进：将抽象诉求转成标记为推断的可撤销方向，只询问会改变任务、方向或范围的缺口。工作台缺业务定义时交给 workbench-definition；仅视觉模糊时不重开产品访谈。
+
+需要提取参考、建立或整理设计系统时读取 ../design-reference-extraction/SKILL.md 及其包契约，形成来源明确的 DESIGN.md、tokens 与组件预览。已有规范只补受影响部分，无参考也可从任务推导，不强迫用户选样例。空白项目在 project init 前 apply 资源包；已有 DESIGN.md 或代码先继承并按授权合并，apply 拒绝覆盖不是要求用户重新授权已明确的局部修改。
+
+先在浏览器查看包的 design-preview.html，再把同一 tokens.css 接入实际页面（例如 link/import），不要复制一套色值。必须记录实际导入路径；生成预览不是产品实现。若应用需要变量映射，记录源变量与目标变量关系，并在实际界面核对计算样式。组件预览通过后仍执行产品状态与行为验收。无浏览器时记录视觉未验证，继续不依赖它的本地工作。
 
 使用 Impeccable 前读 [references/impeccable.md](references/impeccable.md)，使用 UI UX Pro Max 前读 [references/ui-ux-pro-max.md](references/ui-ux-pro-max.md)。确认实际可用后执行对应技能指令；未安装时使用内置方法，明确记录 provider=builtin。
 

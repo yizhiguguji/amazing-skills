@@ -58,3 +58,13 @@ QA参考项目的commit/许可摘要在qa-sources.lock.json；它们只是MIT参
 所有自有确定性逻辑在Go标准库模块中，cmd/amazing-skills为唯一CLI。编译时嵌入当前技能/目录快照；安装将所选技能与同平台运行工具一起复制。修改嵌入材料后必须重新构建。完整操作见docs/go-runtime.md。
 
 功能安全筛选放在qa-test-design内；qa-security-review独立处理指定目标专项。范围、目标和预期依据可选扩展沿用schema1，不新增必填功能维度。OWASP参考只提供方法，不自动采纳为产品规则。
+
+## 参考提取与设计资源（0.6.0）
+
+设计参考提取是独立能力 design-reference-extraction，不改变技能扁平发现。其 assets/systems 下携带自建合成设计包，随该技能安装；资源包不是新 provider，不加入 providers.lock，也不向所有技能注入设计上下文。interface-delivery 的必要本地依赖包含它，工作台子包据此携带完整闭环；QA子包不增加设计依赖。
+
+允许从一句抽象意图开始，依据已知任务形成可撤销草案、标注推断；只有会改变方向、数据可行性或范围的缺口才询问。不要求用户先提供完整规格或参考截图。产品定义仍由既有工作台契约管理，视觉提取不发明业务目标。
+
+资源包 contract 见 skills/design-reference-extraction/references/package-contract.md：design-system.json 管身份/来源/版本，DESIGN.md 管设计意图，tokens.css 管精确值，design-evidence.json 管依据与未知，design-preview.html 是派生产物。组件预览消费同一 tokens，改变源后重新生成；应用直接导入或明确记录变量映射。包检查只验证结构、证据摘要与预览同步，行为和视觉仍需真实验收。
+
+空白项目先 apply 再 project init，后者仅补缺失模板；既有项目按授权合并，不引入第二份设计规范。apply 拒绝覆盖任何包目标及设计锁，成功只登记选择来源，不改变阶段或通过状态。现有 project lock-design/check-design 继续保护项目 DESIGN.md 与实际 tokens。DESIGN.md 中不重复抄精确 token 值；发现意图与代码冲突需更新原有 decisions 并协调，不能自动择一覆盖。

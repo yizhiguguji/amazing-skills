@@ -1,0 +1,16 @@
+{
+  "artifacts": [
+    {
+      "mode": "file",
+      "path": "DESIGN.md",
+      "sha256": "e0eb8fc8c279641dceb80ee29540684ef9360562543dd55af82e6a4a35f7a155"
+    },
+    {
+      "mode": "css-root",
+      "path": "tokens.css",
+      "sha256": "5b980572fd927245c6e1a32cbaee90bd9cb1d233a77fbe971568d335874859db"
+    }
+  ],
+  "created_at": "2026-10-15T02:43:46.817119Z",
+  "schema_version": 1
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "0.5.0",
+  "version": "0.6.0",
   "path_base": "skills/",
   "categories": [
     "product",
@@ -102,6 +102,35 @@
       "level": "capability"
     },
     {
+      "id": "design-reference-extraction",
+      "kind": "capability",
+      "category": "design",
+      "tags": [
+        "reference",
+        "design-system",
+        "evidence",
+        "preview"
+      ],
+      "path": "design-reference-extraction/SKILL.md",
+      "use_when": "将抽象视觉意图、截图、网站或已有界面形成有证据的设计方向、设计系统包和组件预览",
+      "not_for": "重定义业务范围、自动品牌复刻或把组件预览当成产品验收",
+      "inputs": [
+        "抽象目标或参考材料（均可不完整）",
+        "已有代码、规范和授权范围"
+      ],
+      "outputs": [
+        "DESIGN.md、tokens.css 与设计系统包",
+        "分级来源证据、组件预览和交接"
+      ],
+      "requires": [],
+      "side_effects": [
+        "本地设计包、组件预览与证据；不自动下载资产或发布"
+      ],
+      "completion": "设计方向可追溯，推断和未知显式，包校验及浏览器检查分别报告",
+      "display_name": "参考提取与设计系统",
+      "level": "capability"
+    },
+    {
       "id": "interface-delivery",
       "kind": "capability",
       "category": "design",
@@ -111,20 +140,21 @@
         "design-system"
       ],
       "path": "interface-delivery/SKILL.md",
-      "use_when": "按明确规格实现或修改 Web 界面",
+      "use_when": "从产品目标和现有规范设计、实现或修改 Web 界面，按需衔接参考提取与预览",
       "not_for": "后端独立项目、Jira 操作",
       "inputs": [
-        "产品规格",
-        "现有代码和设计规范"
+        "产品目标或规格（允许草案）",
+        "现有代码、设计规范或参考"
       ],
       "outputs": [
-        "DESIGN.md",
-        "界面代码"
+        "DESIGN.md、tokens 与组件预览",
+        "界面代码与实际检查记录"
       ],
       "requires": [
         "skill-router",
         "impeccable",
-        "ui-ux-pro-max"
+        "ui-ux-pro-max",
+        "design-reference-extraction"
       ],
       "side_effects": [
         "设计文件和代码",

@@ -10,10 +10,14 @@ import (
 )
 
 func PreviewHandler(repo, example string) (http.Handler, error) {
-	if !member(example, "customer-followup", "project-workbench") {
+	if !member(example, "customer-followup", "project-workbench", "design-system-loop") {
 		return nil, fmt.Errorf("Unknown example")
 	}
 	files := map[string]string{"/": "index.html", "/index.html": "index.html", "/styles.css": "styles.css", "/app.js": "app.js"}
+	if example == "design-system-loop" {
+		files["/tokens.css"] = "tokens.css"
+		files["/design-preview.html"] = "design-preview.html"
+	}
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		name, ok := files[r.URL.Path]
 		if !ok || r.Method != "GET" {
@@ -26,10 +30,10 @@ func PreviewHandler(repo, example string) (http.Handler, error) {
 			return
 		}
 		mime := "text/html; charset=utf-8"
-		if name == "styles.css" {
+		if filepath.Ext(name) == ".css" {
 			mime = "text/css"
 		}
-		if name == "app.js" {
+		if filepath.Ext(name) == ".js" {
 			mime = "text/javascript"
 		}
 		w.Header().Set("Content-Type", mime)

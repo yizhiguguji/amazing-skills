@@ -60,7 +60,7 @@ func TestCatalogAndProviderIntegrity(t *testing.T) {
 func TestClosure(t *testing.T) {
 	c, e := Catalog(Bundle)
 	need(t, e)
-	for id, n := range map[string]int{"product-workflow": 8, "qa-workflow": 6} {
+	for id, n := range map[string]int{"product-workflow": 9, "qa-workflow": 6} {
 		names, e := Closure(c, []string{id})
 		need(t, e)
 		if len(names) != n {
@@ -127,6 +127,24 @@ func TestInstallAndRelocateRuntimeWithoutPython(t *testing.T) {
 	designMoved := filepath.Join(dir, "moved workbench")
 	need(t, os.Rename(designInstall, designMoved))
 	designBinary := filepath.Join(designMoved, ".amazing-skills/amazing-skills")
+	packageRoot := filepath.Join(dir, "portable design package")
+	packageProject := filepath.Join(dir, "portable package project")
+	for _, args := range [][]string{
+		{"design-system", "init", "--preset", "precise-console", "--output", packageRoot},
+		{"design-system", "check", "--package", packageRoot},
+		{"design-system", "apply", "--package", packageRoot, "--project", packageProject},
+		{"design-system", "preview", "--package", packageProject, "--replace"},
+		{"project", "lock-design", "--project", packageProject, "--tokens", "tokens.css"},
+		{"project", "check-design", "--project", packageProject},
+	} {
+		cmd = exec.Command(designBinary, args...)
+		cmd.Dir = dir
+		cmd.Env = []string{"PATH=" + filepath.Join(dir, "empty-path")}
+		out, e = cmd.CombinedOutput()
+		if e != nil {
+			t.Fatalf("Portable design package %v: %v %s", args, e, out)
+		}
+	}
 	designProject := filepath.Join(dir, "design project")
 	cmd = exec.Command(designBinary, "search", "SaaS dashboard dark mode", "--design-system", "--project-name", "Portable Demo", "--density", "8", "--motion", "2", "--persist", "--output-dir", designProject, "--json")
 	cmd.Dir = dir
@@ -167,7 +185,7 @@ func TestInstalledEntryPoints(t *testing.T) {
 	target := filepath.Join(dir, "skills")
 	names, e := Install(Bundle, target, nil, exe)
 	need(t, e)
-	if len(names) != 14 {
+	if len(names) != 15 {
 		t.Fatal(names)
 	}
 	c := obj(mustRead(filepath.Join(target, "skill-router/references/catalog.json")))

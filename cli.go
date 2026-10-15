@@ -112,11 +112,15 @@ Usage: amazing-skills <command> [options]
   sync [--repo <repository>]
   build --output <directory> [--repo <repository>]  (requires Go compiler)
   project init|check|lock-design|check-design --project <path> [--tokens styles.css]
+  design-system list|init|check|preview|apply [--package <directory>]
+    init --preset calm-paper|precise-console --output <fresh-directory>
+    preview --package <directory> [--replace]
+    apply --package <directory> --project <path>  (never overwrites)
   qa init|check|snapshot|impact|record|summary|export-cases --project <path>
   jira draft|check-receipt --project <path> --input <json>
   providers doctor|setup-engine|run [--skills-root <directory>] [--provider <id>]
   search <quoted query> [--domain chart|style|color|ux|...] [--stack react]
-  serve --example customer-followup|project-workbench [--port 8765]
+  serve --example customer-followup|project-workbench|design-system-loop [--port 8765]
   security-replay --output <fresh-directory>  (synthetic security model only)
   replay --output <fresh project directory>
 Use --skills-root after installing only where auto-discovery is insufficient.
@@ -126,7 +130,7 @@ Skills are model instructions; tool success does not prove product acceptance.`)
 	command := args[0]
 	rest := args[1:]
 	action := ""
-	if member(command, "project", "qa", "jira", "providers") {
+	if member(command, "project", "qa", "jira", "providers", "design-system") {
 		if len(rest) == 0 {
 			fmt.Fprintln(out, "Missing subcommand")
 			return 1
@@ -152,7 +156,8 @@ Skills are model instructions; tool success does not prove product acceptance.`)
 	allowed := map[string][]string{
 		"install": {"target", "skills"}, "validate": {"repo"}, "sync": {"repo"}, "build": {"repo", "output"},
 		"project": {"project", "tokens", "replace"}, "qa": {"project", "label", "before", "input", "run"}, "jira": {"project", "input"},
-		"providers": {"project", "provider", "skills-root"}, "serve": {"repo", "example", "port"}, "replay": {"output"}, "security-replay": {"output"},
+		"design-system": {"package", "preset", "output", "project", "replace"},
+		"providers":     {"project", "provider", "skills-root"}, "serve": {"repo", "example", "port"}, "replay": {"output"}, "security-replay": {"output"},
 		"search": {"skills-root", "domain", "stack", "max-results", "json", "full", "design-system", "project-name", "format", "variance", "motion", "density", "persist", "page", "force", "output-dir", "diagnostics"},
 	}
 	for key := range o.Values {
@@ -181,7 +186,7 @@ Skills are model instructions; tool success does not prove product acceptance.`)
 			return err
 		}
 		project := o.Values["project"]
-		if member(command, "project", "qa", "jira") || (command == "providers" && action != "doctor") {
+		if member(command, "project", "qa", "jira") || (command == "providers" && action != "doctor") || (command == "design-system" && action == "apply") {
 			if project == "" {
 				return fmt.Errorf("--project is required")
 			}
@@ -217,6 +222,58 @@ Skills are model instructions; tool success does not prove product acceptance.`)
 				return err
 			}
 			result = M{"catalog_snapshots": "synchronized"}
+		case "design-system":
+			if len(o.Args) != 0 {
+				return fmt.Errorf("Unexpected design-system arguments")
+			}
+			flags := map[string][]string{"list": {}, "init": {"preset", "output"}, "check": {"package"}, "preview": {"package", "replace"}, "apply": {"package", "project"}}
+			if _, ok := flags[action]; !ok {
+				return fmt.Errorf("Unknown design-system subcommand")
+			}
+			for k := range o.Values {
+				if !member(k, flags[action]...) {
+					return fmt.Errorf("Unsupported design-system %s option: --%s", action, k)
+				}
+			}
+			switch action {
+			case "list":
+				r, err := DesignSystemList()
+				result = r
+				return err
+			case "init":
+				if o.Values["output"] == "" || o.Values["preset"] == "" {
+					return fmt.Errorf("--output and --preset required")
+				}
+				r, err := DesignSystemInit(o.Values["output"], o.Values["preset"])
+				result = r
+				return err
+			default:
+				if o.Values["package"] == "" {
+					return fmt.Errorf("--package required")
+				}
+				root, err := rootPath(o.Values["package"])
+				if err != nil {
+					return err
+				}
+				switch action {
+				case "check":
+					errs := DesignSystemCheck(os.DirFS(root), "")
+					status := "passed"
+					if len(errs) > 0 {
+						status = "failed"
+						exit = 1
+					}
+					result = M{"package_check": status, "errors": errs, "visual_verified": false, "implementation_verified": false}
+				case "preview":
+					r, err := DesignSystemPreview(root, o.Values["replace"] == "true")
+					result = r
+					return err
+				case "apply":
+					r, err := DesignSystemApply(root, project)
+					result = r
+					return err
+				}
+			}
 		case "project":
 			switch action {
 			case "init":

@@ -1,0 +1,19 @@
+{
+  "schema": "amazing-design-system/v1",
+  "id": "precise-console",
+  "version": "1.0.0",
+  "name": "明序 · Precise Console",
+  "description": "为频繁扫描、表格和精确操作提供紧凑、清楚的合成起点；不默认暗色。",
+  "source": {
+    "origin": "Amazing Skills original synthetic fixture",
+    "license": "MIT",
+    "revision": "1.0.0"
+  },
+  "files": {
+    "design": "DESIGN.md",
+    "tokens": "tokens.css",
+    "evidence": "design-evidence.json",
+    "preview": "design-preview.html",
+    "license": "design-system.LICENSE"
+  }
+}

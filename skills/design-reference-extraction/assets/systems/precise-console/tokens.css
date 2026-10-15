@@ -1,0 +1,18 @@
+:root {
+  --ds-bg: #f4f6f8;
+  --ds-surface: #ffffff;
+  --ds-fg: #192731;
+  --ds-muted: #506270;
+  --ds-border: #a6b4be;
+  --ds-accent: #155c83;
+  --ds-accent-on: #ffffff;
+  --ds-danger: #ae2736;
+  --ds-font-body: system-ui, "Noto Sans SC", "PingFang SC", sans-serif;
+  --ds-font-display: system-ui, "Noto Sans SC", "PingFang SC", sans-serif;
+  --ds-space: 8px;
+  --ds-radius: 4px;
+  --ds-content: 1200px;
+  --ds-text: 15px;
+  --ds-leading: 1.55;
+  --ds-control: 44px;
+}

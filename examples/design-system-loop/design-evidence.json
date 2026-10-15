@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "request-intent",
+      "kind": "provided",
+      "reference": "合成需求；非真实客户确认",
+      "locator": "sources/request.md / 唯一引文",
+      "claim": "希望读书记录安静，打开就知道接着读哪本；尚无明确样式。",
+      "decision": "保留阅读连续性，首屏强调书名和下一步；不要求先选风格。",
+      "file": "sources/request.md",
+      "sha256": "df71ab08c982945dae67317e57ccc52c8f74d10e3566bdd73860bdbcbbc9c4f1"
+    },
+    {
+      "id": "quiet-direction",
+      "kind": "inferred",
+      "reference": "sources/request.md；calm-paper 自建起点",
+      "locator": "DESIGN.md / 方向",
+      "claim": "把“安静”解释为暖色纸面、连续列表和较少装饰；此选择可撤销。",
+      "decision": "从 calm-paper 起步，保留强调色、字阶与阅读节奏，实际产品使用同一 tokens。",
+      "token": "--ds-bg"
+    },
+    {
+      "id": "local-boundary",
+      "kind": "inferred",
+      "reference": "合成示例范围",
+      "locator": ".workbench/spec.md / 假设",
+      "claim": "无已确认外部服务，暂以本机浏览器存储演示。",
+      "decision": "首屏明确设备范围；不宣称跨设备同步。"
+    }
+  ],
+  "unknowns": [
+    "真实用户是否偏好暖色与衬线标题尚未确认。",
+    "跨设备同步与外部书目服务不在此合成演练范围。"
+  ]
+}

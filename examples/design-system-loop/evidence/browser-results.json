@@ -1,0 +1,49 @@
+{
+  "run_at": "2026-10-15T02:50:15.906Z",
+  "status": "passed",
+  "environment": {
+    "browser": "Existing Chrome via Playwright, headless",
+    "timezone": "Asia/Tokyo",
+    "viewportWidths": [
+      1440,
+      390,
+      320
+    ]
+  },
+  "mode": "synthetic-request / real-browser",
+  "results": [
+    {
+      "id": "AC-01",
+      "status": "passed"
+    },
+    {
+      "id": "AC-02",
+      "status": "passed"
+    },
+    {
+      "id": "AC-03",
+      "status": "passed"
+    },
+    {
+      "id": "AC-04",
+      "status": "passed"
+    },
+    {
+      "id": "AC-05",
+      "status": "passed"
+    },
+    {
+      "id": "AC-06",
+      "status": "passed"
+    },
+    {
+      "id": "AC-07",
+      "status": "passed"
+    },
+    {
+      "id": "PRESET-RENDERS",
+      "status": "passed"
+    }
+  ],
+  "uncaughtErrors": []
+}

@@ -6,7 +6,7 @@
 
 **第一次使用只看 [START_HERE.md](START_HERE.md)。唯一推荐总入口是 [skill-router · 自动选择技能](skills/skill-router/SKILL.md)。**
 
-不需要从十四个技能中挑一个，也不用先认识 finesse-brief、Impeccable 或 QA 的内部步骤。
+不需要从十五个技能中挑一个，也不用先认识 finesse-brief、Impeccable 或 QA 的内部步骤。
 
 ```text
 读取这个仓库的 START_HERE.md，帮我根据这份需求出测试用例。
@@ -35,9 +35,9 @@
 go run ./cmd/amazing-skills install --target /你的项目/.agents/skills
 ```
 
-默认复制十四个技能、相对引用及Go运行工具，不修改目标项目的AGENTS.md，拒绝覆盖现有目录。安装并被工具发现后，可直接用中文提出需求；显式调用总入口为 `$skill-router 你的需求`。其他工具可换成其支持的目录；不支持发现时让AI读取入口文件。
+默认复制十五个技能、相对引用及Go运行工具，不修改目标项目的AGENTS.md，拒绝覆盖现有目录。安装并被工具发现后，可直接用中文提出需求；显式调用总入口为 `$skill-router 你的需求`。其他工具可换成其支持的目录；不支持发现时让AI读取入口文件。
 
-`--skills product-workflow` 可仅安装工作台八技能子包；QA六技能子包见下文。子包使用对应领域入口，只有实际安装的能力才能调用。单独安装 `skill-router` 只提供选择器，不会自动安装全部能力。
+`--skills product-workflow` 可仅安装工作台九技能子包；QA六技能子包见下文。子包使用对应领域入口，只有实际安装的能力才能调用。单独安装 `skill-router` 只提供选择器，不会自动安装全部能力。
 
 ## 第一条工作流
 
@@ -77,7 +77,7 @@ go run ./cmd/amazing-skills serve --example customer-followup --port 8765
 
 阅读 [架构与扩展约定](docs/architecture.md)。`catalog.json` 是仓库总目录；工作流只管理自己的步骤。添加 Jira 或测试技能无需修改工作台模板。修改目录后运行 `go run ./cmd/amazing-skills sync` 更新入口的可安装目录快照，然后验证。
 
-原创新增内容采用 MIT；捆绑第三方目录保留各自许可证与锁定版本。版本：0.5.0。
+原创新增内容采用 MIT；捆绑第三方目录保留各自许可证与锁定版本。版本：0.6.0。
 
 功能安全筛选与独立专项使用见 [安全能力说明](docs/security.md)，模拟验证见 [安全范围演练](examples/qa-security-scope/README.md)。
 
@@ -95,3 +95,17 @@ QA子包只有六技能，不依赖三个设计提供者、私有QA系统、Jira
 [持续需求模拟样例](examples/qa-continuous-change/README.md)包含三版本、一次实际运行的模型失败、修订隔离、撤回、模拟Jira部分失败及报告复算。它不代表真机或远程Jira验收。
 
 隐私复查与本地元数据例外见 [分发隐私审计](docs/privacy-audit.md)。手动打包请排除 `.git/` 与工具缓存。
+
+## 参考提取到实现（0.6.0）
+
+可以直接说“这个页面太累了，想清爽一点”“参考这张图，但不要照抄”，无需先写完整需求或挑选风格。新能力 [参考提取与设计系统](skills/design-reference-extraction/SKILL.md) 会沿用已有上下文，区分观察、用户提供和推断，将方向落实为设计系统包与可运行组件预览。无参考时也能从任务推导，关键未知显式保留。
+
+工作台闭环为 `workbench-definition → design-reference-extraction（按需）→ interface-delivery → workbench-verification`。已有规范优先继承；组件预览与真实产品验收分别记录。包随技能分发，不改变总入口，也不影响QA子包。
+
+```sh
+go run ./cmd/amazing-skills design-system list
+go run ./cmd/amazing-skills design-system init --preset calm-paper --output /新目录/设计包
+go run ./cmd/amazing-skills design-system check --package /新目录/设计包
+```
+
+两个内置包是 MIT 自建合成起点，不是已提取的真实品牌；也可直接创建自己的包。编辑方向、证据和 tokens 后运行 `design-system preview --package <包> --replace`，查看桌面与小屏。新项目用 `apply --package <包> --project <项目>` 落实，再初始化产品模板；已有项目按授权合并。应用导入同一 tokens，完成运行检查后沿用现有设计锁。详细契约与命令见 [包说明](skills/design-reference-extraction/references/package-contract.md)，抽象需求的完整示例见 [闭环演练](examples/design-system-loop/README.md)。

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "synthetic-direction",
+      "kind": "inferred",
+      "reference": "自建合成设计样例，不来自真实客户或品牌",
+      "locator": "DESIGN.md / 方向与适用条件",
+      "claim": "为持续阅读和少量操作提供安静、温暖的合成起点；是否适用须结合用户场景判断。",
+      "decision": "仅作为可撤销起点；实际使用需替换为当前请求的依据与取舍。",
+      "token": "--ds-space"
+    }
+  ],
+  "unknowns": [
+    "实际用户任务、内容密度及品牌承诺尚未输入。",
+    "浏览器字体回退、键盘操作与小屏效果需实际检查。"
+  ]
+}

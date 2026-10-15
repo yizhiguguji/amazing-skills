@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-15",
+  "catalog_version": "0.6.0",
+  "compiler": "go1.27.2",
+  "runtime_dependencies": "Go standard library only",
+  "checks": {
+    "catalog_sync": "passed",
+    "catalog_validate": "passed",
+    "go_test_all": {
+      "status": "passed",
+      "test_results": 1872,
+      "packages": [
+        "amazing-skills"
+      ]
+    },
+    "go_vet_all": "passed",
+    "portable_install": [
+      {
+        "check": "install-single-skill",
+        "status": "passed"
+      },
+      {
+        "check": "relocated-init-without-go-python-node",
+        "status": "passed"
+      },
+      {
+        "check": "relocated-package-check",
+        "status": "passed"
+      },
+      {
+        "check": "relocated-apply",
+        "status": "passed"
+      },
+      {
+        "check": "existing-project-contract-init",
+        "status": "passed"
+      },
+      {
+        "check": "existing-design-lock",
+        "status": "passed"
+      },
+      {
+        "check": "existing-design-drift-check",
+        "status": "passed"
+      },
+      {
+        "check": "relocated-preview-regeneration",
+        "status": "passed"
+      },
+      {
+        "check": "relocated-preview-freshness",
+        "status": "passed"
+      }
+    ],
+    "browser": {
+      "status": "passed",
+      "scenarios": 8,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "evidence": "examples/design-system-loop/evidence/browser-results.json"
+    },
+    "visual": "Reviewed actual desktop, mobile and component viewport screenshots; no material clipping/overlap observed",
+    "privacy": "Synthetic names/data, no local usernames or private service URLs in added distributable files; PNG textual/EXIF chunks checked"
+  },
+  "independent_review": {
+    "status": "fixed-and-rechecked",
+    "finding": "Raw CSS comments could escape the preview style element",
+    "resolution": "Inject only comment-stripped and validated CSS; malicious-comment regression and independent recheck passed"
+  },
+  "skill_behavior": {
+    "method": "independent instruction walkthrough, not a model benchmark",
+    "input": "Abstract synthetic reading-page request, no reference images",
+    "result": "Can proceed with reversible inferred direction; no demand for complete specification or invented user confirmation"
+  },
+  "distribution": {
+    "cross_compiled_only": "Other operating systems require actual execution validation",
+    "platforms": {
+      "amazing-skills-darwin-amd64": "024532a74c28e461fc7a867b7e9e9203ede4b797c4c557df294359169d03428e",
+      "amazing-skills-darwin-arm64": "65002ce31a8aa68dbde649281ed65a4abcfa315861b819909b11700db74d1512",
+      "amazing-skills-linux-amd64": "68d51587c1f8a7382423c910aae9fa44201c7c7ac81db664b4e7e3c86607ad77",
+      "amazing-skills-linux-arm64": "a620253a616631f384e8a69e5dfc35d2c7f680c91e90c03229ec25d060f26c38",
+      "amazing-skills-windows-amd64.exe": "3dca3145735ca6dd6092e9252d2cb338928cca4b7ec9b2a6bb55615ef451c3a3",
+      "amazing-skills-windows-arm64.exe": "dc8faaa4bdc5c1dbc318871047bd952de8b79d5f7779afc4e6bbf687e7d1192f"
+    },
+    "python_required": false,
+    "runtime": "Go standalone binary"
+  },
+  "limitations": [
+    "Only darwin-arm64 executed; other five targets cross-compiled only",
+    "Synthetic request is not real customer research",
+    "Browser checks used existing headless Chrome, not physical devices or other browsers",
+    "No OpenDesign runtime or third-party design assets installed; Impeccable engine unavailable and not downloaded"
+  ]
+}

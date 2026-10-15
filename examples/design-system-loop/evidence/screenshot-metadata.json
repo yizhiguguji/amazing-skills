@@ -1,0 +1,66 @@
+{
+  "display_copies": true,
+  "note": "Synthetic-data viewport screenshots plus retained first-run failure captures; all PNG text/EXIF chunks checked.",
+  "chunks": {
+    "calm-paper-mobile.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "desktop-empty.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "desktop-records.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "first-run/desktop-empty.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "first-run/desktop-records.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "first-run/mobile-records.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "mobile-form.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "mobile-records.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "precise-console-mobile.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "preview-desktop.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "preview-mobile-components.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "preview-mobile.png": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ]
+  }
+}

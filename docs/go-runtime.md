@@ -1,4 +1,4 @@
-# Go运行工具（0.5.0）
+# Go运行工具（0.6.0）
 
 统一程序`amazing-skills`负责安装、目录校验、快照同步、项目初始化与风格锁、QA冻结/记录/报告、Jira草稿/回执、提供者适配、合成QA演练和受限示例预览。只用Go标准库，无go.sum及第三方Go依赖。
 
@@ -43,7 +43,7 @@ go run ./cmd/amazing-skills jira draft --project /项目 --input /项目/defect.
 go run ./cmd/amazing-skills replay --output /新目录/qa-demo
 ```
 
-`--skills`支持一个ID或逗号分隔的多个ID；安装依赖闭包。默认十四技能，QA子包六技能，工作台子包八技能；都附带同平台Go程序。已有技能目录或运行工具拒绝覆盖，重装需选择新目录或自行明确管理旧安装。
+`--skills`支持一个ID或逗号分隔的多个ID；安装依赖闭包。默认十五技能，QA子包六技能，工作台子包九技能；都附带同平台Go程序。已有技能目录或运行工具拒绝覆盖，重装需选择新目录或自行明确管理旧安装。
 
 目录更新先运行sync，再重新构建，避免二进制中的嵌入快照过期。修改源文件不会自动更新已经安装的副本或已经构建的dist文件。
 
@@ -61,4 +61,22 @@ Pro Max已从简化适配升级为原版查询与结构化设计系统逻辑的G
 
 后续Pro Max补齐及最新验证见 [兼容说明](promax-parity.md) 和 [对照记录](verification/promax-parity.json)。
 
-0.5.0新增通用功能安全筛选、独立qa-security-review与可选安全计划约束；完整安装14技能，QA子包6技能。`security-replay --output <全新目录>`运行合成安全范围演练；最新证据见docs/verification/security.json，不代表真实应用扫描。
+0.5.0新增通用功能安全筛选、独立qa-security-review与可选安全计划约束；当时完整安装14技能，QA子包6技能。`security-replay --output <全新目录>`运行合成安全范围演练；最新证据见docs/verification/security.json，不代表真实应用扫描。
+
+## 设计资源包（0.6.0）
+
+新增 design-reference-extraction：完整安装15技能，工作台子包9技能，QA子包仍6技能。运行 `design-system list|init|check|preview|apply`，无需 Node、Python、网络或 OpenDesign。标准库完成 JSON/路径/证据摘要/token 引用检查、确定性组件预览及拒绝覆盖的项目应用。实际浏览器和项目构建仍使用执行环境已有能力。
+
+```sh
+go run ./cmd/amazing-skills design-system init --preset precise-console --output /全新目录/设计包
+go run ./cmd/amazing-skills design-system preview --package /全新目录/设计包 --replace
+go run ./cmd/amazing-skills design-system check --package /全新目录/设计包
+go run ./cmd/amazing-skills design-system apply --package /全新目录/设计包 --project /目标项目
+go run ./cmd/amazing-skills project init --project /目标项目
+```
+
+apply 不覆盖旧规范或锁，不自动改变验收状态。包来源和示例均明确区分推断与观察，命令成功不代表视觉通过。契约见 [设计包说明](../skills/design-reference-extraction/references/package-contract.md)。维护完成后必须 sync、validate、go test ./...、go vet ./... 并重新 build；其他平台只声明交叉编译。
+
+本次完整验证与六平台摘要见 [0.6.0 验证记录](verification/design-system-loop.json)。
+
+QA/Jira 导出改进的后续合并及最新重编译记录见 [合并说明](qa-jira-merge.md) 和 [验证记录](verification/qa-jira-merge.json)。历史设计闭环构建摘要保留为当时快照；当前程序以 dist/manifest.json 和 SHA256SUMS 为准。

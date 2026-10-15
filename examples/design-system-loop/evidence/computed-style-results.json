@@ -1,0 +1,78 @@
+{
+  "mode": "real-browser / synthetic-data",
+  "note": "Selected computed styles and text contrast only; not full accessibility compliance.",
+  "results": [
+    {
+      "label": "reading-app",
+      "values": {
+        "background": "rgb(246, 244, 237)",
+        "foreground": "rgb(37, 43, 38)",
+        "muted": "rgb(82, 96, 82)",
+        "accent": "rgb(36, 92, 67)",
+        "accentOn": "rgb(255, 255, 255)",
+        "font": "Georgia, \"Noto Serif SC\", \"Songti SC\", serif",
+        "space": "12px",
+        "control": "44px"
+      },
+      "contrast": {
+        "body": 13.139856950568825,
+        "muted": 6.050477106007189,
+        "button": 7.815635572753908
+      }
+    },
+    {
+      "label": "reading-preview",
+      "values": {
+        "background": "rgb(246, 244, 237)",
+        "foreground": "rgb(37, 43, 38)",
+        "muted": "rgb(82, 96, 82)",
+        "accent": "rgb(36, 92, 67)",
+        "accentOn": "rgb(255, 255, 255)",
+        "font": "Georgia, \"Noto Serif SC\", \"Songti SC\", serif",
+        "space": "12px",
+        "control": "44px"
+      },
+      "contrast": {
+        "body": 13.139856950568825,
+        "muted": 6.050477106007189,
+        "button": 7.815635572753908
+      }
+    },
+    {
+      "label": "calm-paper",
+      "values": {
+        "background": "rgb(246, 244, 237)",
+        "foreground": "rgb(37, 43, 38)",
+        "muted": "rgb(82, 96, 82)",
+        "accent": "rgb(36, 92, 67)",
+        "accentOn": "rgb(255, 255, 255)",
+        "font": "Georgia, \"Noto Serif SC\", \"Songti SC\", serif",
+        "space": "12px",
+        "control": "44px"
+      },
+      "contrast": {
+        "body": 13.139856950568825,
+        "muted": 6.050477106007189,
+        "button": 7.815635572753908
+      }
+    },
+    {
+      "label": "precise-console",
+      "values": {
+        "background": "rgb(244, 246, 248)",
+        "foreground": "rgb(25, 39, 49)",
+        "muted": "rgb(80, 98, 112)",
+        "accent": "rgb(21, 92, 131)",
+        "accentOn": "rgb(255, 255, 255)",
+        "font": "system-ui, \"Noto Sans SC\", \"PingFang SC\", sans-serif",
+        "space": "8px",
+        "control": "44px"
+      },
+      "contrast": {
+        "body": 14.088592892799705,
+        "muted": 5.834913492037616,
+        "button": 7.265221586528404
+      }
+    }
+  ]
+}

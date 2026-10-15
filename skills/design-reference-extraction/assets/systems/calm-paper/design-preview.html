@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>静页 · Calm Paper · 组件预览</title>
+<style>
+:root {
+  --ds-bg: #f6f4ed;
+  --ds-surface: #eeece3;
+  --ds-fg: #252b26;
+  --ds-muted: #526052;
+  --ds-border: #b3bbad;
+  --ds-accent: #245c43;
+  --ds-accent-on: #ffffff;
+  --ds-danger: #a02f35;
+  --ds-font-body: Georgia, "Noto Serif SC", "Songti SC", serif;
+  --ds-font-display: Georgia, "Noto Serif SC", "Songti SC", serif;
+  --ds-space: 12px;
+  --ds-radius: 8px;
+  --ds-content: 1080px;
+  --ds-text: 16px;
+  --ds-leading: 1.65;
+  --ds-control: 44px;
+}
+
+*{box-sizing:border-box}html{background:var(--ds-bg);color:var(--ds-fg);font-family:var(--ds-font-body);font-size:var(--ds-text);line-height:var(--ds-leading)}body{margin:0}::selection{background:var(--ds-accent);color:var(--ds-accent-on)}main{max-width:var(--ds-content);margin:auto;padding:clamp(20px,5vw,64px)}a{color:var(--ds-accent);text-underline-offset:.2em}h1,h2,h3{font-family:var(--ds-font-display);line-height:1.2;overflow-wrap:anywhere}h1{font-size:clamp(2rem,5vw,3.4rem);max-width:20ch;margin:.4em 0}h2{font-size:1.5rem;margin:0 0 1em}h3{font-size:1.1rem}p{max-width:68ch}header{padding-bottom:calc(var(--ds-space)*3);border-bottom:1px solid var(--ds-border)}.muted,small{color:var(--ds-muted)}.notice{font-size:.875rem}.section{padding:calc(var(--ds-space)*3) 0;border-bottom:1px solid var(--ds-border)}.swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--ds-space)}.swatch{min-width:0}.color{height:64px;border:1px solid var(--ds-border);border-radius:var(--ds-radius)}code{font-size:.8rem;overflow-wrap:anywhere}code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,"Noto Sans SC",monospace}pre{white-space:pre-wrap;overflow-wrap:anywhere}label{display:block;margin-bottom:.4rem;font-weight:600}input,button{font:inherit;min-height:var(--ds-control);border-radius:var(--ds-radius)}input{width:100%;padding:.65em .8em;color:var(--ds-fg);background:var(--ds-bg);border:1px solid var(--ds-border);caret-color:var(--ds-accent)}input[aria-invalid=true]{border-color:var(--ds-danger)}button{padding:.6em 1.1em;border:1px solid var(--ds-accent);background:var(--ds-accent);color:var(--ds-accent-on);cursor:pointer}button:hover:not(:disabled){text-decoration:underline;text-underline-offset:.2em}button:disabled{background:var(--ds-surface);color:var(--ds-muted);border-color:var(--ds-border);cursor:not-allowed}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--ds-accent);outline-offset:4px}.controls{display:flex;gap:var(--ds-space);flex-wrap:wrap;align-items:center}.columns{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--ds-space)*3)}.error{color:var(--ds-danger);font-size:.9rem}.specimen{font-family:var(--ds-font-display);font-size:1.7rem}.panel{background:var(--ds-surface);padding:calc(var(--ds-space)*2);border-radius:var(--ds-radius)}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{padding:.8em .5em;border-bottom:1px solid var(--ds-border);text-align:left}th{font-size:.875rem;color:var(--ds-muted)}td:nth-child(2),th:nth-child(2){white-space:nowrap}td:first-child{min-width:12ch;overflow-wrap:anywhere}.ruler{height:var(--ds-space);background:var(--ds-accent);width:calc(var(--ds-space)*8);max-width:100%}summary{cursor:pointer}footer{font-size:.8rem;padding-top:2rem;overflow-wrap:anywhere}@media(max-width:640px){.columns{grid-template-columns:1fr}.swatches{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding:24px 20px}.section{padding:28px 0}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style></head>
+<body><main>
+<header><p class="notice muted">合成组件样例 · 非真实业务数据 · 浏览器验收单独记录</p><h1>静页 · Calm Paper</h1><p>为持续阅读和少量操作提供安静、温暖的合成起点；是否适用须结合用户场景判断。</p><p class="muted">版本 1.0.0 · 来源 Amazing Skills original synthetic fixture</p><a href="#components">查看组件与状态</a></header>
+<section class="section" aria-labelledby="palette"><h2 id="palette">颜色与角色</h2><div class="swatches"><div class="swatch"><div class="color" style="background:var(--ds-bg)"></div><p><code>--ds-bg</code><br><code>#f6f4ed</code></p></div><div class="swatch"><div class="color" style="background:var(--ds-surface)"></div><p><code>--ds-surface</code><br><code>#eeece3</code></p></div><div class="swatch"><div class="color" style="background:var(--ds-fg)"></div><p><code>--ds-fg</code><br><code>#252b26</code></p></div><div class="swatch"><div class="color" style="background:var(--ds-muted)"></div><p><code>--ds-muted</code><br><code>#526052</code></p></div><div class="swatch"><div class="color" style="background:var(--ds-accent)"></div><p><code>--ds-accent</code><br><code>#245c43</code></p></div><div class="swatch"><div class="color" style="background:var(--ds-danger)"></div><p><code>--ds-danger</code><br><code>#a02f35</code></p></div></div></section>
+<section class="section"><h2>字阶与阅读节奏</h2><p class="specimen">让信息有秩序，让下一步更清楚。</p><p>中文、English 与数字 0123456789 一起出现时，检查字体回退、行高与标点。这里展示真实文本的换行节奏，不代表某个产品的业务承诺。</p><p class="muted">辅助说明应当清楚可读。长标题样例：为跨区域协作整理一份仍然能够在小屏幕上完整阅读的工作记录。</p><div class="ruler" aria-hidden="true"></div><small>间距尺：8 个基础间距单位；组件使用同一 tokens.css。</small></section>
+<section class="section" id="components"><h2>输入、操作与反馈</h2><div class="columns"><form id="demo-form" novalidate><label for="demo-name">样例记录名称</label><input id="demo-name" name="name" aria-describedby="name-help name-error" aria-invalid="true" autocomplete="off"><p id="name-help" class="muted">输入名称后保存，仅演示本地交互，不保存业务数据。</p><p id="name-error" class="error">名称不能为空，请输入后再试。</p><div class="controls"><button type="submit">保存样例</button><button disabled type="button">不可用操作</button></div><p id="form-status" role="status" aria-live="polite"></p></form><div class="panel"><h3>空状态</h3><p>还没有样例记录。填写左侧名称，体验完成后的反馈。</p><h3>加载状态</h3><p role="status">正在读取样例，请稍候……</p><p class="muted">这里是静态状态展示；实际产品的超时和恢复策略由需求确定。</p></div></div></section>
+<section class="section"><h2>表格与长文本</h2><div class="table-wrap" tabindex="0" role="region" aria-label="合成记录表格"><table><thead><tr><th scope="col">合成记录</th><th scope="col">状态</th><th scope="col">数量</th></tr></thead><tbody><tr><td>秋日阅读清单 / Reading list</td><td>可查看</td><td>12</td></tr><tr><td>一条很长的合成记录名称，用于检查换行、表格密度和混排场景</td><td>待补充</td><td>128</td></tr></tbody></table></div></section>
+<section class="section"><h2>证据与推断</h2><p><strong>inferred</strong> · 为持续阅读和少量操作提供安静、温暖的合成起点；是否适用须结合用户场景判断。<br><small>自建合成设计样例，不来自真实客户或品牌 / DESIGN.md / 方向与适用条件 · 仅作为可撤销起点；实际使用需替换为当前请求的依据与取舍。</small></p><h3>仍需验证</h3><ul><li>实际用户任务、内容密度及品牌承诺尚未输入。</li><li>浏览器字体回退、键盘操作与小屏效果需实际检查。</li></ul><details><summary>查看设计方向</summary><pre># 静页 · Calm Paper
+
+## 方向与适用条件
+
+为持续阅读和少量操作提供安静、温暖的合成起点；是否适用须结合用户场景判断。 这是自建合成样例，不是已确认的用户设计，不代表外部品牌。无参考时可以从任务推导新方向，无需选用本样例。
+
+## 颜色与排版
+
+精确值由 tokens.css 单独管理。页面使用 --ds-bg，组件区域使用 --ds-surface，正文使用 --ds-fg，辅助文字使用 --ds-muted；主操作用 --ds-accent 与 --ds-accent-on，错误同时用 --ds-danger 和文字表达。正文与标题消费 --ds-font-body / --ds-font-display；包含中文回退，不加载远程字体。
+
+## 密度与布局
+
+保持连续阅读，段落成组、章节之间留白；避免装饰打断内容。 使用 --ds-space 构成间距，--ds-content 限制内容宽度。小屏单列，长文本可换行，表格必要时局部横向滚动，页面整体不横溢。
+
+## 组件与状态
+
+按钮、输入、表格和空状态见 design-preview.html；焦点始终可见，禁用状态有明确文本与原生 disabled。错误保留输入并说明恢复方法，加载与空数据分开。样例数据明确为合成，不引入产品规则或统计。
+
+## 动效与边界
+
+本样例不需要动效。后续按实际任务选择，并尊重减少动态效果偏好。现有项目优先继承既有规范，不通过选择本包覆盖事实。
+
+## 实现与验收
+
+消费 tokens.css，按实际页面核对计算样式。查看桌面和小屏，检查中文混排、长文本、键盘焦点、表单错误及保存反馈。行为检查、视觉检查与未验证分别记录。预览只是组件样例，不代替实际产品验收；完成后使用现有设计锁保护规范与 tokens。
+</pre></details></section>
+<footer>包内容摘要 8367cf62b2bac6a080c0afe8acaead25c929492aaad7e4aceccda4f3c7f2742e<br>结构与同步检查不等于行为或视觉验收。此页不加载远程资源。</footer>
+</main><script>
+const form=document.getElementById('demo-form'),field=document.getElementById('demo-name'),error=document.getElementById('name-error'),status=document.getElementById('form-status');
+field.addEventListener('input',()=>{if(field.value.trim()){field.setAttribute('aria-invalid','false');error.textContent='';}});
+form.addEventListener('submit',event=>{event.preventDefault();if(!field.value.trim()){field.setAttribute('aria-invalid','true');error.textContent='名称不能为空，请输入后再试。';status.textContent='';field.focus();return;}field.setAttribute('aria-invalid','false');error.textContent='';status.textContent='样例已保存：'+field.value.trim()+'（仅当前预览，不持久化）';});
+</script></body></html>

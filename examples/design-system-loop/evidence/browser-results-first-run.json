@@ -1,0 +1,42 @@
+{
+  "run_at": "2026-10-15T02:44:46.759Z",
+  "status": "failed",
+  "environment": {
+    "browser": "Existing Chrome via Playwright, headless",
+    "timezone": "Asia/Tokyo",
+    "viewportWidths": [
+      1440,
+      390,
+      320
+    ]
+  },
+  "mode": "synthetic-request / real-browser",
+  "results": [
+    {
+      "id": "AC-01",
+      "status": "passed"
+    },
+    {
+      "id": "AC-02",
+      "status": "passed"
+    },
+    {
+      "id": "AC-03",
+      "status": "passed"
+    },
+    {
+      "id": "AC-04",
+      "status": "passed"
+    },
+    {
+      "id": "AC-05",
+      "status": "passed"
+    },
+    {
+      "id": "AC-06",
+      "status": "failed",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   accent: 'rgba(0, 0, 0, 0)',\n+   background: 'rgba(0, 0, 0, 0)',\n+   font: 'Times'\n-   accent: 'rgb(36, 92, 67)',\n-   background: 'rgb(246, 244, 237)',\n-   font: 'Georgia, \"Noto Serif SC\", \"Songti SC\", serif'\n  }\n"
+    }
+  ],
+  "uncaughtErrors": []
+}

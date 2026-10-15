@@ -185,6 +185,11 @@ func Validate(f fs.FS) []string {
 		if err != nil {
 			return err
 		}
+		for _, id := range []string{"calm-paper", "precise-console"} {
+			for _, message := range DesignSystemCheck(f, designAssetRoot+"systems/"+id+"/") {
+				errs = append(errs, "Design system "+id+": "+message)
+			}
+		}
 		entries := index(c["skills"], "skills", &errs)
 		for _, n := range []string{"skill-router", "product-workflow"} {
 			v, err := load(f, "skills/"+n+"/references/catalog.json")

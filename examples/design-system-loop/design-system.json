@@ -1,0 +1,19 @@
+{
+  "schema": "amazing-design-system/v1",
+  "id": "reading-continuation",
+  "version": "1.0.0",
+  "name": "续读 · Reading Continuation",
+  "description": "从一句抽象的合成需求推导的阅读记录方向：连续排版、温暖底色和清楚的下一步。",
+  "source": {
+    "origin": "Amazing Skills synthetic abstract-request exercise",
+    "license": "MIT",
+    "revision": "1.0.0"
+  },
+  "files": {
+    "design": "DESIGN.md",
+    "tokens": "tokens.css",
+    "evidence": "design-evidence.json",
+    "preview": "design-preview.html",
+    "license": "design-system.LICENSE"
+  }
+}

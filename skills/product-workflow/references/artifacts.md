@@ -2,6 +2,7 @@
 
 - `.workbench/spec.md`：唯一产品定义，含用户/角色、主对象、任务、页面与数据、字段写入者、断开/空数据行为、MVP、排除项、假设和验收编号。
 - `DESIGN.md`：目标模式、字体与中英文回退、颜色角色、间距、密度、导航、状态、动效、响应式、组件与页面例外。实现后记录代码 token 来源。
+- 使用设计包时附带 `design-system.json`（身份/版本/来源）、`tokens.css`（精确变量）、`design-evidence.json`（观察/提供/推断与未知）、`design-preview.html`（消费同一 tokens 的可运行组件样例）、`design-system.LICENSE`。来源快照在包内 `sources/`，观察证据记录摘要。`.product/design-system-selection.json` 只记录选中包身份，不复制设计事实。DESIGN.md 仍是唯一设计意图，tokens 是其精确值实现；二者冲突必须协调。
 - `.product/plan.md`：实施任务和规格验收的对应关系。
 - `.product/decisions.md`：产品/设计/技术决策，区分用户事实、工作假设、实现决策；记录后续替代。
 - `.product/verification.md`：每个验收编号的结果、方法、证据、环境、实际日期，视觉检查与行为检查分开，未运行写未验证。

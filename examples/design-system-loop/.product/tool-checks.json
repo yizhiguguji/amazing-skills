@@ -1,0 +1,23 @@
+{
+  "run_at": "2026-10-15T02:52:09.551Z",
+  "checks": [
+    {
+      "command": "design-system check --package examples/design-system-loop",
+      "result": {
+        "errors": [],
+        "implementation_verified": false,
+        "package_check": "passed",
+        "visual_verified": false
+      }
+    },
+    {
+      "command": "project check-design --project examples/design-system-loop",
+      "result": {
+        "documentary_check": "passed",
+        "errors": [],
+        "note": "Does not verify implementation or completeness of acceptance coverage."
+      }
+    }
+  ],
+  "implementation_verified_by_these_tools": false
+}

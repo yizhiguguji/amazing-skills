@@ -1,0 +1,18 @@
+:root {
+  --ds-bg: #f6f4ed;
+  --ds-surface: #eeece3;
+  --ds-fg: #252b26;
+  --ds-muted: #526052;
+  --ds-border: #b3bbad;
+  --ds-accent: #245c43;
+  --ds-accent-on: #ffffff;
+  --ds-danger: #a02f35;
+  --ds-font-body: Georgia, "Noto Serif SC", "Songti SC", serif;
+  --ds-font-display: Georgia, "Noto Serif SC", "Songti SC", serif;
+  --ds-space: 12px;
+  --ds-radius: 8px;
+  --ds-content: 1080px;
+  --ds-text: 16px;
+  --ds-leading: 1.65;
+  --ds-control: 44px;
+}
