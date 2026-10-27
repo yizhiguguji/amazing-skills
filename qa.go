@@ -1,7 +1,6 @@
 package amazing
 
 import (
-	"bufio"
 	"fmt"
 	"io/fs"
 	"os"
@@ -443,40 +442,20 @@ func Impact(root, before string) (M, error) {
 func ReadEvents(root string) ([]M, error) {
 	events := []M{}
 	err := safeCall(func() error {
-		p := path(root, ".qa/executions.jsonl")
+		if e := recoverExecutionCommit(root, atomicExecutionWrite); e != nil {
+			return e
+		}
+		data, e := executionJournalBytes(root)
+		if e != nil {
+			return e
+		}
+		events, e = parseExecutionLog(data)
+		if e != nil {
+			return e
+		}
 		previous := ""
-		ids := map[string]bool{}
-		if exists(p) {
-			f, e := os.Open(p)
-			if e != nil {
-				return e
-			}
-			defer f.Close()
-			scanner := bufio.NewScanner(f)
-			scanner.Buffer(make([]byte, 4096), 16*1024*1024)
-			for scanner.Scan() {
-				v, e := decode(scanner.Bytes())
-				if e != nil {
-					return e
-				}
-				m := obj(v)
-				body := obj(clone(m))
-				delete(body, "hash")
-				h := str(m["hash"])
-				if m["previous_hash"] != previous || hash(canonical(body)) != h {
-					return fmt.Errorf("Execution history drift")
-				}
-				id := str(m["execution_id"])
-				if ids[id] {
-					return fmt.Errorf("Duplicate execution identity")
-				}
-				ids[id] = true
-				previous = h
-				events = append(events, m)
-			}
-			if e = scanner.Err(); e != nil {
-				return e
-			}
+		if len(events) > 0 {
+			previous = str(events[len(events)-1]["hash"])
 		}
 		cp := path(root, ".qa/execution-checkpoint.json")
 		if exists(cp) {
@@ -501,6 +480,10 @@ func ReadEvents(root string) ([]M, error) {
 	return events, err
 }
 func Record(root string, observation M) (M, error) {
+	return recordWithExecutionWriter(root, observation, atomicExecutionWrite)
+}
+
+func recordWithExecutionWriter(root string, observation M, writeAtomic executionWriter) (M, error) {
 	result := M{}
 	e := safeCall(func() error {
 		if e := requireQA(root); e != nil {
@@ -587,23 +570,7 @@ func Record(root string, observation M) (M, error) {
 		}
 		ev["previous_hash"] = previous
 		ev["hash"] = hash(canonical(ev))
-		p := path(root, ".qa/executions.jsonl")
-		if e = os.MkdirAll(filepath.Dir(p), 0755); e != nil {
-			return e
-		}
-		f, e := os.OpenFile(p, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
-		if e != nil {
-			return e
-		}
-		_, e = f.Write(append(canonical(ev), '\n'))
-		ce := f.Close()
-		if e != nil {
-			return e
-		}
-		if ce != nil {
-			return ce
-		}
-		if e = write(path(root, ".qa/execution-checkpoint.json"), M{"count": len(events) + 1, "hash": ev["hash"]}, false); e != nil {
+		if e = appendExecution(root, events, ev, writeAtomic); e != nil {
 			return e
 		}
 		result = M{"recorded": true, "execution_id": ev["execution_id"], "mode": ev["mode"]}

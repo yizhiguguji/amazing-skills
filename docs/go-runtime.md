@@ -51,6 +51,8 @@ go run ./cmd/amazing-skills replay --output /新目录/qa-demo
 
 保持项目规格、设计锁、QA计划、快照、执行链及缺陷数据schema1。Go可读取原Python生成的历史执行哈希、证据与快照；旧历史未改写。JSON展示格式可能变化，但canonical SHA语义兼容已有示例。工具采用串行单写，不提供多人写入协调。
 
+执行记录先持久化 `.qa/execution-pending.json` 提交意图，再以同目录临时文件、文件同步及重命名发布日志和 checkpoint；读取或重试会核对历史前缀、checkpoint 与证据，仅完成意图声明的一条追加。异常变化停止并保留现场，无有效意图的损坏不自动修复。运行中备份要同时保留日志、checkpoint 和 pending；Windows 不提供目录 fsync 的断电持久性保证。详见 [本地数据契约](../skills/qa-test-design/references/data-contract.md)。
+
 通过测试覆盖来源变化、范围约束、未明确规则、修订隔离、冻结身份保留、同轮首次失败、复测历史、缺陷证据、重复操作、零分母、路径与符号链接逃逸、旧记录兼容、安装和移动。新增合成演练仍是模拟模型，没有原生应用/网络/温度事件、Figma连接或真实Jira提交。
 
 Pro Max已从简化适配升级为原版查询与结构化设计系统逻辑的Go移植，1,807个原版对照场景通过；文本排版不逐字一致，详见 [兼容说明](promax-parity.md)。Impeccable仍调用校验过的官方引擎，首次准备需要网络；用户项目的前端构建/浏览器工具不是由Go工具替代。
@@ -80,3 +82,5 @@ apply 不覆盖旧规范或锁，不自动改变验收状态。包来源和示�
 本次完整验证与六平台摘要见 [0.6.0 验证记录](verification/design-system-loop.json)。
 
 QA/Jira 导出改进的后续合并及最新重编译记录见 [合并说明](qa-jira-merge.md) 和 [验证记录](verification/qa-jira-merge.json)。历史设计闭环构建摘要保留为当时快照；当前程序以 dist/manifest.json 和 SHA256SUMS 为准。
+
+2026-10-27 合并执行提交恢复与通用 QA/Jira 增量规则；本机测试、故障注入和最新构建摘要见 [本次验证记录](verification/execution-recovery-merge-20261027.json)。其他电脑的测试和安装记录未作为本机执行结果导入。

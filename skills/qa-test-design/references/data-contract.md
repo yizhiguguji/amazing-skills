@@ -23,6 +23,8 @@ sources可以用相对文件或外部URL；本地必须提供真实SHA256并存�
 
 `executions.jsonl`是追加记录：execution_id、run_id、case_id、case_revision、status（passed/failed/blocked/deferred/not-run）、mode（synthetic-fixture/mock/browser-emulation/real-device/manual）、environment、actual、evidence（项目内文件列表）、started_at/finished_at。passed/failed必须有实际观察和证据。记录自动带当时用例快照；相同execution_id重复同内容不再写，不同内容拒绝。所有记录有前序摘要链，check检测篡改/截断（项目最新checkpoint亦需保留）。无法抵御有权同时篡改记录及checkpoint的攻击，不替代系统权限或审计存储。
 
+运行工具先持久化 `execution-pending.json` 提交意图，再以同目录临时文件、同步及重命名发布记录与checkpoint，最后移除意图。写入中断后，读取或重试会核对原日志前缀摘要、当前checkpoint及全部证据，只完成该意图声明的一条追加，不重写既有记录或重复记账。前缀、证据或checkpoint有非预期变化时停止并保留现场；没有有效意图的历史截断或checkpoint损坏仍报错，不自动猜测修复。任务运行中备份 `.qa/` 时须同时保留日志、checkpoint与尚未完成的意图。仍采用串行单写；Windows不通过目录fsync承诺断电持久性，跨系统行为以目标机实际验证为准。
+
 `snapshots/<label>/plan.json`与config、manifest是冻结计划，不是审批。脚本保存文件摘要，check检测历史快照被改。相同case ID+revision语义不可变，修订必须递增；源文件变化未同步plan摘要会失败。label仅字母数字连字符，拒绝路径逃逸/覆盖。
 
 ```bash

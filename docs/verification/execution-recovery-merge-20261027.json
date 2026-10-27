@@ -1,0 +1,183 @@
+{
+  "date": "2026-10-27",
+  "catalog_version": "0.6.0",
+  "compiler": "go1.27.2",
+  "source": {
+    "label": "downloaded full 0.6.0 source snapshot",
+    "base_commit": "5c82095",
+    "files": [
+      {
+        "path": "qa.go",
+        "incoming_sha256": "53d333a40794d015ce0dac294fab3924fcc4419831e96c667609111a30ab67de",
+        "merged_sha256": "53d333a40794d015ce0dac294fab3924fcc4419831e96c667609111a30ab67de"
+      },
+      {
+        "path": "execution_commit.go",
+        "incoming_sha256": "4b20ed14e0d5934be65891556e274f25512e8825dff6e9db2984aeade8e4e38a",
+        "merged_sha256": "4b20ed14e0d5934be65891556e274f25512e8825dff6e9db2984aeade8e4e38a"
+      },
+      {
+        "path": "execution_commit_test.go",
+        "incoming_sha256": "5551d16997507b1d15994369ca649f47d3fac27791dc8fd9ce2846f179185e24",
+        "merged_sha256": "5551d16997507b1d15994369ca649f47d3fac27791dc8fd9ce2846f179185e24"
+      },
+      {
+        "path": "skills/jira-defect-delivery/SKILL.md",
+        "incoming_sha256": "49574aecfa5474de94551777f3548bf11d9545128b7caa08cac64331e0694e9b",
+        "merged_sha256": "49574aecfa5474de94551777f3548bf11d9545128b7caa08cac64331e0694e9b"
+      },
+      {
+        "path": "skills/jira-defect-delivery/references/jira.md",
+        "incoming_sha256": "1557063eb942d717618ed651dca0edc48755b2d58118d7a763972e7d9a16c941",
+        "merged_sha256": "61d52c30a81edea16035bb487f7f866fe2fd11c072e66482f23f97aef00c7d87"
+      },
+      {
+        "path": "skills/qa-functional-execution/references/execution.md",
+        "incoming_sha256": "49a400ca10449bd71f2868412065dada36dd6ab38a7ff77182075e031334427a",
+        "merged_sha256": "49a400ca10449bd71f2868412065dada36dd6ab38a7ff77182075e031334427a"
+      },
+      {
+        "path": "skills/qa-test-design/references/data-contract.md",
+        "incoming_sha256": "f06b5ad1cfd2c755ed728e565cbdf50460de98438a54149b8720b7a557fb10af",
+        "merged_sha256": "f06b5ad1cfd2c755ed728e565cbdf50460de98438a54149b8720b7a557fb10af"
+      },
+      {
+        "path": "skills/qa-test-design/references/sources-and-change.md",
+        "incoming_sha256": "316f0a84cafd3f914b5ea8fa0642db308d67a62f4f45276b210e7a3c559ae76c",
+        "merged_sha256": "316f0a84cafd3f914b5ea8fa0642db308d67a62f4f45276b210e7a3c559ae76c"
+      },
+      {
+        "path": "skills/qa-workflow/references/selection.md",
+        "incoming_sha256": "f22fcb1cb3be37cdee2f6deff0664d259b9c11f6b0e03d29b4b01894d79301a2",
+        "merged_sha256": "f22fcb1cb3be37cdee2f6deff0664d259b9c11f6b0e03d29b4b01894d79301a2"
+      }
+    ]
+  },
+  "checks": {
+    "catalog_sync": "passed",
+    "repository_validation": "passed",
+    "go_test_all": {
+      "status": "passed",
+      "passed_test_results_including_subtests": 1895,
+      "publication_boundaries": 6
+    },
+    "go_vet_all": "passed",
+    "portable": [
+      {
+        "check": "fresh-install-15-skills",
+        "status": "passed"
+      },
+      {
+        "check": "relocated-help-without-go-python-node",
+        "status": "passed"
+      },
+      {
+        "check": "relocated-provider-integrity",
+        "status": "passed"
+      },
+      {
+        "check": "relocated-synthetic-qa-replay",
+        "status": "passed"
+      },
+      {
+        "check": "relocated-qa-history-check",
+        "status": "passed"
+      },
+      {
+        "check": "relocated-synthetic-security-replay",
+        "status": "passed"
+      },
+      {
+        "check": "recover-durable-pending-intent-on-read",
+        "status": "passed"
+      },
+      {
+        "check": "recovery-read-is-idempotent",
+        "status": "passed"
+      },
+      {
+        "check": "reject-checkpoint-loss-without-intent",
+        "status": "passed"
+      },
+      {
+        "check": "design-package-init",
+        "status": "passed"
+      },
+      {
+        "check": "design-package-check",
+        "status": "passed"
+      },
+      {
+        "check": "design-package-apply",
+        "status": "passed"
+      },
+      {
+        "check": "existing-project-contract",
+        "status": "passed"
+      },
+      {
+        "check": "design-preview-regeneration",
+        "status": "passed"
+      },
+      {
+        "check": "design-preview-freshness",
+        "status": "passed"
+      },
+      {
+        "check": "existing-design-lock",
+        "status": "passed"
+      },
+      {
+        "check": "existing-design-drift-check",
+        "status": "passed"
+      },
+      {
+        "check": "existing-jira-structured-draft",
+        "status": "passed"
+      },
+      {
+        "check": "source-catalog-and-provider-validation",
+        "status": "passed"
+      },
+      {
+        "check": "existing-example-design-package",
+        "status": "passed"
+      },
+      {
+        "check": "existing-example-design-lock",
+        "status": "passed"
+      }
+    ],
+    "installed_skill_files_verified": 221,
+    "design_loop_unchanged_files_verified": 77,
+    "design_loop_browser": "No new UI edits; prior browser evidence retained as historical evidence, not re-executed"
+  },
+  "generalization": {
+    "fixed_status_assignee_and_project_fields": "not imported",
+    "side_by_side_images": "optional per project",
+    "installation_package_link": "only when applicable and required",
+    "external_writes": "separate actual authorization; no live Jira calls",
+    "untracked_local_product_logs": "preserved outside commit"
+  },
+  "distribution": {
+    "cross_compiled_only": "Other operating systems require actual execution validation",
+    "platforms": {
+      "amazing-skills-darwin-amd64": "737b2b034d7b81dc09b94ed501021e965e795912988120455851d946d74fc34a",
+      "amazing-skills-darwin-arm64": "f95f8f0e87629b2cb68439ddc4adcb779c03abea543471f0674d10638253325a",
+      "amazing-skills-linux-amd64": "f35b2a324cd77ccfe44e8c1b19798272f9db170aab8aac763407daf7cb39de2e",
+      "amazing-skills-linux-arm64": "fd08c6ed99ba5309eea7c2e12d469f222904ef44613758f90c58ee51871e9a23",
+      "amazing-skills-windows-amd64.exe": "4e265f27d7cacab22d5ba4811b2e83169473102808a8e8cadf740ec8b82db8e0",
+      "amazing-skills-windows-arm64.exe": "816e5ad3eba19bed54445b24fe7d14eeeffc119c84fa51c0a7bdfd09224e7d1c"
+    },
+    "python_required": false,
+    "runtime": "Go standalone binary"
+  },
+  "limitations": [
+    "Single writer only; no multi-process coordination",
+    "Windows directory fsync is not provided; no power-loss guarantee asserted there",
+    "Only darwin-arm64 executed locally; five other platforms cross-compiled only",
+    "Fault injection and portable history checks are synthetic, not real application tests",
+    "No live Jira, remote design service or physical-device execution",
+    "No whole-library model-behavior correctness claim from prose review"
+  ]
+}
